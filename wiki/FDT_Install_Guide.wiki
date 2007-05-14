@@ -1,6 +1,0 @@
-#summary A quick guide to install and use FDTKit
-#labels Featured,Phase-Deploy
-
-= FDTKit Installation =
-
-_in progress_
