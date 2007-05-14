@@ -1,0 +1,13 @@
+#summary The never-ending story
+
+= Components =
+
+  * Ant build.xml templates
+  * as2api batch scripts for windows
+
+
+= Documentation =
+
+  * Rewrite existing docs
+  * Clean up install guides
+  * Organize external resources and links
