@@ -1,4 +1,0 @@
-MTASC - LATEST VERSIONS
-
-windows: 1.13
-mac osx: 1.12

@@ -1,5 +1,0 @@
-AS2API-0.4
-
-ruby: as2api.rb
-windows: as2api.exe
-mac osx: as2api or as2api_darwin (courtesy http://www.plasticstare.com/plains/category/coding/ruby/)
