@@ -1,0 +1,10 @@
+#summary Getting Started with Eclipse and FDT
+#labels Featured,Phase-Deploy
+
+= How to Install Eclipse, FDT, Subclipse =
+
+_installation guide here_
+
+
+
+
