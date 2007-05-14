@@ -1,0 +1,856 @@
+<?xml version="1.0"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+                         "docbook/dtd/4.3/docbookx.dtd"
+[
+  <!ATTLIST chapter id ID #IMPLIED>
+  <!ATTLIST section id ID #IMPLIED>
+  <!ATTLIST titleabbrev id ID #IMPLIED>
+]>
+
+<?xml-stylesheet href="/home/dave/projects/docbook/css/xml/docbook/driver.css"
+                 type="text/css"?>
+
+
+<article lang="en_GB">
+  <title>as2api Documentation</title>
+
+  <section>
+    <title>About</title>
+
+    <para>as2api parses ActionScript 2 source code and generates HTML
+    API documentation in the style of JavaDoc.  It is open source, and
+    runs on Windows, MacOSX and Linux.</para>
+  </section>
+
+  <section>
+    <title>Getting the software</title>
+
+    <para>There are three versions of the software available from the
+    project homepage,
+    <ulink url="http://www.badgers-in-foil.co.uk/projects/as2api/"/>:</para>
+
+    <itemizedlist>
+      <listitem>
+	<para>A single-file, command-line executable for MacOSX</para>
+      </listitem>
+      <listitem>
+	<para>A single-file, command-line exe for Windows</para>
+      </listitem>
+      <listitem>
+	<para>The source ruby scripts, runnable from the command-line
+	under Linux (or anywhere else that Ruby is available)</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+
+  <section>
+    <title>Command-line Reference</title>
+
+    <refentry id="as2api">
+      <refmeta>
+	<refentrytitle>as2api</refentrytitle>
+	<manvolnum>1</manvolnum>
+      </refmeta>
+
+      <refnamediv>
+	<refname>as2api</refname>
+	<refpurpose>ActionScript 2 API reference documentation
+	generator</refpurpose>
+      </refnamediv>
+
+      <refsynopsisdiv>
+	<cmdsynopsis>
+	  <command>as2api</command>
+	  <arg>--help</arg>
+	  <arg>--output-dir <replaceable>path</replaceable></arg>
+	  <arg>--classpath <replaceable>path</replaceable></arg>
+	  <arg>--title <replaceable>title-text</replaceable></arg>
+	  <arg>--progress</arg>
+	  <arg>--encoding <replaceable>encoding-name</replaceable></arg>
+	  <arg>--draw-diagrams</arg>
+	  <arg>--dot-exe <replaceable>executable-path-and-name</replaceable></arg>
+	  <arg>--sources</arg>
+	  <arg rep="repeat" choice="plain"><replaceable>package-spec</replaceable></arg>
+	</cmdsynopsis>
+      </refsynopsisdiv>
+
+      <refsection id="options">
+	<title>Options</title>
+	
+	<para>Arguments can be given in any order.
+	<replaceable>package-spec</replaceable> is required.</para>
+
+	<variablelist>
+	  <varlistentry>
+	    <term><option><replaceable>package-spec</replaceable></option></term>
+	    <listitem>
+	      <para>You must specify at least one package of types to be
+	      documented, and may specify multiple packages:</para>
+
+	      <informalexample>
+		<screen>as2api org.example.utils com.yoyodyne.app</screen>
+	      </informalexample>
+
+	      <para>If you want to document all packages who's names share a
+	      common prefix, you can avoid listing each package individually by
+	      giving the package prefix with the suffix '.*':</para>
+
+	      <informalexample>
+		<screen>as2api com.yoyodyne.gui.*</screen>
+	      </informalexample>
+	    </listitem>
+	  </varlistentry>
+
+	  <varlistentry>
+	    <term><option>--help</option></term>
+	    <term><option>-h</option></term>
+	    <listitem>
+	      <para>Causes the program to exit immidiately after showing some
+	      brief usage instructions.</para>
+	    </listitem>
+	  </varlistentry>
+
+	  <varlistentry>
+	    <term><option>--output-dir <replaceable>path</replaceable></option></term>
+	    <term><option>-d <replaceable>path</replaceable></option></term>
+	    <listitem>
+	      <para><replaceable>path</replaceable> specifies the location where
+	      the generated HTML files should be placed.  If unspecified, the
+	      default location will be <filename>apidocs</filename>, within
+	      the current directory.</para>
+
+	      <para>If <replaceable>path</replaceable> does not exist, it will
+	      be created.</para>
+	    </listitem>
+	  </varlistentry>
+
+	  <varlistentry>
+	    <term><option>--classpath <replaceable>path</replaceable></option></term>
+	    <listitem>
+	      <para>The <replaceable>path</replaceable> is a list of directories
+	      in which as2api should search for source code.  If no classpath is
+	      specified, as2api just searches within the current
+	      directory.  Items within the list should be seperated by the
+	      platform-dependant path seperator:</para>
+
+	      <variablelist>
+		<varlistentry>
+		  <term>Windows</term>
+
+		  <listitem>
+		    <para>--classpath <replaceable>dir1</replaceable>;<replaceable>dir2</replaceable></para>
+		  </listitem>
+		</varlistentry>
+
+		<varlistentry>
+		  <term>OSX</term>
+		  <term>Unix</term>
+
+		  <listitem>
+		    <para>--classpath <replaceable>dir1</replaceable>:<replaceable>dir2</replaceable></para>
+		  </listitem>
+		</varlistentry>
+	      </variablelist>
+
+	      <para>Note that if one of the directories in the classpath contains
+	      spaces, you will need to enclose the whole classpath in
+	      quotes:</para>
+
+	      <informalexample>
+		<screen>--classpath "C:\Documents and Settings\dave\as;<replaceable>dir2</replaceable>"</screen>
+	      </informalexample>
+	    </listitem>
+	  </varlistentry>
+
+	  <varlistentry>
+	    <term><option>--title <replaceable>title-text</replaceable></option></term>
+	    <listitem>
+	      <para>Some text to be included in the titles of generated pages
+	      (e.g. the name of the software project / library).</para>
+	    </listitem>
+	  </varlistentry>
+
+	  <varlistentry>
+	    <term><option>--progress</option></term>
+	    <listitem>
+	      <para>Causes some extra progress information to be shown as the
+	      program runs</para>
+	    </listitem>
+	  </varlistentry>
+
+	  <varlistentry>
+	    <term><option>--encoding <replaceable>encoding-name</replaceable></option></term>
+	    <listitem>
+	      <para>The encoding for the generated HTML files.  Note that this
+	      must match the encoding of all input source files; no transcoding
+	      is performed.  as2api cannot handle a mixture of file encodings in
+	      the set of source files to be proccessed.</para>
+	    </listitem>
+	  </varlistentry>
+
+	  <varlistentry>
+	    <term><option>--draw-diagrams</option></term>
+	    <listitem>
+	      <para>Enables the generation of inheritance diagrams on package
+	      overview pages.  This requires the external <command>dot</command>
+	      tool from the graphviz package.  If you have downloaded graphviz,
+	      but the tools are not available in the standard system PATH,
+	      you will need to specify the location of  <command>dot</command>
+	      by adding <option>--dot-exe</option> to the command line.</para>
+	    </listitem>
+	  </varlistentry>
+
+	  <varlistentry>
+	    <term><option>--dot-exe <replaceable>executable-path-and-name</replaceable></option></term>
+	    <listitem>
+	      <para>Explicitly names the <command>dot</command> executable to use,
+	      should this not be available in any of the standard locations on
+	      your system.</para>
+	    </listitem>
+	  </varlistentry>
+
+	  <varlistentry>
+	    <term><option>--sources</option></term>
+	    <listitem>
+	      <para>Enables the inclusion of a copy of the source code of each
+	      documented type in the generated HTML.  The source will be
+	      converted to an HTML file with 'syntax highlighting'.</para>
+	    </listitem>
+	  </varlistentry>
+	</variablelist>
+      </refsection>
+    </refentry>
+  </section>
+
+  <section>
+    <title>How to Write Documentation</title>
+
+    <section>
+      <title>Overview</title>
+
+      <section>
+	<title>ActionScript Comments</title>
+	<para>ActionScript 2 provides two kinds of
+	<wordasword>comment</wordasword> marker, for denoting text which
+	is not part of the executable program code.  There is the C++
+	style single-line comment,</para>
+	<programlisting><emphasis role="strong">//</emphasis> everything on the line after the two slashes
+<emphasis role="strong">//</emphasis> is ignored</programlisting>
+	<para>and the C style multi-line comment,</para>
+	<programlisting><emphasis role="strong">/*</emphasis> text between start and end markers is
+   ignored, and the comment may continue across
+   multiple lines in the source code <emphasis role="strong">*/</emphasis></programlisting>
+      </section>
+
+      <section>
+	<title>as2api Documentation Comments</title>
+	<para>as2api ignores the single-line comments, but it will
+	read text from the multi-line comments if both the following
+	conditions are true,</para>
+	<itemizedlist>
+	  <listitem>
+	    <para>The start-of-comment marker has two asterisks, not
+	    just one: "<literal>/**</literal>"</para>
+	  </listitem>
+	  <listitem>
+	    <para>The comment immediately precedes the definition
+	    of part of the public API of an ActionScript 2 class
+	    (e.g. just before the class definition itself)</para>
+	  </listitem>
+	</itemizedlist>
+
+	<example>
+	  <title>A Simple class definition with as2api
+	  documentation</title>
+
+	  <programlisting>/*
+ * MyFirstClass.as
+ *
+ * Copyright (c) __MyEmployer__ 2005
+ *
+ * <lineannotation>The contents of this comment are ignored</lineannotation>
+ */
+
+import "otherpackage.MyOtherClass";
+
+<emphasis role="strong">/**
+ * Objects of this class are responsible for
+ * serving as an example to others.
+ */</emphasis>
+class thispackage.MyFirstClass {
+
+  <emphasis role="strong">/**
+   * When called, this method puts into motion a
+   * plan so cunning that words cannot describe it.
+   */</emphasis>
+  public function enactCunningPlan():Void {
+      // TODO: implement cunning plan
+  }
+}</programlisting>
+	</example>
+      </section>
+    </section>
+
+    <section>
+      <title>Writing Useful Documentation</title>
+
+      <para>Here are a few guidelines</para>
+
+      <section>
+	<title>Empathy!</title>
+	<para>Take a deep breath.</para>
+	<para>Take five (mental) paces back from your code.</para>
+	<para>Try to see the API from someone else's point of view.  It will
+	help if you imagine that this other person is lazy, but
+	<emphasis>not</emphasis> stupid.  They want to gain the maximum
+	understanding with the minimum amount of reading.</para>
+      </section>
+
+      <section>
+	<title>Describe the Interface, not the Implementation</title>
+
+	<para>Classes are useful because they can hide the complicated details
+	of how things are achieved behind a simple, black-box interface.</para>
+
+	<para>If part of a class's implementation can be changed, and no code
+	making use of the class would notice, then this is an implementation
+	detail, not part of the API which must be documented.</para>
+      </section>
+
+      <section>
+	<title>Avoid Repeating the Code in English</title>
+	<para>This kind of annotation is not useful:</para>
+	<programlisting>/**
+ * Set the name property
+ * @param name the name to set
+ */
+public function setName(name:String):Void {
+  // ...
+}</programlisting>
+	<para>Method and class names are an integral part of the API
+	documentation, and should already convey a useful overview of their
+	own purpose.</para>
+      </section>
+    </section>
+
+    <section>
+      <title>Syntax Overview</title>
+
+      <para>The javadoc-style syntax supported by as2api allows the contents
+      of javadoc comments to contain special javadoc 'tags' to add extra
+      meaning, and XHTML tags if extra formatting (e.g. tabulated information)
+      is required.</para>
+
+      <para>If the first non-whitespace characters on a line within a comment
+      are one or more asterisks (the '*' character), then everything upto and
+      including the initial asterisks on the line will be stripped before it
+      reaches the documentation.  This allows you to use the common comment
+      formatting idiom whereby the left-hand margin of the comment is marked
+      with a column of asterisks.</para>
+
+      <example>
+	<title>Initial Asterisks on Comment Lines </title>
+
+	<screen>/**
+ * This is an
+ * example
+ */</screen>
+
+	<para>The documentation will include the text <quote>This is an
+	example</quote>; the '*' characters before the words
+	<wordasword>This</wordasword> and <wordasword>example</wordasword>
+	will disappear.</para>
+      </example>
+
+      <para>Javadoc tags appear in two forms, <wordasword>block</wordasword>
+      tags, such as <literal>@throws</literal>, and
+      <wordasword>inline</wordasword> tags, such as
+      <literal>{@link}</literal>.</para>
+
+      <para>Tags that are allowed in some contexts may not be allowed in
+      others.  For instance <literal>@throws</literal> is allowed to appear
+      in the documentation of methods, but not in the documentation of
+      classes.  See the Syntax Reference below for the full details.</para>
+
+      <section>
+	<title>Block Tags</title>
+
+	<para>Documenation-comment is split into 'blocks'.  The first block is
+	always a general description of the API element to which the comment is
+	attached.  No special tag is required to denote this description block.
+	Further blocks are added to the comment with block-tags, which must
+	always appear at the beginning of a new line.</para>
+
+	<example>
+	  <title>Valid Block-Tag Usage</title>
+	  <screen>/**
+ * So then this is the
+ * description.
+ * @throws Error in all cases
+ */</screen>
+	</example>
+
+	<example>
+	  <title>Invalid Block-Tag Usage</title>
+	  <screen>/**
+ * So then this is the
+ * description.  @throws Error in all cases
+ */</screen>
+	</example>
+
+	<example>
+	  <title>Block-Tag With Newlines</title>
+	  <screen>/**
+ * So then this is the
+ * description.
+ * @throws Error in all cases
+ *
+ * text appearing here is still part of the 'throws'
+ * block
+ */</screen>
+	</example>
+      </section>
+
+      <section>
+	<title>Inline Tags</title>
+
+	<para>Inline tags can appear within the middle of a line of comment
+	text (unlike block-tags, which must always appear at the start of a
+	line).  Inline tags are always surrounded by curly braces (the '{' and
+	'}' characters) so that as2api can tell them appart from 'normal'
+	text.</para>
+      </section>
+
+      <section>
+	<title>XHTML Tags</title>
+
+	<example>
+	  <title>XHTML Markup in Comments</title>
+	  <screen><![CDATA[/**
+ * The allowed values are:
+ * <ul>
+ *   <li>0.1</li>
+ *   <li>0.01</li>
+ *   <li>-6.66</li>
+ * </ul>
+ */]]></screen>
+	</example>
+      </section>
+    </section>
+
+    <section>
+      <title>Syntax Reference</title>
+
+      <section>
+	<title>Supported JavaDoc Features</title>
+
+	<informaltable>
+	  <tgroup cols="2">
+	    <colspec colnum="1" colname="col1" colwidth="1*"/>
+	    <colspec colnum="2" colname="col2" colwidth="3*"/>
+	    <thead>
+	      <row>
+		<entry>Feature</entry>
+		<entry>Description</entry>
+	      </row>
+	    </thead>
+	    <tbody>
+	      <row>
+		<entry><link linkend="type_description">Type
+		Description</link></entry>
+		<entry>Describe a class or interface</entry>
+	      </row>
+	      <row>
+		<entry><link linkend="member_description">Member
+		Description</link></entry>
+		<entry>Describe a field/method of a class or interface</entry>
+	      </row>
+	      <row>
+		<entry><link linkend="param_tag"><literal>@param</literal></link></entry>
+		<entry>Describe a method parameter</entry>
+	      </row>
+	      <row>
+		<entry><link linkend="return_tag"><literal>@return</literal></link></entry>
+		<entry>Describe the value returned by a method</entry>
+	      </row>
+	      <row>
+		<entry><link linkend="see_tag"><literal>@see</literal></link></entry>
+		<entry>Partially supported. Link to additional
+		information.</entry>
+	      </row>
+	      <row>
+		<entry><link linkend="throws_tag"><literal>@throws</literal>, <literal>@exception</literal></link></entry>
+		<entry>Describe an exception thrown by a method</entry>
+	      </row>
+	      <row>
+		<entry><link linkend="link_tag"><literal>{@link}</literal></link></entry>
+		<entry>Link to the documentation of another type or
+		type-member</entry>
+	      </row>
+	      <row>
+		<entry><link linkend="code_tag"><literal>{@code}</literal></link></entry>
+		<entry>A code example (automatically escapes HTML special
+		characters, like '&amp;'</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</informaltable>
+      </section>
+
+      <section>
+	<title>Unsupported JavaDoc Features</title>
+
+	<informaltable>
+	  <tgroup cols="2">
+	    <colspec colnum="1" colname="col1" colwidth="1*"/>
+	    <colspec colnum="2" colname="col2" colwidth="3*"/>
+	    <thead>
+	      <row>
+		<entry>Feature</entry>
+		<entry>Commentary</entry>
+	      </row>
+	    </thead>
+	    <tbody>
+	      <row>
+		<entry><literal>@author</literal></entry>
+		<entry></entry>
+	      </row>
+	      <row>
+		<entry><literal>{@docRoot}</literal></entry>
+		<entry></entry>
+	      </row>
+	      <row>
+		<entry><literal>@depricated</literal></entry>
+		<entry></entry>
+	      </row>
+	      <row>
+		<entry><literal>{@inheritDoc}</literal></entry>
+		<entry></entry>
+	      </row>
+	      <row>
+		<entry><literal>{@linkPlain}</literal></entry>
+		<entry></entry>
+	      </row>
+	      <row>
+		<entry><literal>{@literal}</literal></entry>
+		<entry></entry>
+	      </row>
+	      <row>
+		<entry><literal>@serial</literal></entry>
+		<entry></entry>
+	      </row>
+	      <row>
+		<entry><literal>@serialData</literal></entry>
+		<entry></entry>
+	      </row>
+	      <row>
+		<entry><literal>@serialField</literal></entry>
+		<entry></entry>
+	      </row>
+	      <row>
+		<entry><literal>@since</literal></entry>
+		<entry></entry>
+	      </row>
+	      <row>
+		<entry><literal>{@value}</literal></entry>
+		<entry></entry>
+	      </row>
+	      <row>
+		<entry><literal>@version</literal></entry>
+		<entry></entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</informaltable>
+      </section>
+
+      <section>
+	<title>Unsupported ActionScript Features</title>
+
+	<informaltable>
+	  <tgroup cols="2">
+	    <colspec colnum="1" colname="col1" colwidth="1*"/>
+	    <colspec colnum="2" colname="col2" colwidth="3*"/>
+	    <thead>
+	      <row>
+		<entry>Feature</entry>
+		<entry>Commentary</entry>
+	      </row>
+	    </thead>
+	    <tbody>
+	      <row>
+		<entry><literal>#include "<replaceable>filename</replaceable>"</literal></entry>
+		<entry>includes are ignored</entry>
+	      </row>
+	      <row>
+		<entry><literal>[<replaceable>attributes</replaceable>]</literal></entry>
+		<entry>attributes on types/members are not documented</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</informaltable>
+      </section>
+
+      <section id="type_description">
+	<title>Class/Interface Description</title>
+
+	<para>A doc-comment immediately before a class or interface is taken to
+	be a description of that class.  The text here will be placed at the
+	top of the page documenting the class's public fields and
+	methods.</para>
+
+	<para>The first sentence of the class description will also be
+	included in the package-level index of classes and interfaces.  It
+	should therefore try to give a brief overview of the class's
+	purpose</para>
+
+	<example>
+	  <title>Class Description</title>
+	  <programlisting><emphasis role="strong">/**
+ * An immutable, type-safe wrapper around the
+ * String value of the user identifier.
+ * The constructor will raise an exception if
+ * the given value is not of the correct format,
+ * asserting that the GUI validation code has
+ * done its job, and preventing invalid data
+ * being sent to the backend.
+ */</emphasis>
+class thispackage.UserId {
+    // ...
+}</programlisting>
+	</example>
+
+	<formalpara>
+	  <title>May contain</title>
+	  <para><link linkend="see_tag">@see</link></para>
+	</formalpara>
+      </section>
+
+      <section id="member_description">
+	<title>Member Description</title>
+
+	<para>A doc-comment immediately before a method or field is used as
+	the description of that member.  The text here will be added to this
+	members section in the type's API reference.</para>
+
+	<example>
+	  <title>Member Description</title>
+	  <programlisting><emphasis role="strong">/**
+ * Clears all data that has previously been
+ * collected in this object, and returns it to
+ * its initial state.  Subclasses are expected
+ * to override this method to clear any state of
+ * their own, and use super() ensure that data
+ * defined by this class is cleared too.
+ */</emphasis>
+public function clear() {
+    // ...
+}</programlisting>
+	</example>
+
+        <para>When implicit fields are created (using
+	<literal>function get foo()</literal> or
+	<literal>function set foo()</literal> methods), an entry will be
+	created for this in the 'Fields' section of the resulting documentation
+	(not in the 'Methods' section).  If both <literal>get</literal> and
+	<literal>set</literal> methods are defined for a field, as2api will
+	'pick' the doc-comment from one of them to use as documentation for the
+	resulting field.  If only one of <literal>get</literal> or
+	<literal>set</literal> are defined, the documentation will note
+	that the field is read-only or write-only, as appropriate.</para>
+
+	<formalpara>
+	  <title>May contain</title>
+	  <para><link linkend="param_tag">@param</link>, <link linkend="return_tag">@return</link>, <link linkend="see_tag">@see</link></para>
+	</formalpara>
+      </section>
+
+      <section id="param_tag">
+	<title>Method Parameters</title>
+
+	<para>Within the doc-comment describing a method,
+	<literal>@param</literal> tags may be used to give a description
+	for each of the method's parameters.  Immidiately following the
+	<literal>@param</literal> must be the name of the parameter to
+	be described, with any text following this name being used as the
+	description.</para>
+
+	<para>Arguments named in <literal>@param</literal> tags must match
+	the names of the actual method arguments, or they will be skipped.
+	The special parameter name '...' may be used if the method can
+	accept a variable number of paramters (by inspecting it's
+	<literal>arguments</literal> array.</para>
+
+	<example>
+	  <title>Method Parameters</title>
+	  <programlisting>/**
+ * For each value contained by this object, invoke
+ * the given callback function, passing the value
+ * as an argument.
+ *
+ * <emphasis role="strong">@param callback</emphasis> callback function to be invoked
+ *        for each object.  The function must accept
+ *        one parameter (or two, if index is true).
+ * <emphasis role="strong">@param index</emphasis> if true, each invocation of the
+ *        callback function will be passed an
+ *        additional second parameter giving the
+ *        index of the current value (starting with
+ *        0 for the first value, 1 for the second,
+ *        and so on).
+ * <emphasis role="strong">@param ...</emphasis> any additional arguments to be passed
+ *        to the callback function.
+ */
+public function each(callback:Function,
+                     index:Boolean):Void {
+    // ...
+}</programlisting>
+	</example>
+      </section>
+
+      <section id="return_tag">
+	<title>Method Return Values</title>
+
+	<para>A description of the value returned by a method, where the method
+	description itself does not give this information succinctly
+	enough.</para>
+
+	<example>
+	  <title>Method Return Values</title>
+	  <programlisting>/**
+ * Get the value corresponding to the given key
+ * by searching in the local cache first, then
+ * in the database on the LAN, and finally
+ * consulting a number of LDAP servers from
+ * around the wider internet.
+ *
+ * <emphasis role="strong">@return</emphasis> either the value for the given key, or
+ *         null if there is no such mapping.
+ */
+public function get(key:String):String {
+    // ...
+}</programlisting>
+	</example>
+      </section>
+
+      <section id="see_tag">
+	<title>Links to Related Information</title>
+
+	<para><remark>TODO</remark></para>
+	<example>
+	  <title>Class Related information</title>
+	  <programlisting>/**
+ * See-also tags will be copied to the output HTML,
+ * but are not actually turned into links to other
+ * classes/methods as they should be.
+ *
+ * <emphasis role="strong">@see "some stuff"</emphasis>
+ * <emphasis role="strong">@see some.OtherClass</emphasis>
+ * <emphasis role="strong">@see some.OtherClass#field_name</emphasis>
+ * <emphasis role="strong">@see some.OtherClass#method_name()</emphasis>
+ */
+class somepackage.ThisClass {
+    // ...
+}</programlisting>
+	</example>
+      </section>
+
+      <section id="throws_tag">
+	<title>Exceptions Thrown by a Method</title>
+
+	<para><remark>TODO</remark></para>
+	<example>
+	  <title>Exceptions Thrown by a Method</title>
+	  <programlisting>/**
+ * Causes this message to be sent
+ *
+ * <emphasis role="strong">@throws MessagingException if there is a failure
+ *         in the underlying communications medium</emphasis>
+ */
+public function send():Void {
+    // ...
+}</programlisting>
+	</example>
+      </section>
+
+      <section id="link_tag">
+	<title>Linking to Other Parts of the API Documentation</title>
+
+	<para><remark>TODO</remark></para>
+	<example>
+	  <title>Linking to Other Parts of the API</title>
+	  <programlisting>/**
+ * Causes this message to be sent to the
+ * <emphasis role="strong">{@link OtherClass}</emphasis> instance, where it will be
+ * dealt with by <emphasis role="strong">{@link OtherClass#recieve()}</emphasis>.  We
+ * remember the destination in our <emphasis role="strong">{@link #reciever}</emphasis>
+ * field.
+ */
+public function send():Void {
+    // ...
+}</programlisting>
+	</example>
+      </section>
+
+      <section id="code_tag">
+	<title>Giving Code Examples</title>
+
+	<para>The code tag is provided to allow example ActionScript source
+	code to be included in the documentation.  The advantage of
+	<literal>{@code}</literal> over simply using the HTML
+	<sgmltag class="starttag">code</sgmltag> tag is that you don't need to
+	worry about 'escaping' characters (like '&amp;', which are special in
+	HTML) within the example code.</para>
+
+	<para>In addition, as2api will apply 'syntax highlighting' to the
+	text within <literal>{@code}</literal>, which makes it look pretty.
+	The disadvantage of this is that you can expect to see problems if
+	you make certain classes of syntax error in the contents of the
+	tag (e.g. failing to close a string literal).</para>
+
+	<example>
+	  <title>Example Code</title>
+	  <programlisting>/**
+ * Generates an ending XML tag. For example, if
+ * passed <emphasis role="strong">{@code "p"}</emphasis>, the result will be
+ * <emphasis role="strong">{@code "&lt;/p&gt;"}</emphasis>
+ */
+public function endTag(name:String):String {
+    // ...
+}</programlisting>
+	</example>
+
+        <para><literal>{@code}</literal> may span multiple lines, and when
+	this happens, the resulting documentation will include an HTML
+	<sgmltag class="starttag">pre</sgmltag> around the code so that its
+	formatting is preserved.</para>
+
+	<para>Larger ActionScript code examples may need to include braces
+	(the '{' and '}' characters), however the end of the
+	<literal>{@code}</literal> will be marked by the closing brace.
+	Nested braces <emphasis>are</emphasis> allowed within
+	<literal>{@code}</literal>, but each opening brace,
+	<emphasis>must</emphasis> have a matching closing brace.</para>
+
+	<example>
+	  <title>Complex, multi-line code</title>
+	  <programlisting>/**
+ * Returns the result of calling startTag(), the
+ * given bodyGenerator function and endTag(),
+ * concatenated together.  For example, one might
+ * pass an anonymous function:
+ * <emphasis role="strong">{@code
+ * out.element("head", function() {
+ *   return "some dynamicaly generated content";
+ * });
+ * }</emphasis>
+ */
+public function element(name:String,
+                    bodyGenerator:Function):String {
+    // ...
+}</programlisting>
+	</example>
+      </section>
+    </section>
+  </section>
+
+</article>

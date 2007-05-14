@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!-- ====================================================================== 
+     May 14, 2007 12:19:52 AM                                                        
+
+     FDTKit    
+     Build Template
+                   
+     jason m horwitz | sekati.com                                                               
+     ====================================================================== -->
+<project name="FDTKit" default="default">
+    <description>
+            Build Template
+    </description>
+
+    <!-- ================================= 
+          target: default              
+         ================================= -->
+    <target name="default" description="--> Build Template">
+        
+    </target>
+
+</project>

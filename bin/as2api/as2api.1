@@ -1,0 +1,93 @@
+.\" ** You probably do not want to edit this file directly **
+.\" It was generated using the DocBook XSL Stylesheets (version 1.69.1).
+.\" Instead of manually editing it, you probably should edit the DocBook XML
+.\" source for it and then use the DocBook XSL Stylesheets to regenerate it.
+.TH "AS2API" "1" "11/06/2005" "" "Command\-line Reference"
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.SH "NAME"
+as2api \- ActionScript 2 API reference documentation generator
+.SH "SYNOPSIS"
+.HP 7
+\fBas2api\fR [\-\-help] [\-\-output\-dir\ \fIpath\fR] [\-\-classpath\ \fIpath\fR] [\-\-title\ \fItitle\-text\fR] [\-\-progress] [\-\-encoding\ \fIencoding\-name\fR] [\-\-draw\-diagrams] [\-\-dot\-exe\ \fIexecutable\-path\-and\-name\fR] [\-\-sources] \fIpackage\-spec\fR...
+.SH "OPTIONS"
+.PP
+Arguments can be given in any order.
+\fIpackage\-spec\fR
+is required.
+.TP
+\fB\fIpackage\-spec\fR\fR
+You must specify at least one package of types to be documented, and may specify multiple packages:
+.IP
+.sp
+.nf
+as2api org.example.utils com.yoyodyne.app
+.fi
+If you want to document all packages who's names share a common prefix, you can avoid listing each package individually by giving the package prefix with the suffix '.*':
+.IP
+.sp
+.nf
+as2api com.yoyodyne.gui.*
+.fi
+.TP
+\fB\-\-help\fR, \fB\-h\fR
+Causes the program to exit immidiately after showing some brief usage instructions.
+.TP
+\fB\-\-output\-dir \fR\fB\fIpath\fR\fR, \fB\-d \fR\fB\fIpath\fR\fR
+\fIpath\fR
+specifies the location where the generated HTML files should be placed. If unspecified, the default location will be
+\fIapidocs\fR, within the current directory.
+.sp
+If
+\fIpath\fR
+does not exist, it will be created.
+.TP
+\fB\-\-classpath \fR\fB\fIpath\fR\fR
+The
+\fIpath\fR
+is a list of directories in which as2api should search for source code. If no classpath is specified, as2api just searches within the current directory. Items within the list should be seperated by the platform\-dependant path seperator:
+.RS
+.TP
+Windows
+\-\-classpath
+\fIdir1\fR;\fIdir2\fR
+.TP
+OSX, Unix
+\-\-classpath
+\fIdir1\fR:\fIdir2\fR
+.RE
+.IP
+Note that if one of the directories in the classpath contains spaces, you will need to enclose the whole classpath in quotes:
+.IP
+.sp
+.nf
+\-\-classpath "C:\\Documents and Settings\\dave\\as;\fIdir2\fR"
+.fi
+.TP
+\fB\-\-title \fR\fB\fItitle\-text\fR\fR
+Some text to be included in the titles of generated pages (e.g. the name of the software project / library).
+.TP
+\fB\-\-progress\fR
+Causes some extra progress information to be shown as the program runs
+.TP
+\fB\-\-encoding \fR\fB\fIencoding\-name\fR\fR
+The encoding for the generated HTML files. Note that this must match the encoding of all input source files; no transcoding is performed. as2api cannot handle a mixture of file encodings in the set of source files to be proccessed.
+.TP
+\fB\-\-draw\-diagrams\fR
+Enables the generation of inheritance diagrams on package overview pages. This requires the external
+\fBdot\fR
+tool from the graphviz package. If you have downloaded graphviz, but the tools are not available in the standard system PATH, you will need to specify the location of
+\fBdot\fR
+by adding
+\fB\-\-dot\-exe\fR
+to the command line.
+.TP
+\fB\-\-dot\-exe \fR\fB\fIexecutable\-path\-and\-name\fR\fR
+Explicitly names the
+\fBdot\fR
+executable to use, should this not be available in any of the standard locations on your system.
+.TP
+\fB\-\-sources\fR
+Enables the inclusion of a copy of the source code of each documented type in the generated HTML. The source will be converted to an HTML file with 'syntax highlighting'.
