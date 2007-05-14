@@ -1,4 +1,5 @@
 #summary The never-ending story
+#labels Featured
 
 = Components =
 
