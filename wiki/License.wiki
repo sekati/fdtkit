@@ -2,7 +2,7 @@
 #labels Featured
 
 = Introduction =
-FTDKit is free open source software, licensed under the [http://en.wikipedia.org/wiki/MIT_License MIT License]. Since FTDKit is essentially a collection of well organized open source applications, libraries, documents, scripts and templates it is important to take note that, while all portions of FDTKit are open, there are various licenses that apply to the different compontents which make up FDTKit. For example while AS2API is distributed under the [http://www.opensource.org/licenses/gpl-license.php GNU General Public License], GraphViz is distributed under the [http://www.opensource.org/licenses/cpl1.0.php Common Public License] and so on.
+FTDKit is free open source software, licensed under the [http://en.wikipedia.org/wiki/MIT_License MIT License]. Since FTDKit is essentially a collection of well organized open source applications, libraries, documents, scripts and templates it is important to take note that, while all portions of FDTKit are open, there are various licenses that apply to the different compontents which make up FDTKit. For example while [http://www.badgers-in-foil.co.uk/projects/as2api/ AS2API] is distributed under the [http://www.opensource.org/licenses/gpl-license.php GNU General Public License], [http://www.graphviz.org/ GraphViz] is distributed under the [http://www.opensource.org/licenses/cpl1.0.php Common Public License] and so on.
 
 = FDTKit License =
 
