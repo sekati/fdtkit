@@ -1,0 +1,96 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                myAction = id; 
+                myAction1 = id; 
+                orderFrontActivityWindow = id; 
+                rememberSettings = id; 
+                resetSettings = id; 
+            }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = PGFontColorTableView; LANGUAGE = ObjC; SUPERCLASS = NSTableView; }, 
+        {
+            ACTIONS = {reload = id; stop = id; }; 
+            CLASS = PGGraphvizDocument; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSDocument; 
+        }, 
+        {
+            CLASS = PGGraphvizImageController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {document = PGGraphvizDocument; imager = PGZoomImageView; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = PGGraphvizOptionController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                document = PGGraphvizDocument; 
+                edgeDefaults = NSTableView; 
+                flipVertical = NSButton; 
+                graphDefaults = NSTableView; 
+                layout = NSPopUpButton; 
+                nodeDefaults = NSTableView; 
+                position = NSPopUpButton; 
+                reduceGraph = NSButton; 
+                scale = NSTextField; 
+                scaleStepper = NSStepper; 
+                verbose = NSButton; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = PGGraphvizSavePanelAccessoryController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                accessory = NSView; 
+                document = PGGraphvizDocument; 
+                formatter = NSPopUpButton; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = PGGraphvizStatusController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                alerter = NSButton; 
+                document = PGGraphvizDocument; 
+                messager = NSTextField; 
+                progresser = NSProgressIndicator; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = PGGraphvizToolbarController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {document = PGGraphvizDocument; imager = PGZoomImageView; window = NSWindow; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                actualSizeImage = id; 
+                editDocument = id; 
+                toggleSettings = id; 
+                zoomInImage = id; 
+                zoomOutImage = id; 
+                zoomToFitImage = id; 
+            }; 
+            CLASS = PGGraphvizWindowController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                document = PGGraphvizDocument; 
+                imager = PGZoomImageView; 
+                settings = NSDrawer; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = PGSourceTableColumn; LANGUAGE = ObjC; SUPERCLASS = NSTableColumn; }, 
+        {CLASS = PGTableViewDataSource; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = PGZoomImageView; LANGUAGE = ObjC; SUPERCLASS = NSView; }
+    ); 
+    IBVersion = 1; 
+}

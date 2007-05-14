@@ -1,0 +1,16 @@
+"Settings.label" = "Settings";
+"Settings.paletteLabel" = "Settings";
+"Settings.toolTip" = "Show/Hide the Settings drawer";
+"Edit.label" = "Edit";
+"Edit.paletteLabel" = "Edit";
+"Edit.toolTip" = "Edit the graph";
+"Edit.title" = "Edit with %@";
+"Render.label" = "Render";
+"Render.paletteLabel" = "Render";
+"Render.toolTip" = "Render any changes made to the graph";
+"Stop.label" = "Stop";
+"Stop.paletteLabel" = "Stop";
+"Stop.toolTip" = "Stop rendering/exporting the graph";
+"Zoom.label" = "Zoom: %.f%%";
+"Zoom.paletteLabel" = "Zoom";
+"Zoom.toolTip" = "Zoom in or out, from 12% to 800%";

@@ -1,0 +1,13 @@
+"format.dot" = "dot";
+"format.canon" = "dot";
+"format.xdot" = "dot";
+"format.imap" = "map";
+"format.cmap" = "html";
+"format.cmapx" = "xhtml";
+"format.ismap" = "map";
+"format.plain" = "txt";
+"format.plain-ext" = "txt";
+"format.ps" = "ps";
+"format.ps2" = "ps";
+"format.pdf" = "pdf";
+"format.epdf" = "pdf";
