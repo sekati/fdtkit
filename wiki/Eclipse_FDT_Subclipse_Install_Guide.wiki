@@ -3,4 +3,4 @@
 
 = How to Install Eclipse, FDT & Subclipse =
 
-_installation guide here_
+_not much here yet im afraid_
