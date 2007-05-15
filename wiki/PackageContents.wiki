@@ -6,7 +6,7 @@
   * mtasc/ - _open source as2 compiler: packaged latest builds for windows and os x_
   * scripts/ - _scripts to automate common tasks; package documentation, ssh+rysnc etc._
 
-= doc/ - _various usage documents (FTD/Eclipse shortcuts, etc.)_
+= doc/ = - _various usage documents (FTD/Eclipse shortcuts, etc.)_
 
 = lib/ =
   * FP7/ - _complete core library for Flash 7 (includes mx)_
