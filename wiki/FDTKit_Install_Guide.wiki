@@ -1,6 +1,10 @@
 #summary A quick guide to install and use FDTKit
 #labels Featured,Phase-Deploy
 
-= FDTKit Installation =
+= FDTKit Installation Guide =
 
-_in progress_
+== Introduction ==
+
+== Getting FDTKit ==
+
+== Configuring Eclipse/FDT to use FDTKit ==
