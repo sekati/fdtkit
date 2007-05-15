@@ -8,18 +8,24 @@
 
 This Install Guide assumes you already have the Required Environment (listed below) installed. If you are starting from scratch please read the [http://code.google.com/p/fdtkit/wiki/Eclipse_FDT_Subclipse_Install_Guide Eclipse, FDT, Subclipse Install Guide] to setup your environment and then return to this document.
 
+There are two ways to download & install FDTKit:
+  * [http://code.google.com/p/fdtkit/source From the Project SVN Repository] via the Subclipse eclipse Plugin - (more desirable).
+  * [http://code.google.com/p/fdtkit/downloads/list  From the Project Downloads Section] - (less desireable). 
+
+To understand why [http://en.wikipedia.org/wiki/Subversion_(software) SVN] is the more desirable route it is helpful to quickly review a few core concepts on how Eclipse, Subclipse and FDTKit fit together:
+
+Since Eclipse is a plugin-based IDE, supporting multiple languages, usages and functionalities we choose to build our IDE with the FDT plugin _(which adds advanced ActionScript support)_, Subclipse plugin _(which allows Subversion version control support)_.
+
+Simply put; FDTKit is a treated as a _Project Resource_ in Eclipse; which means you can check it out, or update it from the project repository and have it available on your system. This is handy since all FDTKit is, in essence, is a collection of various libraries, binaries, templates, and scripts - managed directly thru Eclipse.
+
+
 == Requirements ==
   * [http://www.eclipse.org/webtools/main.php Eclipse] - Any flavor of Eclipse should do but the [http://www.bea.com/callisto/eclipse.html Web Tools Platform Project 1.5.x all-in-one] is what I recommend for most flash developers.
   * [http://fdt.powerflasher.com/update/ FDT 1.5.x] - FDT3 will be supported once it is released and I attain a copy.
   * [http://subclipse.tigris.org/install.html Subclipse]^*^ - Not required but strongly recommended as this is the best install and update route for FDTKit.
 
 
-== Getting FDTKit ==
-
-There are two ways to download FDTKit:
-  * [http://code.google.com/p/fdtkit/source From the Project SVN Repository] via the Subclipse eclipse Plugin - (more desirable).
-  * [http://code.google.com/p/fdtkit/downloads/list  From the Project Downloads Section] - (less desireable). 
-
+== Installing FDTKit ==
 
 == Configuring Your Environment to use FDTKit ==
 
