@@ -1,4 +1,4 @@
-#summary step-by-step guide to Eclipse,FDT,Subclipse Installation
+#summary step-by-step guide to install Eclipse, FDT, Subclipse
 #labels Phase-Requirements
 
 = How to Install Eclipse, FDT & Subclipse =
