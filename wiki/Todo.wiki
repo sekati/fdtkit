@@ -1,5 +1,5 @@
 #summary The never-ending story
-#labels Featured
+#labels Phase-QA
 
 = Components =
 
