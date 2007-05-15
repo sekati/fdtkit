@@ -14,7 +14,7 @@ _This Install Guide assumes you already have the Required Environment (listed be
   * [http://subclipse.tigris.org/install.html Subclipse]^*^ - Not required but strongly recommended as this is the best install and update route for FDTKit.
 
 
-  === Install Options ===
+  === Install Routes ===
   * [http://code.google.com/p/fdtkit/source From the Project SVN Repository] via the Subclipse eclipse Plugin - (most desirable).
   * [http://code.google.com/p/fdtkit/downloads/list  From the Project Downloads Section] - (least desireable). 
 
