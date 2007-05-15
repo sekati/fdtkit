@@ -17,8 +17,8 @@ This Install Guide assumes you already have the Required Environment (listed bel
 == Getting FDTKit ==
 
 There are two ways to download FDTKit:
-  * [http://code.google.com/p/fdtkit/source From the Project SVN Repository] via the Subclipse eclipse Plugin.
-  * [http://code.google.com/p/fdtkit/downloads/list  From the Project Downloads Section]. 
+  * [http://code.google.com/p/fdtkit/source From the Project SVN Repository] via the Subclipse eclipse Plugin - (more desirable).
+  * [http://code.google.com/p/fdtkit/downloads/list  From the Project Downloads Section] - (less desireable). 
 
 
 == Configuring Your Environment to use FDTKit ==
