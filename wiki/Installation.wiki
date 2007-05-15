@@ -34,7 +34,7 @@ Simply put; FDTKit is a treated as a _Generic Project_ in Eclipse; which means y
   # The SVNKit repository will not be added to your `"SVN Repository"` panel.
   # Right click on the repository and choose: `"Checkout..."`.
   # Insure that the default: `"Check out as a project in the workspace"` is ticked, the Project Name is: `"fdtkit"`, and `"Head Revision"` is ticked. Then press: `"Finish"`.
-  # Wait while the current build of FDTKit is downloaded and installed; once complete you should see `"Checked out revision [number]."` in the `Console` panel. Thats it your ready to Configure FDT/FDTKit!
+  # Wait while the current build of FDTKit is downloaded and installed; once complete you should see `"Checked out revision [number]."` in the `Console` panel. Thats it; you're now ready to configure FDT to use FDTKit.
 
 == Installing from Download ==
 
