@@ -9,7 +9,7 @@ This Install Guide assumes you already have the Required Environment (listed bel
 
 
 == Requirements ==
-  * [http://www.eclipse.org/webtools/main.php Eclipse] - Any flavor of Eclipse should do but the Web Tools Platform Project 1.5.x all-in-one is what I recommend for most flash developers.
+  * [http://www.eclipse.org/webtools/main.php Eclipse] - Any flavor of Eclipse should do but the [http://www.bea.com/callisto/eclipse.html Web Tools Platform Project 1.5.x all-in-one] is what I recommend for most flash developers.
   * [http://fdt.powerflasher.com/update/ FDT 1.5.x] - FDT3 will be supported on its release and once I get a copy ;)
   * [http://subclipse.tigris.org/install.html Subclipse] - the Subversion Eclipse Plugin you'll likely use as the main install/update route.
 
