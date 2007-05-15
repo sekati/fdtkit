@@ -25,10 +25,10 @@ Eclipse is a plugin-based IDE _(supporting multiple languages, usages and functi
 Simply put; FDTKit is a treated as a _Generic Project_ in Eclipse; which means you can check out, or update the latest version from the project repository and have it available on your system - all directly from Eclipse. This is handy since all FDTKit is, in essence, is a collection of tool meant to help _complete_ the IDE in a centralized way by adding the necessary libraries, compilers, documentation tools, scripts, etc.
 
 
-== Installing FDTKit via Subversion ==
+== Installing from SVN ==
 
 
-== Installing FDTKit via Project Download ==
+== Installing from Download ==
 
 == Configuring Your Environment to use FDTKit ==
 
