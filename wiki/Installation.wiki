@@ -30,7 +30,7 @@ Simply put; FDTKit is a treated as a _Generic Project_ in Eclipse; which means y
 
 == Installing from Download ==
 
-== Configuring Your Environment to use FDTKit ==
+== Configuring &amp; Customizing FDT for FDTKit ==
 
 
 == Updating FDTKit ==
