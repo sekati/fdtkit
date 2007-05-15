@@ -4,7 +4,6 @@
 = FDTKit Installation Guide =
 
 
-
 == Introduction ==
 
 _This Install Guide assumes you already have the Required Environment (listed below) installed. If you are starting from scratch please read the [http://code.google.com/p/fdtkit/wiki/Eclipse_FDT_Subclipse_Install_Guide Eclipse, FDT, Subclipse Install Guide] to setup your environment and then return to this document._
@@ -37,7 +36,16 @@ Simply put; FDTKit is a treated as a _Generic Project_ in Eclipse; which means y
   # Wait while the current build of FDTKit is downloaded and installed; once complete you should see `"Checked out revision [number]."` in the `Console` panel. 
   # Thats it; you're now ready to configure FDT to use FDTKit. To switch back to the `"Flash Perspective"` from the Eclipse toolbar: `"Window -> Open Perspective -> Other -> Flash (default)"`. 
 
+
 == Install via Download ==
+
+  # Download the latest revision archive from the [http://code.google.com/p/fdtkit/downloads/list Project Download page].
+  # Unzip the archive into your eclipse workspace directory.
+  # Rename the directory from `fdtkit-revXX` to `fdtkit`.
+  # From the Eclipse toolbar: `"File -> New -> Project... -> General -> Project"` and press `"Next"`.
+  # Enter `"fdtkit"` as the Project Name and make sure `"Use default workspace"` is ticked. Press `"Finish"`.
+  # Thats it; you're now ready to configure FDT to use FDTKit.
+
 
 == Configuratation ==
 
@@ -46,6 +54,7 @@ Simply put; FDTKit is a treated as a _Generic Project_ in Eclipse; which means y
 
   * To update via SVN: Right-click on the `fdtkit` project in `Flash Explorer` panel and choose `Team -> Update`
   * To update via Download: Delete the `fdtkit` project and files, then repeat the instructions from _Install via Download_ (and consider confronting your fear of Subversion ... you'll thank me later! ;) 
+
 
 == Using FDTKit ==
 
