@@ -1,20 +1,34 @@
 #summary a supplement of FDTKits contents
 #labels Phase-Design
 
-= bin/ =
+=bin/=
   * as2api/ - _open source as2 documentation tool: packaged with ruby, windows and osx executables_
   * mtasc/ - _open source as2 compiler: packaged latest builds for windows and os x_
   * scripts/ - _scripts to automate common tasks; package documentation, ssh+rysnc etc._
 
-= docs/ = - _various usage documents (FTD/Eclipse shortcuts, etc.)_
 
-= lib/ =
+=docs/=
+- _various usage documents (FTD/Eclipse shortcuts, etc.)_
+
+
+=lib/=
   * FP7/ - _complete core library for Flash 7 (includes mx)_
   * FP8/ - _complete core library for Flash 8 (includes mx)_
   * FP9/ - _complete core library for Flash 9 (includes mx)_
   * templates/ - _useful collection of FDT & project templates_
-  
-=== INSTALL.rtf === - _deprecated install/readme document_
 
-=== LICENSE.txt === - _MIT License_
+  
+==INSTALL.rtf==
+- _deprecated install/readme document_
+
+
+==LICENSE.txt==
+- _MIT License_
+
+
+
+
+
+
+
 
