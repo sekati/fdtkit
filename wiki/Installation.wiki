@@ -8,9 +8,9 @@
 
 _This Install Guide assumes you already have the Required Environment (listed below) installed. If you are starting from scratch please read the [http://code.google.com/p/fdtkit/wiki/Eclipse_FDT_Subclipse_Install_Guide Eclipse, FDT, Subclipse Install Guide] to setup your environment and then return to this document._
 
-There are two ways to download & install FDTKit:
-  * [http://code.google.com/p/fdtkit/source From the Project SVN Repository] via the Subclipse eclipse Plugin - (more desirable).
-  * [http://code.google.com/p/fdtkit/downloads/list  From the Project Downloads Section] - (less desireable). 
+There are two ways to install FDTKit:
+  * [http://code.google.com/p/fdtkit/source From the Project SVN Repository] via the Subclipse eclipse Plugin - (most desirable).
+  * [http://code.google.com/p/fdtkit/downloads/list  From the Project Downloads Section] - (least desireable). 
 
 To understand why [http://en.wikipedia.org/wiki/Subversion_(software) SVN] is the more desirable route it is helpful to quickly review a few core concepts on how Eclipse, Subclipse and FDTKit fit together:
 
