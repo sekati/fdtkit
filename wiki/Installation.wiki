@@ -14,7 +14,7 @@ _This Install Guide assumes you already have the Required Environment (listed be
   * [http://subclipse.tigris.org/install.html Subclipse]^*^ - Not required but strongly recommended as this is the best install and update route for FDTKit.
 
 
-There are two ways to install FDTKit:
+  === Install Options ===
   * [http://code.google.com/p/fdtkit/source From the Project SVN Repository] via the Subclipse eclipse Plugin - (most desirable).
   * [http://code.google.com/p/fdtkit/downloads/list  From the Project Downloads Section] - (least desireable). 
 
@@ -25,7 +25,10 @@ Eclipse is a plugin-based IDE _(supporting multiple languages, usages and functi
 Simply put; FDTKit is a treated as a _Generic Project_ in Eclipse; which means you can check out, or update the latest version from the project repository and have it available on your system - all directly from Eclipse. This is handy since all FDTKit is, in essence, is a collection of tool meant to help _complete_ the IDE in a centralized way by adding the necessary libraries, compilers, documentation tools, scripts, etc.
 
 
-== Installing FDTKit ==
+== Installing FDTKit via Subversion ==
+
+
+== Installing FDTKit via Project Download ==
 
 == Configuring Your Environment to use FDTKit ==
 
