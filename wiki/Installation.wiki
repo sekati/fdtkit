@@ -25,12 +25,6 @@ Eclipse is a plugin-based IDE _(supporting multiple languages, usages and functi
 Simply put; FDTKit is a treated as a _Generic Project_ in Eclipse; which means you can check out, or update the latest version from the project repository and have it available on your system - all directly from Eclipse. This is handy since all FDTKit is, in essence, is a collection of tool meant to help _complete_ the IDE in a centralized way by adding the necessary libraries, compilers, documentation tools, scripts, etc.
 
 
-== Requirements ==
-  * [http://www.eclipse.org/webtools/main.php Eclipse] - Any flavor of Eclipse should do but the [http://www.bea.com/callisto/eclipse.html Web Tools Platform Project 1.5.x all-in-one] is what I recommend for most flash developers.
-  * [http://fdt.powerflasher.com/update/ FDT 1.5.x] - FDT3 will be supported once it is released and I attain a copy.
-  * [http://subclipse.tigris.org/install.html Subclipse]^*^ - Not required but strongly recommended as this is the best install and update route for FDTKit.
-
-
 == Installing FDTKit ==
 
 == Configuring Your Environment to use FDTKit ==
