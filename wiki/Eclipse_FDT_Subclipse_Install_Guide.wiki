@@ -4,3 +4,22 @@
 = How to Install Eclipse, FDT & Subclipse =
 
 _not much here yet im afraid_
+
+== Install Links ==
+  
+  * [http://64.233.167.104/search?q=cache:ybQxbW0LV2AJ:fdt.powerflasher.com/links/files/The_Ultimate_Flash_Development_Environment.doc+http://fdt.powerflasher.com/links/files/The_Ultimate_Flash_Development_Environment.doc&hl=en&ct=clnk&cd=1&gl=us The Ultimate Flash Development Environment: Integrating Eclipse, FDT, Subversion, and Flash into your ActionScript 2 Project]
+  * [http://elitemedia.blogspot.com/2005/09/installing-eclipse-mtasc-fdt-in.html Installing Eclipse, MTASC & FDT in Windows XP]
+  * [http://www.actionscript.com/Article/tabid/54/ArticleID/Optimizing-Your-Workflow-with-Eclipse-and-FDT/Default.aspx Optimizing Your Workflow with Eclipse and FDT]
+
+
+== plugin installer general instructions ==
+
+  * [http://subclipse.tigris.org/install.html Subclipse Install]
+  * [http://fdt.powerflasher.com/update/ FDT Install]
+  * [http://www.plog4u.org/index.php/Using_PHPEclipse_:_Installation_:_Installing_PHPEclipse PHPEclipse Install]
+
+
+== various useful links ==
+
+  * [http://fdt.powerflasher.com/forum/ powerflasher forum]
+  * [http://fdt.powerflasher.com/links/ powerflasher links]
