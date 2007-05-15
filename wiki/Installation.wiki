@@ -54,17 +54,15 @@ One of the primary uses of FDTKit is the included organized Flash libraries & bo
 In order to take advantage of this centralized packaging we need to change some basic configuration settings in FDT:
 
   # From the Eclipse toolbar: `"Eclipse -> Preferences -> FDT -> Core Libraries"` (`"Window -> Preferences -> FDT -> Core Libraries"` on Windows).
-  # Press `"Add"`, then browse to `"~/workspace/fdtkit/lib/FP7"`. Enter `"FP7"` as the Name for the library.
+  # Press `"Add"`, then browse to `"..workspace/fdtkit/lib/FP7"`. Enter `"FP7"` as the Name for the library. Press `"Apply"`.
   # Repeat the previous step until each `"FP"` directory has been added (_i.e. FP7, FP8, FP9_). Each of these represents a target Flash Player version you might target in a projects development.
   # Finally tick the `"FP"` directory which you would like to use as your default core library.
-  # Press `"Apply"` then `"OK"`.
+  # Navigate to `"Tools -> MTASC"` and browse to `"..workspace/fdtkit/bin/mtasc and select the MTASC build for your platform.
+  # Navigate to `"Templates"`, tick `"Override System User Name - ${user}"` and customize this to your liking (_i.e. jason m horwitz | sekati.com_). This will be used to insert author credits in created class files.
+  # Navigate to `"Code Style -> Code Templates"` and press `"Import..."`. Browse to `"...workspace/fdtkit/lib/templates/codetemplate.xml"`. It is recommended you personalize the Copyright string in typeheader after template import to suite your tastes.
+  # Navigate to `"Editor -> Templates"` and `"Import..."`. Browse to `...workspace/fdtkit/lib/templates/templates.xml"`. You should then also edit and personalize the `"header"` template. These templates are formatted to work properly with the AS2API documentation tool (also part of FDTKit). _Note: For best results with AS2API you should insert the "header" template at the top of your classes, then do your import statements, and finally either "desc" or "usage" template to enter in the class description to be documented (header is ignored by as2api which does not support @author and many other javadoc tags)._
+
   
- 
-  # Add each "FP" directory from your FDTK/lib directory one at a time, naming them accordingly (FP7,FP8, FP9)
-  #
-  #
-
-
 == Updating FDTKit ==
 
   * To update via SVN: Right-click on the `fdtkit` project in `Flash Explorer` panel and choose `Team -> Update`
