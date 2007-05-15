@@ -26,7 +26,7 @@ Eclipse is a plugin-based IDE _(supporting multiple languages, usages and functi
 Simply put; FDTKit is a treated as a _Generic Project_ in Eclipse; which means you can check out, or update the latest version from the project repository and have it available on your system - all directly from Eclipse. This is handy since all FDTKit is, in essence, is a collection of tool meant to help _complete_ the IDE in a centralized way by adding the necessary libraries, compilers, documentation tools, scripts, etc.
 
 
-== Installing from SVN ==
+== Install via SVN ==
 
   # From the Eclipse toolbar: `"Window -> Open Perspective -> Other -> SVN Repository Exporing"`. 
   # Right-click in the `"SVN Repository"` panel and select: `"New -> Repository Location..."`.
@@ -37,13 +37,14 @@ Simply put; FDTKit is a treated as a _Generic Project_ in Eclipse; which means y
   # Wait while the current build of FDTKit is downloaded and installed; once complete you should see `"Checked out revision [number]."` in the `Console` panel. 
   # Thats it; you're now ready to configure FDT to use FDTKit. To switch back to the `"Flash Perspective"` from the Eclipse toolbar: `"Window -> Open Perspective -> Other -> Flash (default)"`. 
 
-== Installing from Download ==
+== Install via Download ==
 
 == Configuratation ==
 
 
 == Updating FDTKit ==
-
+  * To update via SVN simply right-click on the `fdtkit` project in `Flash Explorer` panel and choose `Team -> Update`
+  * To update via Download delete the `fdtkit` project and files, then repeat the instructions from _Install via Download_ (and consider confronting your fear of Subversion ... you'll thank me later! ;) 
 
 == Using FDTKit ==
 
