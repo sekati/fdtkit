@@ -4,6 +4,7 @@
 = FDTKit Installation Guide =
 
 
+
 == Introduction ==
 
 _This Install Guide assumes you already have the Required Environment (listed below) installed. If you are starting from scratch please read the [http://code.google.com/p/fdtkit/wiki/Eclipse_FDT_Subclipse_Install_Guide Eclipse, FDT, Subclipse Install Guide] to setup your environment and then return to this document._
@@ -27,6 +28,12 @@ Simply put; FDTKit is a treated as a _Generic Project_ in Eclipse; which means y
 
 == Installing from SVN ==
 
+  # From the Eclipse toolbar: `Window -> Open Perspective -> Other -> SVN Repository Exporing` 
+  # _Right click_ in the _SVN Repository_ panel and select `New -> Repository Location...`
+  # Enter `http://fdtkit.googlecode.com/svn/trunk/` in the URL field and click `Finish`
+  # The SVNKit repository will not be added to your _SVN Repository_ panel
+  # Right click on the repository and choose `Checkout...`
+  # Insure that the default `Check out as a project in the workspace` is ticked, the Project Name is `fdtkit`, and `Head Revision` is ticked. Then press `Finish`.
 
 == Installing from Download ==
 
