@@ -31,7 +31,7 @@ Simply put; FDTKit is a treated as a _Generic Project_ in Eclipse; which means y
   # From the Eclipse toolbar: `"Window -> Open Perspective -> Other -> SVN Repository Exporing"`. 
   # Right-click in the `"SVN Repository"` panel and select: `"New -> Repository Location..."`.
   # Enter: _"[http://fdtkit.googlecode.com/svn/trunk/ http://fdtkit.googlecode.com/svn/trunk/]"_ in the URL field and click: `"Finish"`.
-  # The SVNKit repository will not be added to your `"SVN Repository"` panel.
+  # The SVNKit repository will now be added to your `"SVN Repository"` panel.
   # Right click on the repository and choose: `"Checkout..."`.
   # Insure that the default: `"Check out as a project in the workspace"` is ticked, the Project Name is: `"fdtkit"`, and `"Head Revision"` is ticked. Then press: `"Finish"`.
   # Wait while the current build of FDTKit is downloaded and installed; once complete you should see `"Checked out revision [number]."` in the `Console` panel. 
@@ -48,4 +48,3 @@ Simply put; FDTKit is a treated as a _Generic Project_ in Eclipse; which means y
 == Using FDTKit ==
 
 Please see the [http://code.google.com/p/fdtkit/wiki/Documentation Documentation wiki] for usage.
-
