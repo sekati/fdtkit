@@ -20,7 +20,7 @@ _This Install Guide assumes you already have the Required Environment (listed be
 
 To understand why [http://en.wikipedia.org/wiki/Subversion_(software) SVN] is the more desirable route it is helpful to quickly review a few core concepts on how Eclipse, Subclipse and FDTKit fit together:
 
-Eclipse is a plugin-based IDE _(supporting multiple languages, usages and functionalities)_. We build our Flash IDE with the FDT plugin _(which adds advanced ActionScript support)_ and Subclipse plugin _(which allows Subversion version control support)_.
+Eclipse is a plugin-based IDE _(supporting multiple languages, usages and functionalities)_. We build our Flash IDE with the FDT plugin _(which adds advanced [http://en.wikipedia.org/wiki/ActionScript ActionScript] support)_ and Subclipse plugin _(which allows Subversion version control support)_.
 
 Simply put; FDTKit is a treated as a _Generic Project_ in Eclipse; which means you can check out, or update the latest version from the project repository and have it available on your system - all directly from Eclipse. This is handy since all FDTKit is, in essence, is a collection of tool meant to help _complete_ the IDE in a centralized way by adding the necessary libraries, compilers, documentation tools, scripts, etc.
 
