@@ -49,4 +49,4 @@ Simply put; FDTKit is a treated as a _Generic Project_ in Eclipse; which means y
 
 == Using FDTKit ==
 
-Please see the [http://code.google.com/p/fdtkit/wiki/Documentation Documentation wiki] for usage.
+Please see the FDTKit [http://code.google.com/p/fdtkit/wiki/Documentation Documentation] for specific usages.
