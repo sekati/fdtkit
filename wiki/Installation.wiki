@@ -49,9 +49,7 @@ Simply put; FDTKit is a treated as a _Generic Project_ in Eclipse; which means y
 
 == Configuring FDT to use FDTKit's Tools ==
 
-One of the primary uses of FDTKit is the included organized Flash libraries & both platform builds of the MTASC compiler, as well as several handy FDT templates. 
-
-In order to take advantage of this centralized packaging we need to change some basic configuration settings in FDT:
+One of the primary uses of FDTKit is the included organized Flash libraries & both platform builds of the MTASC compiler, as well as several handy FDT templates. In order to take advantage of this centralized packaging we need to change some basic configuration settings in FDT:
 
   # From the Eclipse toolbar: `"Eclipse -> Preferences -> FDT -> Core Libraries"` (`"Window -> Preferences -> FDT -> Core Libraries"` on Windows).
   # Press `"Add"`, then browse to `"..workspace/fdtkit/lib/FP7"`. Enter `"FP7"` as the Name for the library. Press `"Apply"`.
