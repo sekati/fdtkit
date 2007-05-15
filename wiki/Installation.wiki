@@ -1,5 +1,5 @@
 #summary FDTKit Installation Guide
-#labels Featured,Phase-Deploy
+#labels Featured,Phase-Deploy,Phase-Requirements
 
 = FDTKit Installation Guide =
 
@@ -29,4 +29,3 @@ There are two avenues to installing FDTKit
 == Using FDTKit ==
 
 Please see the [http://code.google.com/p/fdtkit/wiki/Documentation Documentation wiki] for usage.
-
