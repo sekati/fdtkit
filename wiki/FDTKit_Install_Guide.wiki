@@ -5,6 +5,10 @@
 
 == Introduction ==
 
+  * This Install Guide assumes that you already have Eclipse, FDT and Subclipse already installed. If you are starting from scratch please first visit the [http://code.google.com/p/fdtkit/wiki/Eclipse_FDT_Subclipse_Install_Guide Eclipse, FDT, Subclipse Install Guide wiki].
+
 == Getting FDTKit ==
+
+
 
 == Configuring Eclipse/FDT to use FDTKit ==
