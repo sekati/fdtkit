@@ -16,8 +16,9 @@ This Install Guide assumes you already have the Required Environment (listed bel
 
 == Installing FDTKit ==
 
-There are two avenues to installing FDTKit
-
+There are two avenues to installing FDTKit:
+  * [http://code.google.com/p/fdtkit/source Eclipse Plugin]
+  * As an archive from the [http://code.google.com/p/fdtkit/downloads/list  Downloads Section] 
 
 
 == Configuring Your Environment to use FDTKit ==
