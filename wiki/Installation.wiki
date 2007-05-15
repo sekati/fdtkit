@@ -43,8 +43,9 @@ Simply put; FDTKit is a treated as a _Generic Project_ in Eclipse; which means y
 
 
 == Updating FDTKit ==
-  * To update via SVN simply right-click on the `fdtkit` project in `Flash Explorer` panel and choose `Team -> Update`
-  * To update via Download delete the `fdtkit` project and files, then repeat the instructions from _Install via Download_ (and consider confronting your fear of Subversion ... you'll thank me later! ;) 
+
+  * To update via SVN: Right-click on the `fdtkit` project in `Flash Explorer` panel and choose `Team -> Update`
+  * To update via Download: Delete the `fdtkit` project and files, then repeat the instructions from _Install via Download_ (and consider confronting your fear of Subversion ... you'll thank me later! ;) 
 
 == Using FDTKit ==
 
