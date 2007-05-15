@@ -3,9 +3,16 @@
 
 = FDTKit Installation Guide =
 
+== Requirements ==
+  * [http://www.eclipse.org/webtools/main.php Eclipse] - Any flavor of Eclipse should do but the Web Tools Platform Project 1.5.x all-in-one is what I recommend for most flash developers.
+  * [http://fdt.powerflasher.com/update/ FDT 1.5.x] - FDT3 will be supported on its release and once I get a copy ;)
+  * [http://subclipse.tigris.org/install.html Subclipse]
+
 == Introduction ==
 
   * This Install Guide assumes that you already have Eclipse, FDT and Subclipse already installed. If you are starting from scratch please visit the [http://code.google.com/p/fdtkit/wiki/Eclipse_FDT_Subclipse_Install_Guide Eclipse_FDT_Subclipse Install Guide wiki] to setup your environment and then return to this page.
+
+
 
 == Getting FDTKit ==
 
