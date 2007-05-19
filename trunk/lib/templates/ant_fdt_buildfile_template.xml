@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?><templates><template autoinsert="true" context="org.eclipse.ant.ui.templateContextType.buildFile" deleted="false" description="FDT build.xml Template" enabled="true" name="FDT buildfile">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;!-- *************************************************************************************
+		${project}
+		
+		Universal build file for FDT Flash Projects.
+		${date} - ${user}
+     ************************************************************************************* --&gt;
+	
+	&lt;project name="${project}" default="Usage" basedir="."&gt;
+	&lt;description&gt;Universal build file for FDT Flash projects&lt;/description&gt;
+	
+	&lt;!-- project specific properties --&gt;
+	&lt;property name="targetswf" value="${filename}.swf"/&gt;
+	&lt;property name="targethtml" value="${filename}.html"/&gt;
+	&lt;property name="mainclass" value="${classname}.as"/&gt;
+	&lt;property name="classframe" value="3"/&gt;
+	&lt;property name="flashversion" value="${cursor}8"/&gt;
+	&lt;property name="swfdata" value="swf.xml"/&gt;
+	
+	&lt;!-- properties for creating a new SWF with MTASC --&gt;
+	&lt;property name="width" value="640"/&gt;
+	&lt;property name="height" value="480"/&gt;
+	&lt;property name="fps" value="25"/&gt;
+	&lt;property name="bgcolor" value="888888"/&gt;
+	
+	&lt;!-- project folders --&gt;
+	&lt;property name="deploy" location="bin"/&gt;
+	&lt;property name="library" location="lib"/&gt;
+	&lt;property name="source" location="src"/&gt;
+	
+	&lt;!-- classpath info --&gt;
+	&lt;property name="classpath1" value="E:/Projects/Flash Classes/Classes Additional"/&gt;
+	&lt;property name="classpath2" value="E:/Projects/Flash Classes/Classes Zinc/"/&gt;
+	
+	&lt;!-- tool locations --&gt;
+	&lt;property name="swfmill" location="D:/Authoring/Flash Tools/SWFMill/swfmill.exe"/&gt;
+	&lt;property name="mtasc" location="D:/Authoring/Flash Tools/MTASC/mtasc.exe"/&gt;
+	&lt;property name="flashplayer8.0" location="D:/Authoring/Flash 8/Players/SAFlashPlayer.exe"/&gt;
+	&lt;property name="flashplayer8.5" location="D:/Authoring/Flex/Player/Version 8.5 alpha 1/Debug/SAFlashPlayer.exe"/&gt;
+	
+	&lt;!-- default project location --&gt;
+	&lt;property name="defproject" location="E:/Projects/Eclipse/net.hiddenresource.Default"/&gt;
+
+	
+	&lt;!-- ==== targets ==================================================================== --&gt;
+	
+	&lt;!-- target: Usage --&gt;
+	&lt;target name="Usage"&gt;
+		&lt;echo message=""/&gt;
+		&lt;echo message="----------------------"/&gt;
+		&lt;echo message="Available Ant targets:"/&gt;
+		&lt;echo message="Create Assets"/&gt;
+		&lt;echo message="FlashIDE"/&gt;
+		&lt;echo message="SWFMill"/&gt;
+		&lt;echo message="MTASC Compile"/&gt;
+		&lt;echo message="MTASC Create"/&gt;
+		&lt;echo message="FlashPlayer 8.0"/&gt;
+		&lt;echo message="FlashPlayer 8.5"/&gt;
+		&lt;echo message="FDT View"/&gt;
+		&lt;echo message="----------------------"/&gt;
+		&lt;echo message=""/&gt;
+	&lt;/target&gt;
+	
+	&lt;!-- target: Create Assets --&gt;
+	&lt;target name="Create Assets" description="Creates project default folders and copies swf.xml"&gt;
+		&lt;mkdir dir="$${deploy}"/&gt;
+		&lt;mkdir dir="$${library}"/&gt;
+		&lt;mkdir dir="$${library}/fla"/&gt;
+		&lt;mkdir dir="$${library}/swf"/&gt;
+		&lt;copy todir="$${library}" file="$${defproject}/lib/swf.xml" /&gt;
+		&lt;copy todir="$${library}/fla" file="$${defproject}/lib/fla/preloader.fla" /&gt;
+		&lt;copy todir="$${library}/swf" file="$${defproject}/lib/swf/preloader.swf" /&gt;
+	&lt;/target&gt;
+	
+	
+	&lt;!-- target: FlashIDE --&gt;
+	&lt;target name="FlashIDE" description="Compiles a set of Fla files in the Flash IDE"&gt;
+		&lt;fdt.flashCompile&gt;
+			&lt;fileset dir="$${library}/fla"&gt;
+				&lt;include name="*.fla"/&gt;
+			&lt;/fileset&gt;
+		&lt;/fdt.flashCompile&gt;
+	&lt;/target&gt;
+	
+	&lt;!-- target: SWFMill --&gt;
+	&lt;target name="SWFMill" description="Creates a new SWF file by using SWFMill"&gt;
+		&lt;exec executable="$${swfmill}" dir="." failonerror="true"&gt;
+			&lt;arg value="simple"/&gt;
+			&lt;arg value="$${library}/$${swfdata}"/&gt;
+			&lt;arg value="$${deploy}/$${targetswf}"/&gt;
+		&lt;/exec&gt;
+	&lt;/target&gt;
+	
+	&lt;!-- target: MTASC Compile --&gt;
+	&lt;target name="MTASC Compile" description="Compiles an existing SWF file with MTASC"&gt;
+		&lt;exec executable="$${mtasc}" failonerror="true"&gt;
+			&lt;arg value="-cp"/&gt;
+			&lt;arg value="$${source}"/&gt;
+			&lt;arg value="-cp"/&gt;
+			&lt;arg value="$${classpath1}"/&gt;
+			&lt;arg value="-cp"/&gt;
+			&lt;arg value="$${classpath2}"/&gt;
+			&lt;arg value="-wimp"/&gt;
+			&lt;arg value="-group"/&gt;
+			&lt;arg value="-strict"/&gt;
+			&lt;arg value="-version"/&gt;
+			&lt;arg value="$${flashversion}"/&gt;
+			&lt;arg value="-swf"/&gt;
+			&lt;arg value="$${deploy}/$${targetswf}"/&gt;
+			&lt;arg value="-frame"/&gt;
+			&lt;arg value="$${classframe}"/&gt;
+			&lt;arg value="-main"/&gt;
+			&lt;arg value="$${source}/$${mainclass}"/&gt;
+		&lt;/exec&gt;
+	&lt;/target&gt;
+	
+	&lt;!-- target: MTASC Create --&gt;
+	&lt;target name="MTASC Create" description="Creates a new SWF file with MTASC and compiles it"&gt;
+		&lt;exec executable="$${mtasc}" failonerror="true"&gt;
+			&lt;arg value="-cp"/&gt;
+			&lt;arg value="$${source}"/&gt;
+			&lt;arg value="-cp"/&gt;
+			&lt;arg value="$${classpath1}"/&gt;
+			&lt;arg value="-cp"/&gt;
+			&lt;arg value="$${classpath2}"/&gt;
+			&lt;arg value="-group"/&gt;
+			&lt;arg value="-wimp"/&gt;
+			&lt;arg value="-strict"/&gt;
+			&lt;arg value="-version"/&gt;
+			&lt;arg value="$${flashversion}"/&gt;
+			&lt;arg value="-header"/&gt;
+			&lt;arg value="$${width}:$${height}:$${fps}:$${bgcolor}"/&gt;
+			&lt;arg value="-swf"/&gt;
+			&lt;arg value="$${deploy}/$${targetswf}"/&gt;
+			&lt;arg value="-main"/&gt;
+			&lt;arg value="$${source}/$${mainclass}"/&gt;
+		&lt;/exec&gt;
+	&lt;/target&gt;
+	
+	&lt;!-- target: FlashPlayer 8.0 --&gt;
+	&lt;target name="FlashPlayer 8.0" description="Opens the SWF in Flashplayer 8.0"&gt;
+		&lt;exec executable="$${flashplayer8.0}" spawn="true"&gt;
+			&lt;arg value="$${deploy}\$${targetswf}"/&gt;
+		&lt;/exec&gt;
+	&lt;/target&gt;
+	
+	&lt;!-- target: FlashPlayer 8.5 --&gt;
+	&lt;target name="FlashPlayer 8.5" description="Opens the SWF in Flashplayer 8.5"&gt;
+		&lt;exec executable="$${flashplayer8.5}" spawn="true"&gt;
+			&lt;arg value="$${deploy}\$${targetswf}"/&gt;
+		&lt;/exec&gt;
+	&lt;/target&gt;
+	
+	&lt;!-- target: FDT View --&gt;
+	&lt;target name="FDT View" description="Opens the SWF HTML in the FDT Browser"&gt;
+		&lt;fdt.viewDocument location="$${deploy}\$${targethtml}"/&gt;
+	&lt;/target&gt;
+
+&lt;/project&gt;</template></templates>
