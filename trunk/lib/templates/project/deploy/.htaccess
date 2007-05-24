@@ -1,0 +1,2 @@
+Options +Indexes
+IndexOptions NameWidth=* DescriptionWidth=* FancyIndexing FoldersFirst IconHeight=12 IconWidth=12
