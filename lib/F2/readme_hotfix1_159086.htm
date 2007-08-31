@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Flex SDK Hotfix Readme</title>
+<style type="text/css">
+<!--
+body {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+-->
+</style>
+</head>
+
+<body>
+<h4><strong>Flex 2.0.1 SDK Hotfix 1 - 159086</strong><br />  
+  flex2sdk_hf1_159086.zip <br />
+  02/07/07</h4>
+<p>This page describes the contents and  installation instructions for  Flex 2.0.1 SDK hotfix 159086. It is divided into the following sections:</p>
+<ul>
+  <li><a href="#Summary">Summary </a></li>
+  <li><a href="#Bugs">Prerequisites</a></li>
+  <li><a href="#Bugs">Bugs Fixed</a></li>
+  <li><a href="#Flex_SDK">Flex SDK Install Instructions</a></li>
+  <li><a href="#Flex_Builder">Flex Builder Install Instructions</a></li>
+  <li><a href="#Flex_Data_Services">Flex Data Services Install Instructions   </a></li>
+</ul>
+<h4><a name="Summary" id="Summary"></a>Summary</h4>
+<blockquote>
+  <p>Flex 2.0.1 SDK hotfix 1 (build 159086) is a collection of bug fixes that have   been completed since the Flex 2.0.1 release on January 5, 2007. This hotfix   release is being made available to Flex customers who are experiencing any of   the issues described in this document and require the provided bug fixes.   Installation of this hotfix release is not recommended for customers who are not   experiencing one of the described issues.</p>
+</blockquote>
+<h4><a name="Bugs" id="Bugs"></a>Prerequisites: </h4>
+<blockquote>
+  <p>Requires Flex 2.0.1 SDK already be installed. Flex 2.0.1 SDK is included  in Flex Builder 2.0.1 and Flex Data Services 2.0.1.  If you are running Flex Builder  2.0 you must first get the 2.0.1 updater which is available at <a href="http://www.adobe.com/products/flex/productinfo/updater/">http://www.adobe.com/products/flex/productinfo/updater/</a>.</p>
+</blockquote>
+<h4><a name="Bugs" id="Bugs"></a>Bugs Fixed: </h4>
+<blockquote>
+  <p><strong>Cell Renderers </strong></p>
+  <ul>
+    <li>192854 - itemEditors on DataGrid don't correctly commit data when dragEnable=true </li>
+    <li>192558 -  Combo renderer in a DataGrid causes problems on the DataGrid scroll </li>
+  </ul>
+  <p><strong>DataGrid </strong></p>
+  <ul>
+    <li>193316 -  DataGrid with headerRenderer and selectedIndices becomes uneditable </li>
+    <li>194284 -  DataGrid incorrectly focuses hScrollbar </li>
+    <li>194311 -  After clearing data from DataGrid RTE occurs </li>
+    <li>183325 - when set verticalScrollPolicy=&quot;off&quot; in datagrid, can't move up/down to show more rows. </li>
+    <li>192117 -  DataGrid whose width depends on the size change of Browser gets RTE </li>
+    <li>196149 -  DataGrid with lockedColumnCount incorrectly displays using vScrollbar </li>
+    <li>193106 - Horizontal scrolling DataGrid cannot display the updated width </li>
+    <li>194972 -  DataGridColumn visibility=false doesn't work (when set in mxml) </li>
+    <li>192466 -  The width of the last 2 columns is displayed narrower after horizontal scrolling </li>
+    <li>193641 - If you resize the player window with a DataGrid with width=100%, the DataGrid's last column continues to grow rather than showing more columns </li>
+    <li>192695 - After horizontal scrolling, changing the width of DG updates the width of incorrect column </li>
+    <li>192694 - Changing the width of DataGrid which is disappeared gets error (RTE) </li>
+    <li>192728 - Using an itemRenderer as an editor may not update the dataProvider </li>
+    <li>195589 -  DataGrid with horizontalScrollPolicy cell and width behavior changed </li>
+    <li>193319 - Change event doesn't occur when moving the line using Enter and Tab key on DataGrid </li>
+    <li>195389 - Tab key is functional even if scrollbar is focused </li>
+  </ul>
+  <p><strong>Debugging (Macintosh only) </strong></p>
+  <ul>
+    <li>193086 - Once RTE is thrown and debug session is selected to be terminated, closing   browser window does not let FB release debug session.</li>
+  </ul>
+  <p><strong>Other</strong></p>
+  <ul>
+    <li>193354 - CollectionChangeEventKind in CollectEvent.COLLECTION_CHANGE incorrect </li>
+    <li>192765 - If you use MenuBar.dataDescriptor.setEnabled(...) on a top level item of a MenuBar, the item is not changed </li>
+    <li>126610 - binding to a static variable gives warning Unable to detect changes to 'var' and does not show changes </li>
+    <li>193102 - Parent window becomes available after close grandchild Popup </li>
+    <li>194872 - Update PhotoViewer sample README.html file   with the additional compiler arguments needed to compile</li>
+  </ul>
+  <p><strong>Tree</strong></p>
+  <ul>
+    <li>192365 - selecting  a node then collapsing its grandparent doesn't move selection up to the grandparent </li>
+    <li>192347 - RTE when tweening occurred while opening nodes in Tree (in Flex Explorer sample). </li>
+  </ul>
+  <p>&nbsp;</p>
+</blockquote>
+<h4><a name="Flex_SDK" id="Flex_SDK"></a>Flex SDK Install Instructions</h4>
+<blockquote>
+  <p>The hot fix is delivered as a Zip file containing all relevant files. </p>
+  <p>To   update the SDK on Windows, Macintosh and Unix: </p>
+  <ol>
+    <li>   Make a copy of your current Flex SDK   2.0.1 installation and name it &lsquo;FlexSDK-154929&rsquo; </li>
+    <li>   Download the hotfix build zip file </li>
+    <li>   Extract the zip file to the location   where the SDK should be installed. &nbsp;</li>
+  </ol>
+  <p>&nbsp;</p>
+</blockquote>
+<h4><a name="Flex_Builder" id="Flex_Builder"></a>Flex Builder  Install Instructions</h4>
+<blockquote>
+  <p>This SDK  hotfix 1 works only with licensed copies of Flex Builder 2.0.1. It does not support Flex Builder 2.0 </p>
+  <h5>Install SDK hot fix 1</h5>
+  <ol>
+    <li>Make a copy of the &lsquo;Flex SDK 2&rsquo; folder located in your Flex Builder installation folder ( typically C:\Program Files\Adobe\Flex Builder 2\ or C:\Program Files\Adobe\Flex Builder 2 Plug-in\ )&nbsp; and name it 'FlexSDK--155577'&rsquo;</li>
+    <li>Download the hotfix  zip file </li>
+    <li>Unzip it to the &lsquo;Flex SDK 2&rsquo; directory&nbsp; </li>
+    <li>On the &lsquo;Confirm File Overwrite&rsquo; dialog, click &lsquo;Yes To All&rsquo;
+        </pre>
+    </li>
+  </ol>
+  <h5>Install Instructions for Flex Builder Macintosh users needing a fix for bug 193086:</h5>
+  <p>If you are a Macintosh user running  the Safari browser and have encountered bug 193086 as documented in Flex  Builder 2.0.1 Known Issues: <br />
+  <strong>(Macintosh-only)  Release a debug session</strong> - When an application throws a runtime exception (RTE) and you  terminate a debug session, Flex Builder does not release the debug session when  the browser window is closed. To fix the problem, completely close your browser  with Command-Q.</p>
+  <p>This hot fix contains a new fdb.jar  that fixes the bug. To install this jar follow  these instructions:</p>
+  <ol>
+    <li>Follow the installation       instructions above to install SDK hot fix 1 </li>
+    <li>Exit Flex Builder </li>
+    <li>In the &ldquo;Flex SDK 2&rdquo; directory       navigate to /lib/fdb.jar </li>
+    <li>Make a copy of the new fdb.jar </li>
+    <li>Navigate to the directory:&nbsp;       /Applications/Adobe Flex Builder 2/plugins/com.adobe.flexbuilder.flex_2.0.155577/lib/ (the default location for fdb.jar).       If you&rsquo;re running Flex Builder Plug-In then this folder will be in your       Eclipse plugins folder. </li>
+    <li>Paste the fdb.jar to the  directory listed in step 5. </li>
+    <li>When asked whether to replace the existing file, say yes</li>
+  </ol>
+</blockquote>
+<h3><a name="Flex_Data_Services" id="Flex_Data_Services"></a>Flex Data Services Install Instructions </h3>
+<blockquote>
+  <p>This hot fix is only supported when installed upon a licensed server that is running Flex Data Services 2.0.1.</p>
+  <p> The hot fix is delivered as a Zip file containing all relevant files.</p>
+  <p> The hot fix must be manually installed.  	  	</p>
+  <p>To update FDS with SDK hotfix:</p>
+  <ol>
+    <li>
+      <p>Back up:  	Please create a back up of FDS install and the deployed instance of FDS that will be updated</p>
+    </li>
+    <li>
+      <p> Unzip the flex2sdk_hotfix.zip to a temporary folder.  	  	</p>
+    </li>
+    <li>
+      <p> Update the SDK shipped with FDS:  	<br />
+        Copy {flex_hotfix}/frameworks to {fds2_install}/flex_sdk_2/frameworks  	<br />
+        Copy {flex_hotfix}/lib to {fds2_install}/flex_sdk_2/lib  	  	</p>
+    </li>
+    <li>
+      <p> Update every deployed FDS application:  	<br />
+        Copy {flex_hotfix}/lib/*.* to {fds2_deployed_application}/WEB-INF/flex/jars  	<br />
+        Copy {flex_hotfix}/frameworks/libs to {fds2_deployed_application}/WEB-INF/flex/libs<br />  	
+        Copy {flex_hotfix}/frameworks/locale to {fds2_deployed_application}/WEB-INF/flex/locale  	<br />
+        Copy {flex_hotfix}/frameworks/themes to {fds2_deployed_application}/WEB-INF/flex/themes  	  	</p>
+    </li>
+    <li>
+      <p> Update FDS resources:   	Copy {flex_hotfix}/resources/html-templates to {fds2_install}/resources/html-templates </p>
+    </li>
+  </ol>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</blockquote>
+</body>
+</html>
