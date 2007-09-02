@@ -136,7 +136,7 @@
 			<arg line='--sources'/>
 			<arg line='--progress'/>
         	<arg line='--draw-diagram'/>
-        	<arg line='--dot-exe ${dot_exe}'/>
+        	<arg line='--dot-exe ${dot}'/>
 		</exec>
 		<copy file="${lib}/tools/doc_sekati_index.html" tofile="${docs}/index.html" overwrite="true"  failonerror="true"/>
 		<copy file="${lib}/tools/doc_sekati_style.css" tofile="${docs}/style.css" overwrite="true"  failonerror="true"/>
