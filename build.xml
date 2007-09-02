@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- *************************************************************************************
-		FDTKit Buildfile v1.2.2
+!-- *************************************************************************************
+		FDTKit Buildfile v1.2.3
 		
 		@note	You must run this Buildfile in the same JRE as the workspace, be sure to
 				check this option in the launch configuration.
@@ -8,13 +8,11 @@
 		@setup	This Buildfile is currently scoped for OSX,Eclipse,Subclipse,FDT. If you
 				you would like to use it on Windows simply install Cygwin and adjust the 
 				necessary path properties.
-		
-		@see	http://www.dopelogik.com/documents/actionscript_ant/
 			     
 		May 22, 2007 - jason m horwitz | Sekati LLC | sekati.com
      ************************************************************************************* -->
 
-<project name="FDT Sample Project" default="SafeTestMovie" basedir=".">
+<project name="Sekati ActionScript API" default="SafeTestMovie" basedir=".">
 
 	<!-- FDTKit Structure -->
 	<property name="fdtkit" location="/Users/jason/workspace/fdtkit"/>
@@ -54,7 +52,8 @@
 	<!-- Project Details -->
 	<property name="corelib" location="${flash8}"/>
 	<property name="target_player" value="8"/>
-	<property name="classpath" value="com.*"/>
+	<property name="classpath" location="${src}/"/>
+	<property name="package" value="com.*"/>
 	<property name="main_class" location="${src}/com/sekati/core/Document.as"/>
 	<property name="target_fla" location="${src}/framework.fla"/>
 	<property name="target_swf" location="${deploy}/framework.swf"/>
@@ -71,7 +70,7 @@
 	<property name="ssh" location="/usr/bin/ssh"/>		
 
 	<!-- Project Deployment Paths -->
-	<property name="deploy_source_path" location="${deploy}/"/>
+	<property name="deploy_source_path" location="${basedir}/"/>
 	<property name="deploy_dest_path" value="/home/www/dev/"/>	
 	
 	<!-- Documentation Deployment Paths -->
@@ -114,9 +113,9 @@
 	<!-- TASK: compile a batch of tasks to execute -->
     <target name="batch_doc">
         <antcall target="sloc_count"/>
-    	<antcall target="doc_clean"/>
-        <antcall target="doc_compile_as2api"/>
-        <antcall target="doc_deploy"/>
+    	<antcall target="clean_doc"/>
+        <antcall target="compile_doc_as2api"/>
+        <antcall target="deploy_doc"/>
     </target>	
 	
 	<!-- TASK: remove all old documentation files -->	
