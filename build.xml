@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-!-- *************************************************************************************
-		FDTKit Buildfile v1.2.3
+<!-- *************************************************************************************
+		FDTKit Buildfile v1.2.5
 		
 		@note	You must run this Buildfile in the same JRE as the workspace, be sure to
 				check this option in the launch configuration.
@@ -12,7 +12,7 @@
 		May 22, 2007 - jason m horwitz | Sekati LLC | sekati.com
      ************************************************************************************* -->
 
-<project name="Sekati ActionScript API" default="SafeTestMovie" basedir=".">
+<project name="FDT Sample Project" default="SafeTestMovie" basedir=".">
 
 	<!-- FDTKit Structure -->
 	<property name="fdtkit" location="/Users/jason/workspace/fdtkit"/>
@@ -88,6 +88,7 @@
 		<echo message="clean_doc"/>
 		<echo message="compile_ide"/>
 		<echo message="compile_all_ide"/>
+		<echo message="compile_all_tests_ide"/>
 		<echo message="compile_doc_as2api"/>
 		<echo message="compile_doc_asdoc"/>
 		<echo message="compile_doc_naturaldoc"/>
@@ -113,7 +114,7 @@
 	<!-- TASK: compile a batch of tasks to execute -->
     <target name="batch_doc">
         <antcall target="sloc_count"/>
-    	<antcall target="clean_doc"/>
+    	<!--<antcall target="clean_doc"/>-->
         <antcall target="compile_doc_as2api"/>
         <antcall target="deploy_doc"/>
     </target>	
@@ -182,8 +183,8 @@
 
 	<!-- TASK: compile a batch of tasks to execute -->
     <target name="batch_project">
-        <antcall target="batch_doc"/>
-        <antcall target="project_deploy"/>
+        <!--<antcall target="batch_doc"/>-->
+        <antcall target="deploy_project"/>
     </target>	
 	
 	<!-- TASK: rsync+ssh documentation to target server -->
@@ -251,6 +252,14 @@
 	        </fileset>
 	    </fdt.flashCompile>
 	</target>
+	
+	<target name="compile_all_tests_ide">
+		 <fdt.flashCompile>
+		   <fileset dir="${tests}">
+		    <include name="*.fla"/>
+		   </fileset>
+		  </fdt.flashCompile>
+	</target>	
 	
 	<!-- TASK: launch target swf in FlashPlayer -->	
     <target name="launch_external">
