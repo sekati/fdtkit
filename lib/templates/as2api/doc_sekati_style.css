@@ -1,0 +1,129 @@
+/*
+SASAPI Documentation Stylesheet
+	   MADE BY SEKATI
+		    		@ www.sekati.com
+*/
+body {
+	padding-left: 10px;
+	font-family: "Lucida Grande",verdana,arial,sans-serif; 
+	line-height: 1.4em;
+	font-size: x-small;
+	background-color: transparent;
+}
+img { border: none; }
+h1,h2,h3 { font-family:"Myriad Apple", Myriad, Arial, Helvetica, Lucida Grande, sans-serif; line-height:100%;}
+h1 {
+	color: #9b101c;
+	font-weight: lighter;
+	font-size:2.2em; 
+	line-height:1.1em;
+}
+h2, caption {
+	color:#a00;
+	margin-bottom:.5em; padding:4px 0px; font-size:1.4em;
+	border-bottom:1px solid #999;
+	font-weight: light;
+}
+h3, h4 {
+	font-size: 13px;
+}
+a {
+	color: #285090;
+	text-decoration: none;
+	border-bottom:1px solid #ededed;
+	background-color:transparent;
+	padding: 2px;
+}
+a:hover {
+	text-decoration:none;
+	background-color:#729b12;
+	color:#fff;
+	border-bottom:none;
+	width: 100%;
+}
+.field_synopsis, .method_synopsis {
+	padding-left: 20px;
+}
+.field_info, .method_info {
+	padding-top: 10px;
+}
+.method_details {
+	border-bottom: 1px solid #ccc;
+}
+.method_details p {
+	margin-top: 3px;
+	padding: 0px;
+}
+.main_nav {
+	margin-left: 0px;
+	padding-left: 0px;
+	font-weight: lighter;
+	font-size: 12px;
+}
+.main_nav li {
+	padding: 8px;
+	padding-left: 0px;
+	display: inline;
+}
+.main_nav span {
+	color: #999;
+}
+table.summary_list {
+	border-collapse: collapse;
+	width: 100%;
+}
+table.summary_list td {
+	padding: 4px;
+	font-size: 12px;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	border-bottom:1px solid #dedede;
+	padding-left: 8px;
+}
+table td.summary_list_id {
+	width: 160px;
+}
+table td.summary_list_comment {
+	width: auto;
+}
+table.summary_list caption {
+	padding: 4px;
+	text-align: left;
+	padding-left: 8px;
+	background-color: #FFF;
+	width: 100.5%;
+	font-size: 12px;
+}
+ul.navigation_list {
+	padding-left: 0px;
+	margin-left: 0px;
+}
+ul.navigation_list li {
+	margin-bottom: 4px;
+	list-style: none;
+}
+.footer {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: smaller;
+}
+.lineno {
+  	color:  #999;
+  	background-color: #F7F7F7;
+  	border-right: 1px solid #EDEDED;
+	margin-right: 5px;
+}
+.comment { 
+	color: #008000;
+}
+.comment.doc { 
+	color: #008000;
+}
+.str_const, .num_const { 
+	color: #ff00ff; 
+}
+.key { 
+	font-weight: bolder;
+	color: #000099;
+}
