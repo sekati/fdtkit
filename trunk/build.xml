@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************************************************
-		FDTKit Buildfile v1.2.5
+		FDTKit Buildfile v1.3.1
 		
 		@note	You must run this Buildfile in the same JRE as the workspace, be sure to
 				check this option in the launch configuration.
 				
-		@setup	This Buildfile is currently scoped for OSX,Eclipse,Subclipse,FDT. If you
-				you would like to use it on Windows simply install Cygwin and adjust the 
-				necessary path properties.
+		@setup	This Buildfile is currently scoped for OSX,Eclipse, Subclipse, FDT. If 
+		        you would like to use it on Windows simply install Cygwin and adjust 
+		        the necessary path properties.
 			     
 		May 22, 2007 - jason m horwitz | Sekati LLC | sekati.com
      ************************************************************************************* -->
 
-<project name="FDT Sample Project" default="SafeTestMovie" basedir=".">
+<project name="Sekati ActionScript API" default="TestMovie" basedir=".">
 
 	<!-- FDTKit Structure -->
-	<property name="fdtkit" location="/Users/jason/workspace/fdtkit"/>
+	<property name="fdtkit" location="/Users/jason/workspaces/fdt/fdtkit"/>
 	<property name="fbin" location="${fdtkit}/bin"/>
 	<property name="fdoc" location="${fdtkit}/doc"/>
 	<property name="flib" location="${fdtkit}/lib"/>
@@ -57,10 +57,10 @@
 	<property name="main_class" location="${src}/com/sekati/core/Document.as"/>
 	<property name="target_fla" location="${src}/framework.fla"/>
 	<property name="target_swf" location="${deploy}/framework.swf"/>
-	<property name="width" value="800"/>
-	<property name="height" value="600"/>
+	<property name="width" value="950"/>
+	<property name="height" value="650"/>
 	<property name="fps" value="31"/>
-	<property name="bgcolor" value="000000"/>	
+	<property name="bgcolor" value="292929"/>	
 
 	<!-- Deployment Settings : @note Always use trailing slashes on paths. You must have your ssh key installed on the target server to automate deployment -->
 	<property name="deploy_dest_host" value="sekati.com"/>	
@@ -78,49 +78,22 @@
 	<property name="deploy_dest_docpath" value="/home/www/dev/sasapi/"/>		
 	
 	
-	<!-- TASK: give overview of available tasks -->
-	<target name="usage">
-		<echo message=""/>
-		<echo message="----------------------"/>
-		<echo message="Available Ant tasks:"/>
-		<echo message="batch_doc"/>
-		<echo message="batch_project"/>
-		<echo message="clean_doc"/>
-		<echo message="compile_ide"/>
-		<echo message="compile_all_ide"/>
-		<echo message="compile_all_tests_ide"/>
-		<echo message="compile_doc_as2api"/>
-		<echo message="compile_doc_asdoc"/>
-		<echo message="compile_doc_naturaldoc"/>
-		<echo message="compile_mtasc"/>
-		<echo message="create_project"/>
-		<echo message="deploy_doc"/>
-		<echo message="deploy_project"/>
-		<echo message="launch_external"/>
-		<echo message="launch_fdt"/>
-		<echo message="sloc_count"/>
-		<echo message="SafeTestMovie"/>
-		<echo message="usage"/>
-		<echo message="----------------------"/>
-		<echo message=""/>
-	</target>		
-
-	<!-- TASK: compile current opened fla in src dir with Flash IDE -->		
-	<target name="SafeTestMovie">
-		<echo message="@@@@@ Clearing ASO Cache, saving FLA, and executing TestMovie() in IDE @@@@@"/>
-		<exec executable="open"><arg line="${compile.jsfl}"/></exec>
-	</target>
+	<!-- TASK: compile a batch of tasks to execute -->
+    <target name="batch_document">
+        <antcall target="sloc_count"/>
+        <antcall target="document_as2api"/>
+        <antcall target="deploy_documentation"/>
+    </target>
 	
 	<!-- TASK: compile a batch of tasks to execute -->
-    <target name="batch_doc">
-        <antcall target="sloc_count"/>
-    	<!--<antcall target="clean_doc"/>-->
-        <antcall target="compile_doc_as2api"/>
-        <antcall target="deploy_doc"/>
+    <target name="batch_project">
+    	<antcall target="build_project"/>
+    	<!--<antcall target="batch_doc"/>-->
+        <antcall target="deploy_project"/>
     </target>	
 	
 	<!-- TASK: remove all old documentation files -->	
-	<target name="clean_doc">
+	<target name="document_cleanup">
 		<defaultexcludes echo="true"/>
 		<delete includeemptydirs="true">
 			<fileset dir="${docs}" includes="**/*" excludes="**/.svn"/>
@@ -128,7 +101,7 @@
 	</target>
 	
 	<!-- TASK: run as2api to build documentation -->	
-	<target name="compile_doc_as2api">
+	<target name="document_as2api">
 		<exec executable="${as2api}" failonerror="true">
 			<arg line='package-spec ${package}'/>
 			<arg line='--classpath ${src}'/>
@@ -139,13 +112,13 @@
         	<arg line='--draw-diagram'/>
         	<arg line='--dot-exe ${dot}'/>
 		</exec>
-		<copy file="${lib}/tools/doc_sekati_index.html" tofile="${docs}/index.html" overwrite="true"  failonerror="true"/>
-		<copy file="${lib}/tools/doc_sekati_style.css" tofile="${docs}/style.css" overwrite="true"  failonerror="true"/>
-		<copy file="${lib}/tools/doc_sekati_unnatural.css" tofile="${docs}/unnatural.css" overwrite="true"  failonerror="true"/>
+		<copy file="${ftemplates}/as2api/doc_sekati_index.html" tofile="${docs}/index.html" overwrite="true"  failonerror="true"/>
+		<copy file="${ftemplates}/as2api/doc_sekati_style.css" tofile="${docs}/style.css" overwrite="true"  failonerror="true"/>
+		<copy file="${ftemplates}/as2api/doc_sekati_unnatural.css" tofile="${docs}/unnatural.css" overwrite="true"  failonerror="true"/>
 	</target>
 	
 	<!-- TASK: run NaturalDocs to build documentation -->	
-	<target name="compile_doc_naturaldoc">		
+	<target name="document_naturaldocs">		
 		<exec executable="${naturaldocs}" failonerror="true">
 			<arg line='-i ${src}'/>
 			<arg line='-o FramedHTML ${docs}'/>
@@ -156,14 +129,14 @@
 	</target>	
 
 	<!-- TASK: run asdoc to build documentation for AS3 classes -->
-	<target name="compile_doc_asdoc">
+	<target name="document_asdoc">
 		<exec executable="${asdoc}" failonerror="true">
 			<arg line = "-source-path ${src} -doc-sources ${src}/com/ -window-title 'Documentation' -output ${docs} -templates-path '${flex2}/asdoc/templates'" />
 		</exec>
 	</target>
 	
 	<!-- TASK: rsync+ssh documentation to target server -->
-	<target name="deploy_doc">
+	<target name="deploy_documentation">
 		<exec executable="${rsync}">
 			<arg value="-ave ssh"/>
 			<arg value="--delete"/>
@@ -173,19 +146,7 @@
 			<arg value="${deploy_source_docpath}"/>
 			<arg value="${deploy_dest_user}@${deploy_dest_host}:${deploy_dest_docpath}"/>
 		</exec>
-	</target>
-	
-	<!-- TASK: sloc_count :count source lines of code -->
-	<target name="sloc_count">
-		<exec executable="${sloccount}">
-		</exec>
-	</target>	
-
-	<!-- TASK: compile a batch of tasks to execute -->
-    <target name="batch_project">
-        <!--<antcall target="batch_doc"/>-->
-        <antcall target="deploy_project"/>
-    </target>	
+	</target>		
 	
 	<!-- TASK: rsync+ssh documentation to target server -->
 	<target name="deploy_project">
@@ -199,53 +160,9 @@
 			<arg value="${deploy_dest_user}@${deploy_dest_host}:${deploy_dest_path}"/>
 		</exec>
 	</target>
-	
-	<!-- TASK: create directory structure for a new project -->
-	<target name="create_project">
-		<!-- create root struct -->
-		<mkdir dir="${deploy}"/>
-		<mkdir dir="${docs}"/>
-		<mkdir dir="${lib}"/>
-		<mkdir dir="${src}"/>
-		<mkdir dir="${tests}"/>
-		<!-- create deploy struct -->
-		<mkdir dir="${deploy}/_archive"/>
-		<mkdir dir="${deploy}/assets"/>
-		<mkdir dir="${deploy}/css"/>
-		<mkdir dir="${deploy}/js"/>
-		<mkdir dir="${deploy}/php"/>
-		<!-- create lib struct -->
-		<mkdir dir="${lib}/comps"/>
-		<mkdir dir="${lib}/fonts"/>
-		<mkdir dir="${lib}/misc"/>
-		<mkdir dir="${lib}/tools"/>
-		<!-- copy project template assets -->
-		<copy todir="${build}">
-			<fileset dir="${project_template}/build"/>
-		</copy>
-	</target>	
-
-	<!-- TASK: compile target fla in src dir with mtasc -->
-    <target name="compile_mtasc">
-        <exec executable="${mtasc}" dir="." failonerror="true">
-            <arg line="-cp ${corelib}"/>
-            <arg line="-cp ${classpath}"/>
-            <arg line="-v -version 8 -mx -swf"/>
-            <arg line="${target_swf} ${main_class}"/>
-        </exec>
-    </target>	
-
-	<!-- TASK: compile target fla in src dir with Flash IDE -->		
-	<target name="compile_ide">
-	    <fdt.flashCompile>
-	        <fileset dir="${src}">
-	            <include name="${target_fla}"/>
-	        </fileset>
-	    </fdt.flashCompile>
-	</target>
-	
+		
 	<!-- TASK: compile all fla's in src dir with Flash IDE -->	
-	<target name="compile_all_ide">
+	<target name="build_project">
 	    <fdt.flashCompile>
 	        <fileset dir="${src}">
 	        	 <include name="*.fla"/>
@@ -253,22 +170,58 @@
 	    </fdt.flashCompile>
 	</target>
 	
-	<target name="compile_all_tests_ide">
+	<!-- TASK build target fla with Flash IDE -->
+	<target name="build_target">
+		<fdt.flashCompile>
+	        <fileset dir="${src}">
+	            <include name="${target_fla}"/>
+	        </fileset>
+	    </fdt.flashCompile>		
+	</target>
+	
+	<!-- TASK: compile all fla's in tests dir with Flash IDE -->	
+	<target name="build_tests">
 		 <fdt.flashCompile>
 		   <fileset dir="${tests}">
 		    <include name="*.fla"/>
 		   </fileset>
 		  </fdt.flashCompile>
 	</target>	
+
+	<!-- TASK: compile target fla in src dir with mtasc -->
+    <target name="build_mtasc">
+        <exec executable="${mtasc}" dir="." failonerror="true">
+            <arg line="-cp ${corelib}"/>
+            <arg line="-cp ${classpath}"/>
+            <arg line="-v -version 8 -mx -swf"/>
+            <arg line="${target_swf} ${main_class}"/>
+        </exec>
+    </target>	
 	
 	<!-- TASK: launch target swf in FlashPlayer -->	
-    <target name="launch_external">
+    <!--
+	<target name="launch_external">
     	<fdt.extSWFViewer.startSWF file="${target_swf}" width="${movie.width}" height="${movie.height}" flashvars="${movie.flashvars}"/>
     </target>
+    -->
     		
-	<!-- TASK: launch target swf in FDT viewer -->			
+	<!-- TASK: launch target swf in FDT viewer -->
+	<!--
     <target name="launch_fdt">
     	<fdt.viewDocument location="${target_swf}"/>
     </target>
+	-->
+	
+	<!-- TASK: sloc_count :count source lines of code -->
+	<target name="sloc_count">
+		<exec executable="${sloccount}">
+		</exec>
+	</target>	
+
+	<!-- TASK: compile current opened fla in src dir with Flash IDE -->		
+	<target name="TestMovie">
+		<echo message="@@@@@ Clearing ASO Cache, saving FLA, and executing TestMovie() in IDE @@@@@"/>
+		<exec executable="open"><arg line="${compile.jsfl}"/></exec>
+	</target>	
 	
 </project>
