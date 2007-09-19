@@ -54,12 +54,12 @@ One of the primary uses of FDTKit is the included organized Flash libraries & bo
 == Updating FDTKit ==
 
   * To update via SVN: Right-click on the `fdtkit` project in `Flash Explorer` panel and choose `Team -> Update`
-  * To update via Download: Delete the `fdtkit` project and files, then repeat the instructions from _Install via Download_ (and consider confronting your fear of Subversion ... you'll thank me later! ;) 
 
 
 == Usage ==
 
 Please see the FDTKit [http://code.google.com/p/fdtkit/wiki/Documentation Documentation] for specific usages.
+ 
  
  
  
