@@ -22,7 +22,7 @@
 
  
 ==LICENSE.txt==
-- _MIT License_
+  * _MIT License_
 
 
 
@@ -31,6 +31,7 @@
 
 
 
+ 
  
  
  
