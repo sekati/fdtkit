@@ -12,7 +12,7 @@ _This Install Guide assumes you already have the Required Environment (listed be
   * [http://www.eclipse.org/ Eclipse] - Any flavor of Eclipse should do but the [http://www.eclipse.org/webtools/ Web Tools Platform Project all-in-one] is what I recommend for most flash developers.
   * [http://fdt.powerflasher.com/update/ FDT 1.5.x] - FDT3 will be supported once it is released and I attain a copy.
   * [http://subclipse.tigris.org/install.html Subclipse] - Not required but strongly recommended as this is the best install and update route for FDTKit.
-  * [http://www.adobe.com/products/flash/ Flash CS3 or 8]
+  * [http://www.adobe.com/products/flash/ Flash CS3 or Flash 8]
 
 
   === Install Routes ===
@@ -71,5 +71,6 @@ One of the primary uses of FDTKit is the included organized Flash libraries & bo
 == Usage ==
 
 Please see the FDTKit [http://code.google.com/p/fdtkit/wiki/Documentation Documentation] for specific usages.
+ 
  
  
