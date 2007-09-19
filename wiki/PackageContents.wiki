@@ -11,6 +11,7 @@
 
 =docs/=
   * _various usage documents (FTD/Eclipse shortcuts, etc.)_
+  * Flash8_en_HelpPanel.zip - _Flash 8 HelpPanel contents for CS3 users as FDT 1.5 does not support CS3 Help_
 
 
 =lib/=
@@ -31,6 +32,7 @@
 
 
 
+ 
  
  
  
