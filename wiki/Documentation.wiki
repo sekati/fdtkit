@@ -3,4 +3,5 @@
 
 = FDTKit Documentation & Usage Guide =
 
-_not much here yet im afraid_
+Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclipse_FDT_Subclipse_Install_Guide Eclipse, FDT, Subclipse] & [http://code.google.com/p/fdtkit/wiki/Installation FDTKit] you are ready to start using your new environment.
+ 
