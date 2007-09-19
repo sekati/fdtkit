@@ -1,6 +1,0 @@
-#summary FDTKit Documentation
-#labels Featured,Phase-Deploy
-
-= FDTKit Documentation & Usage Guide =
-
-_not much here yet im afraid_
