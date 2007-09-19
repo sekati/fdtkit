@@ -12,9 +12,9 @@
 
 
 =lib/=
-  * FP7/ - _complete core library for Flash 7 (includes mx)_
-  * FP8/ - _complete core library for Flash 8 (includes mx)_
-  * FP9/ - _complete core library for Flash 9 (includes mx)_
+  * FP7/ - _complete core library for Flash 7 (includes mx & remoting libs)_
+  * FP8/ - _complete core library for Flash 8 (includes mx & remoting libs)_
+  * FP9/ - _complete core library for Flash 9 (includes mx & remoting libs)_
   * templates/ - _useful collection of FDT & project templates_
 
   
@@ -32,3 +32,4 @@
 
 
 
+ 
