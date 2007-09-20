@@ -1,7 +1,7 @@
 #!/bin/sh
 ####################################################################
 #
-# SLOCCount.sh - Source Lines Of Code Counter v1.1 - sekati.com
+# SLOCCount.sh - Source Lines Of Code Counter v1.1 - sekati [ dot ] com
 #
 ####################################################################
 

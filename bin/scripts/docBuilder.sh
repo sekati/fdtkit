@@ -1,6 +1,6 @@
 #!/bin/sh
 ####################################################################################
-# AS2 Documentation Builder - v.0.0.5 - jason m horwitz | sekati.com
+# AS2 Documentation Builder - v.0.0.5 - jason m horwitz | sekati [ dot ] com
 # Copyright (C) 2007  jason m horwitz, Sekat LLC. All Rights Reserved.
 # Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
 #
