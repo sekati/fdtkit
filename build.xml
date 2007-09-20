@@ -10,6 +10,8 @@
 		        the necessary path properties.
 			     
 		May 22, 2007 - jason m horwitz | Sekati LLC | sekati [ . ] com
+		
+		Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
      ************************************************************************************* -->
 
 <project name="FDTKit Buildfile" default="TestMovie" basedir=".">
