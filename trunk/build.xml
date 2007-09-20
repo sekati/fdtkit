@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************************************************
-		FDTKit Buildfile v1.3.1
+		FDTKit Buildfile v1.3.3
 		
-		@note	You must run this Buildfile in the same JRE as the workspace, be sure to
-				check this option in the launch configuration.
+		@note	You must run this Buildfile in the same JRE as the workspace. To configure
+		        this: Run -> External Tools -> JRE -> Run in the same JRE as the workspace
 				
 		@setup	This Buildfile is currently scoped for OSX,Eclipse, Subclipse, FDT. If 
 		        you would like to use it on Windows simply install Cygwin and adjust 
@@ -12,7 +12,7 @@
 		May 22, 2007 - jason m horwitz | Sekati LLC | sekati.com
      ************************************************************************************* -->
 
-<project name="Sekati ActionScript API" default="TestMovie" basedir=".">
+<project name="FDTKit Buildfile" default="TestMovie" basedir=".">
 
 	<!-- FDTKit Structure -->
 	<property name="fdtkit" location="/Users/jason/workspaces/fdt/fdtkit"/>
