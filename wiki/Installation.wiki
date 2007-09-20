@@ -46,7 +46,7 @@ One of the primary uses of FDTKit is the included organized Flash libraries & bo
   # Repeat the previous step until each `"FP"` directory has been added (_i.e. FP7, FP8, FP9_). Each of these represents a target Flash Player version you might target in a projects development.
   # Finally tick the `"FP"` directory which you would like to use as your default core library.
   # Navigate to `"Tools -> MTASC"` and browse to `"..workspace/fdtkit/bin/mtasc and select the MTASC build for your platform.
-  # Because FDT 1.5.x does not support the Flash CS3 HelpPanel due to a bug, FDTKit includes the necessary plugin to add Flash 8 help support to Eclipse. To use this unarchive the `"fdtkit/docs/flashhelp.zip"` and place it the directory `"com.pf.fdt.flashhelp_1.5.1"` into your `"eclipse/plugins/"` directory and restart Eclipse.
+  # Because FDT 1.5.x does not support the Flash CS3 HelpPanel due to a bug, FDTKit includes the necessary plugin to add Flash 8 help support to Eclipse. To use this unarchive the `"fdtkit/docs/flashhelp.zip"` and place it the directory `"com.pf.fdt.flashhelp_1.5.1"` into your `"eclipse/plugins/"` directory and restart Eclipse. Note: you only need to do this if you only have Flash CS3 IDE installed, if you have the Flash 8 IDE you maybe simply set the proper paths in the FDT Preference panel.
   # Navigate to `"Templates"`, tick `"Override System User Name - ${user}"` and customize this to your liking (_i.e. jason m horwitz | sekati.com_). This will be used to insert author credits in created class files.
   # Navigate to `"Code Style -> Code Templates"` and press `"Import..."`. Browse to `"...workspace/fdtkit/lib/templates/codetemplate.xml"`. It is recommended you personalize the Copyright string in typeheader after template import to suite your tastes.
   # Navigate to `"Editor -> Templates"` and `"Import..."`. Browse to `...workspace/fdtkit/lib/templates/templates.xml"`. You should then also edit and personalize the `"header"` template. These templates are formatted to work properly with the AS2API documentation tool (also part of FDTKit). _Note: For best results with AS2API you should insert the "header" template at the top of your classes, then do your import statements, and finally either "desc" or "usage" template to enter in the class description to be documented (header is ignored by as2api which does not support @author and many other javadoc tags)._
@@ -60,6 +60,7 @@ One of the primary uses of FDTKit is the included organized Flash libraries & bo
 == Usage ==
 
 Please see the FDTKit [http://code.google.com/p/fdtkit/wiki/Documentation Documentation] for specific usages.
+ 
  
  
  
