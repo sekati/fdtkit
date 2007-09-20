@@ -9,7 +9,7 @@
 		        you would like to use it on Windows simply install Cygwin and adjust 
 		        the necessary path properties.
 			     
-		May 22, 2007 - jason m horwitz | Sekati LLC | sekati.com
+		May 22, 2007 - jason m horwitz | Sekati LLC | sekati [ . ] com
      ************************************************************************************* -->
 
 <project name="FDTKit Buildfile" default="TestMovie" basedir=".">
@@ -63,8 +63,8 @@
 	<property name="bgcolor" value="292929"/>	
 
 	<!-- Deployment Settings : @note Always use trailing slashes on paths. You must have your ssh key installed on the target server to automate deployment -->
-	<property name="deploy_dest_host" value="sekati.com"/>	
-	<property name="deploy_dest_user" value="jason"/>
+	<property name="deploy_dest_host" value="productionserver.com"/>	
+	<property name="deploy_dest_user" value="username"/>
 	<property name="deploy_excludes" value=".svn"/>
 	<property name="rsync" location="/usr/bin/rsync"/>
 	<property name="ssh" location="/usr/bin/ssh"/>		
