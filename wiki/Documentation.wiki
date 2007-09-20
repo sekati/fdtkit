@@ -16,7 +16,8 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
  
 
 == Create a Source Folder ==
-  # Now we need a project source folder to keep our classes in.  We so this simply by right-clicking our "Test Project" in the Flash Explorer and choose "New -> Source Folder" which we will name "src".
+  # Now we need a project source folder to keep our classes in.  We so this simply by right-clicking our "Test Project" in the Flash Explorer.
+  # Choose "New -> Source Folder" which we will name "src".
 
 
 == Creating Packages and Classes in the Source Folder ==
@@ -32,6 +33,7 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Double click the "Main.fla" in our "src" folder and the Flash IDE will launch and open the Fla.
   # Next go to "Publish Settings" in the Flash IDE and set the FlashPlayer Version for the FLA to match your Core Library.
   
+ 
  
  
  
