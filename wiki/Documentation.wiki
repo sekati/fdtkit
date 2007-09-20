@@ -60,5 +60,8 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
 
 
 == Automate Compile, Document & Other Tasks ==
-  # A great number of things can be automated in Eclipse using FDTKit's [http://fdtkit.googlecode.com/svn/trunk/build.xml Buildfile] & [http://en.wikipedia.org/wiki/Apache_Ant Apache Ant].
- 
+  # A great number of things can be automated in Eclipse using [http://fdtkit.googlecode.com/svn/trunk/build.xml FDTKit's Buildfile] & [http://en.wikipedia.org/wiki/Apache_Ant Apache Ant].
+  # First we need to copy the FDTKit Buildfile into our project: Expand the "fdtkit" project in FlashExplorer.
+  # Right click on "build.xml" in fdtkit" and choose "Copy".
+  # Right click our "Test Project" and choose "Paste".
+  
