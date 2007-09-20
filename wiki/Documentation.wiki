@@ -54,7 +54,13 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Change the "Flash" file from "Main.fla" to "../deploy/Main.fla" so our movie will be published into the "deploy" directory in our project structure.
 
 
+== Creating Test Fla's ==
+  # Creating unit test fla's in the "tests/" directory is quite similar to the process described above except we do not want to publish our swf's  into the deploy directory and we will need to adjust the as2 path.
+  # To adjust the class path in the Flash IDE we go to  "Publish Settings" and click "settings" next to "ActionScript version" and add "../src" so our test fla's can locate our classes.
+
+
   
+ 
  
  
  
