@@ -3,5 +3,12 @@
 
 = FDTKit Documentation & Usage Guide =
 
-Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclipse_FDT_Subclipse_Install_Guide Eclipse, FDT, Subclipse] & [http://code.google.com/p/fdtkit/wiki/Installation FDTKit] you are ready to start using your new environment.
+== Introduction ==
+
+Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclipse_FDT_Subclipse_Install_Guide Eclipse, FDT, Subclipse] & [http://code.google.com/p/fdtkit/wiki/Installation FDTKit] you are ready to start using your new environment. So, lets start by creating a test project and continue customizing our environment.
+
+== Create a new Project ==
+  # First we must make sure we are in the _Flash Perspective_ by going to `"Window -> Open Perspective -> Flash"`
+  # `"File -> New -> New Flash Project"` 
+  # Enter `"Test Project"` for "Project Name", insuring that `"Use Default Location"` is checked and hit `"Next"`
  
