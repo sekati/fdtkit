@@ -20,19 +20,20 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Choose "New -> Source Folder" which we will name "src".
 
 
-== Creating Packages and Classes in the Source Folder ==
+== Create a Class ==
   # Right click on our project "src" folder and choose "New -> Class".
   # In the "Create AS2 Class" wizard fill in our package: "com.sekati.core", classname:"Test", superclass:"MovieClip".
   # Press "Finish". Our class has been created, you may view it by expanding the "src" folder to see our package and its class contents. 
  
 
- == Creating FLA's ==
+== Create an Fla ==
   # Right click on our project "src" folder and choose "New -> Fla".
   # In the "New Fla" wizard fill in our fla name: "Main.fla"
   # Press "Finish". Our fla has been created.
   # Double click the "Main.fla" in our "src" folder and the Flash IDE will launch and open the Fla.
   # Next go to "Publish Settings" in the Flash IDE and set the FlashPlayer Version for the FLA to match your Core Library.
   
+ 
  
  
  
