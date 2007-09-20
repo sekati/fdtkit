@@ -1,6 +1,6 @@
 #!/bin/sh
 ####################################################################################
-# SyncSite - v.0.0.3 - ssh/rsync dev to production - jason m horwitz | sekati.com
+# SyncSite - v.0.0.3 - ssh/rsync dev to production - jason m horwitz | sekati [ dot ] com
 # Copyright (C) 2007  jason m horwitz, Sekat LLC. All Rights Reserved.
 # Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
 #

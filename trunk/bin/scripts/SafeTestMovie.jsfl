@@ -2,7 +2,7 @@
 JSFL Command:	Safe Test Movie
 Version:				1.0.0
 Date:					10.2006
-Author:					jason m horwitz // sekati.com
+Author:					jason m horwitz // sekati [ . ] com
 License:				GNU General Public License - http://www.gnu.org/licenses/gpl.txt
 */
 function clearASOCache (path) {
