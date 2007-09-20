@@ -14,6 +14,22 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Select your default "Core Library" (based on your target FlashPlayer version). If you would like to use a different Core Library simply press "Change Core Library" and select the version you would like (these will already be available via FDTKit installation).
   # Press "Finish" and your project will be created. You may see this in the "Flash Explorer" panel ("Window -> Show View -> Flash Explorer).
  
+== Create the Project Layout ==
+  # Now we want to create a good project structure to keep things organized. Right click our "Test Project" in the Flash Explorer and click "New -> Folder".
+  # Name the folder "deploy" and press finish.
+  # Repeat steps 1 & 2 and create the following project directory structure:
+    * deploy/
+    * deploy/_assets_
+    * deploy/_css_
+    * deploy/_js_
+    * deploy/_php_
+    * docs/
+    * lib/
+    * lib/_assets_
+    * lib/_comps_
+    * lib/_fonts_
+    * tests/
+
 
 == Create a Source Folder ==
   # Now we need a project source folder to keep our classes in.  We so this simply by right-clicking our "Test Project" in the Flash Explorer.
@@ -32,7 +48,9 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Press "Finish". Our fla has been created.
   # Double click the "Main.fla" in our "src" folder and the Flash IDE will launch and open the Fla.
   # Next go to "Publish Settings" in the Flash IDE and set the FlashPlayer Version for the FLA to match your Core Library.
+  # Make any other changes/configurations you would like to your project FLA.
   
+ 
  
  
  
