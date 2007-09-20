@@ -18,6 +18,7 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Now we want to create a good project structure to keep things organized. Right click our "Test Project" in the Flash Explorer and click "New -> Folder".
   # Name the folder "deploy" and press finish.
   # Repeat steps 1 & 2 and create the following project directory structure:
+
     * *deploy*/ `- project files ready for deployment to a productions server (sans source code)`
     * deploy/assets `- misc external project graphics, audio, videos, etc`
     * deploy/css `- css files`
@@ -50,6 +51,7 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Next go to "Publish Settings" in the Flash IDE and set the FlashPlayer Version for the FLA to match your Core Library.
   # Make any other changes/configurations you would like to your project FLA.
   
+ 
  
  
  
