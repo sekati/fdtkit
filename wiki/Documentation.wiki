@@ -59,9 +59,10 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # To adjust the class path in the Flash IDE we go to  "Publish Settings" and click "settings" next to "ActionScript version" and add "../src" so our test fla's can locate our classes.
 
 
-== Automate Compile, Document & Other Tasks ==
+== Automate Compilation, Documentation & Other Common Tasks ==
   # A great number of things can be automated in Eclipse using [http://fdtkit.googlecode.com/svn/trunk/build.xml FDTKit's Buildfile] & [http://en.wikipedia.org/wiki/Apache_Ant Apache Ant].
   # First we need to copy the FDTKit Buildfile into our project: Expand the "fdtkit" project in FlashExplorer.
   # Right click on "build.xml" in fdtkit" and choose "Copy".
   # Right click our "Test Project" and choose "Paste".
   
+ 
