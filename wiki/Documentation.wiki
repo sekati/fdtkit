@@ -60,6 +60,8 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
 
 
 == Automate Compilation, Documentation & Other Common Tasks ==
+
+  === Add the Project Buildfile ===
   # A great number of things can be automated in Eclipse using [http://fdtkit.googlecode.com/svn/trunk/build.xml FDTKit's Buildfile] & [http://en.wikipedia.org/wiki/Apache_Ant Apache Ant].
   # First we need to copy the FDTKit Buildfile into our project: Expand the "fdtkit" project in FlashExplorer.
   # Right click on "build.xml" in fdtkit" and choose "Copy".
@@ -70,5 +72,6 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Edit the "Project Details" paying special attention to corelib, target_player, target_fla & target_swf (the remaining Project Details are unused unless you plan on compiling with MTASC).
   # Save you updated build.xml and close the file.
   
- 
+  === Using the Project Buildfile === 
+  #
  
