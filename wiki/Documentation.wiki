@@ -83,6 +83,12 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
     * *TestMovie* `- _will run a "Test Movie" in the flash IDE for the currently opened fla.`
     * *build_target* `- will open your main fla in the flash ide and compile it.` 
     * *document_as2api* `- will generate html documents for all javadoc'd classes in the project "docs" directory.`
+
+  === Adding Key Bindings ===
+  # You may like to have some familiar hotkeys similar to those you used in flash. For instance if you would like to map Control+Enter to the "TestMovie" task from the FDTKit buildfile so you can easily go straight from editting a class in Eclipse to viewing the compiled swf you can do this via: "Eclipse -> Preferences -> Keys". 
+  # Find the Command  "Run Ant Build", When: "In Windows" under Category: "Run/Debug" and add a key binding of your choosing (usually Control+Enter or Command+Enter).
+
+ 
  
  
  
