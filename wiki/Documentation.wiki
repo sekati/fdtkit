@@ -64,5 +64,11 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # First we need to copy the FDTKit Buildfile into our project: Expand the "fdtkit" project in FlashExplorer.
   # Right click on "build.xml" in fdtkit" and choose "Copy".
   # Right click our "Test Project" and choose "Paste".
+  # Double click the Build.xml now in your Test Project so that we may configure the buildfile for our project.
+  # Edit the "project name" attribute.
+  # Edit the "fdtkit" location to reflect the absolute path to the "fdtkit" project on your computer.
+  # Edit the "Project Details" paying special attention to corelib, target_player, target_fla & target_swf (the remaining Project Details are unused unless you plan on compiling with MTASC).
+  # Save you updated build.xml and close the file.
   
+ 
  
