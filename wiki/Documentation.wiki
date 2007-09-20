@@ -77,6 +77,11 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # In the Ant panel press the "Add Buildfiles" button (small ant icon with a plus symbol).
   # Select "Test Project -> build.xml", the buildfile tasks will appear in the Ant panel.
   # Since you must run the Buildfile in the same JRE as the workspace: "Run -> External Tools -> JRE -> Run in the same JRE as the workspace".
-  # 
+  # You Buildfile is now configured and you may run any task you wish. You may expand the Buildfile to see all available tasks by clickin on the arrow to the left of the Buildfile project title. 
+  # The tasks you will most likely want use are: 
+
+  * *TestMovie* `- _will run a "Test Movie" in the flash IDE for the currently opened fla.`
+  * *build_target* `- will open your main fla in the flash ide and compile it.` 
+  * *document_as2api* `- will generate html documents for all javadoc'd classes in the project "docs" directory.`
  
  
