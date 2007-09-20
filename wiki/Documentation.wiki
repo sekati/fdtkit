@@ -18,17 +18,17 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Now we want to create a good project structure to keep things organized. Right click our "Test Project" in the Flash Explorer and click "New -> Folder".
   # Name the folder "deploy" and press finish.
   # Repeat steps 1 & 2 and create the following project directory structure:
-    * *deploy*/ ^- this is where our finished project files go & what we upload to the production server^
-    * deploy/assets 
-    * deploy/css
-    * deploy/js
-    * deploy/php
-    * *docs*/
-    * *lib*/
-    * lib/assets
-    * lib/comps
-    * lib/fonts
-    * *tests*/
+    * *deploy*/ `- project files ready for deployment to a productions server (sans source code)`
+    * deploy/assets `- misc external project graphics, audio, videos, etc`
+    * deploy/css `- css files`
+    * deploy/js `- javascript files`
+    * deploy/php `- php files`
+    * *docs*/ `- ActionScript Documentation generated with FDTKit`
+    * *lib*/ `- assets needed for project development but not for production`
+    * lib/assets `- generic assets`
+    * lib/comps `- design comps`
+    * lib/fonts `- reqiured fonts`
+    * *tests*/ `- unit tests and fla's`
 
 
 == Create a Source Folder ==
@@ -50,6 +50,7 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Next go to "Publish Settings" in the Flash IDE and set the FlashPlayer Version for the FLA to match your Core Library.
   # Make any other changes/configurations you would like to your project FLA.
   
+ 
  
  
  
