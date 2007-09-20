@@ -12,6 +12,10 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # "File -> New -> New Flash Project".
   # Enter "Test Project" for "Project Name", insuring that "Use Default Location" is checked and hit "Next".
   # Select your default "Core Library" (based on your target FlashPlayer version). If you would like to use a different Core Library simply press "Change Core Library" and select the version you would like (these will already be available via FDTKit installation).
+  # Press "Finish" and your project will be created. You may see this in the "Flash Explorer" panel ("Window -> Show View -> Flash Explorer).
  
+
+== Create a Source Folder ==
+  # Now we need a project source folder to keep our classes in.  We so this simply by right-clicking our "Test Project" in the Flash Explorer and choose "New -> Source Folder" which we will name "src".
  
  
