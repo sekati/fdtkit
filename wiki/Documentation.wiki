@@ -33,3 +33,4 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Next go to "Publish Settings" in the Flash IDE and set the FlashPlayer Version for the FLA to match your Core Library.
   
  
+ 
