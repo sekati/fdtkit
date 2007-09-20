@@ -80,8 +80,9 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # You Buildfile is now configured and you may run any task you wish. You may expand the Buildfile to see all available tasks by clickin on the arrow to the left of the Buildfile project title. 
   # The tasks you will most likely want use are: 
 
-  * *TestMovie* `- _will run a "Test Movie" in the flash IDE for the currently opened fla.`
-  * *build_target* `- will open your main fla in the flash ide and compile it.` 
-  * *document_as2api* `- will generate html documents for all javadoc'd classes in the project "docs" directory.`
+    * *TestMovie* `- _will run a "Test Movie" in the flash IDE for the currently opened fla.`
+    * *build_target* `- will open your main fla in the flash ide and compile it.` 
+    * *document_as2api* `- will generate html documents for all javadoc'd classes in the project "docs" directory.`
+ 
  
  
