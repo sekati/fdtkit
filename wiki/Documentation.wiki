@@ -73,5 +73,10 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Save you updated build.xml and close the file.
   
   === Using the Project Buildfile === 
-  #
+  # Open Ant: "Window -> Show View -> Ant".
+  # In the Ant panel press the "Add Buildfiles" button (small ant icon with a plus symbol).
+  # Select "Test Project -> build.xml", the buildfile tasks will appear in the Ant panel.
+  # Since you must run the Buildfile in the same JRE as the workspace: "Run -> External Tools -> JRE -> Run in the same JRE as the workspace".
+  # 
+ 
  
