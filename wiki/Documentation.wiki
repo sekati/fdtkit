@@ -49,8 +49,13 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Press "Finish". Our fla has been created.
   # Double click the "Main.fla" in our "src" folder and the Flash IDE will launch and open the Fla.
   # Next go to "Publish Settings" in the Flash IDE and set the FlashPlayer Version for the FLA to match your Core Library.
-  # Make any other changes/configurations you would like to your project FLA.
+  # Select the "Formats" tab in "Publish Settings". 
+  # Uncheck "HTML".
+  # Change the "Flash" file from "Main.fla" to "../deploy/Main.fla" so our movie will be published into the "deploy" directory in our project structure.
+
+
   
+ 
  
  
  
