@@ -59,7 +59,9 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # To adjust the class path in the Flash IDE we go to  "Publish Settings" and click "settings" next to "ActionScript version" and add "../src" so our test fla's can locate our classes.
 
 
+== Automation with FDTKit's Buildfile & Ant ==
   
+ 
  
  
  
