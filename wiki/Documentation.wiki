@@ -19,15 +19,15 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Name the folder "deploy" and press finish.
   # Repeat steps 1 & 2 and create the following project directory structure:
     * *deploy*/
-    * deploy/assets
-    * deploy/css
-    * deploy/js
-    * deploy/php
+    * _deploy/assets_
+    * _deploy/css_
+    * _deploy/js_
+    * _deploy/php_
     * *docs*/
     * *lib*/
-    * lib/_assets_
-    * lib/_comps_
-    * lib/_fonts_
+    * _lib/assets_
+    * _lib/comps_
+    * _lib/fonts_
     * *tests*/
 
 
@@ -50,6 +50,7 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Next go to "Publish Settings" in the Flash IDE and set the FlashPlayer Version for the FLA to match your Core Library.
   # Make any other changes/configurations you would like to your project FLA.
   
+ 
  
  
  
