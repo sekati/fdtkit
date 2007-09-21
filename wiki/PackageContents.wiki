@@ -23,7 +23,7 @@
 
  
 ==LICENSE.txt==
-  * [http://code.google.com/p/fdtkit/wiki/License _MIT License_]
+  * _[http://code.google.com/p/fdtkit/wiki/License MIT License]_
 
 
 
@@ -32,6 +32,8 @@
 
 
 
+
+ 
  
  
  
