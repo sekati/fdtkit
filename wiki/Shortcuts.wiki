@@ -1,4 +1,4 @@
-#summary Everything you ever wanted to know about Eclipse, FDT key bindings but were afraid to ask.
+#summary Everything you ever wanted to know about Eclipse & FDT key bindings but were afraid to ask.
 #labels Featured,Phase-Deploy
 
 = Eclipse & FDT Shortcuts = 
@@ -49,6 +49,7 @@
 
 == Custom Shortcuts ==
 Of course you may also wish to build or customize shortcuts of your own; please see the [http://code.google.com/p/fdtkit/wiki/Documentation FDTKit Documentation Wiki page] under *Adding Key Bindings* for instructions on this topic.
+ 
  
  
  
