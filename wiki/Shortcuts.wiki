@@ -1,6 +1,6 @@
 #summary All the Eclipse & FDT key bindings you ever wanted to know but were afraid to ask.
 
-= Eclipse & FDT Shortcuts =
+|| = Eclipse & FDT Shortcuts = ||
 
 || *Searching* || ||
 || CTRL+SHIFT+R || Find Resources ||
@@ -45,6 +45,7 @@
 || *Building* ||
 || CTRL+F11 || Start last run || 
 
+ 
  
  
  
