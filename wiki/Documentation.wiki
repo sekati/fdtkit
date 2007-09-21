@@ -85,12 +85,13 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
     * *document_as2api* `- will generate html documents for all javadoc'd classes in the project "docs" directory.`
 
   === Adding Key Bindings ===
-  # You may like to have some familiar hotkeys similar to those you used in flash. For instance if you would like to map `"Control+Enter"` to the `"TestMovie"` task from the FDTKit buildfile so you can easily go straight from editting a class in Eclipse to viewing the compiled swf you can do this via: `"Eclipse -> Preferences -> Keys"`. 
+  # You may like to have some familiar hotkeys similar to those you used in flash. For instance if you would like to map `"Control+Enter"` to the `"TestMovie"` default task from the FDTKit buildfile so you can easily go straight from editting a class in Eclipse to viewing the compiled swf you can do this via: `"Eclipse -> Preferences -> Keys"`. 
   # Find the Command  `"Run Ant Build"`, When: `"In Windows"` under Category: `"Run/Debug"` and add a key binding of your choosing (usually `"Control+Enter"` or `"Command+Enter"`).
   # If you use SVN you may also choose to add bindings for `"&Add to Version Control"` `(Control+A)` and `"&Commit..."` `(Control+S)`.
 
   === Built-In Shortcuts ===
  If you would like to know more about the built-in shortcuts and key-bindings in Eclipse & FDT please see the [http://code.google.com/p/fdtkit/wiki/Shortcuts FDTKit Shortcuts Wiki page].
+ 
  
  
  
