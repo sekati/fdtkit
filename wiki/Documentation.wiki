@@ -8,11 +8,11 @@
 Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclipse_FDT_Subclipse_Install_Guide Eclipse, FDT, Subclipse] & [http://code.google.com/p/fdtkit/wiki/Installation FDTKit] you are ready to start using your new environment. So, lets start by creating a test project and continue customizing our environment.
 
 == Create a new Project ==
-  # First we must make sure we are in the _Flash Perspective_ by going to "Window -> Open Perspective -> Flash".
-  # "File -> New -> New Flash Project".
-  # Enter "Test Project" for "Project Name", insuring that "Use Default Location" is checked and hit "Next".
-  # Select your default "Core Library" (based on your target FlashPlayer version). If you would like to use a different Core Library simply press "Change Core Library" and select the version you would like (these will already be available via FDTKit installation).
-  # Press "Finish" and your project will be created. You may see this in the "Flash Explorer" panel ("Window -> Show View -> Flash Explorer).
+  # First we must make sure we are in the _Flash Perspective_ by going to `"Window -> Open Perspective -> Flash"`.
+  # `"File -> New -> New Flash Project"`.
+  # Enter `"Test Project"` for `"Project Name"`, insuring that `"Use Default Location"` is checked and hit `"Next"`.
+  # Select your default `"Core Library"` (based on your target FlashPlayer version). If you would like to use a different Core Library simply press `"Change Core Library"` and select the version you would like (these will already be available via FDTKit installation).
+  # Press `"Finish"` and your project will be created. You may see this in the `"Flash Explorer"` panel (`"Window -> Show View -> Flash Explorer"`).
  
 == Create the Project Layout ==
   # Now we want to create a good project structure to keep things organized. Right click our "Test Project" in the Flash Explorer and click "New -> Folder".
@@ -88,3 +88,4 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # You may like to have some familiar hotkeys similar to those you used in flash. For instance if you would like to map Control+Enter to the "TestMovie" task from the FDTKit buildfile so you can easily go straight from editting a class in Eclipse to viewing the compiled swf you can do this via: "Eclipse -> Preferences -> Keys". 
   # Find the Command  "Run Ant Build", When: "In Windows" under Category: "Run/Debug" and add a key binding of your choosing (usually Control+Enter or Command+Enter).
   # If you use SVN you may also choose to add bindings for "&Add to Version Control" (Control+A) and "&Commit..." (Control+S).
+ 
