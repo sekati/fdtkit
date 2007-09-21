@@ -47,7 +47,8 @@
 || CTRL+F11 || Start last run || 
 
 == Custom Shortcuts ==
- Of course you may wish to build or customize shortcuts of your own; please see the [http://code.google.com/p/fdtkit/wiki/Documentation FDTKit Documentation] Wiki page under *Adding Key Bindings*.
+Of course you may wish to build or customize shortcuts of your own; please see the [http://code.google.com/p/fdtkit/wiki/Documentation FDTKit Documentation Wiki page] under *Adding Key Bindings*.
+ 
  
  
  
