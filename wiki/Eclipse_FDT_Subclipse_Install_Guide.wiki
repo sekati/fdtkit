@@ -1,4 +1,4 @@
-#summary step-by-step guide to install Eclipse, FDT, Subclipse
+#summary Step-by-step guide to install Eclipse, FDT, Subclipse.
 #labels Phase-Requirements
 
 = How to Install Eclipse, FDT & Subclipse =
@@ -22,3 +22,4 @@ _A full install guide is in-progress, until then the links below should be used 
 
   * [http://fdt.powerflasher.com/forum/ powerflasher forum]
   * [http://fdt.powerflasher.com/links/ powerflasher links]
+ 
