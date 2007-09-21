@@ -1,7 +1,7 @@
 #summary All the Eclipse & FDT key bindings you ever wanted to know but were afraid to ask.
 #labels Featured,Phase-Deploy
 
- = Eclipse & FDT Shortcuts = 
+= Eclipse & FDT Shortcuts = 
 
 || *Searching* || _description_ ||
 || CTRL+SHIFT+R || Find Resources ||
@@ -46,6 +46,7 @@
 || *Building* || _description_  ||
 || CTRL+F11 || Start last run || 
 
+ 
  
  
  
