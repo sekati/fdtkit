@@ -21,6 +21,10 @@
 || CTRL+U || Show type dependency || 
 || CTRL+O || Show quick outline || 
 
+|| *Generating*  || _description_  ||
+|| CTRL+Space || Insert code template/auto complete code || 
+|| CTRL+SHIFT+O || Organize imports || 
+
 || *Editing Single Files* || _description_  ||
 || ALT+UpArrow || Move line up || 
 || ALT+DownArrow || Move line down || 
@@ -30,10 +34,6 @@
 || CTRL+(numeric)- / CTRL+(numeric)+ || Fold/unfold other methods || 
 || CTRL+M || Maximize view || 
 || CTRL+(numeric) ENTER || Alternative to CTRL+M || 
-
-|| *Generating*  || _description_  ||
-|| CTRL+Space || Insert code template/auto complete code || 
-|| CTRL+SHIFT+O || Organize imports || 
 
 || *Editing Several Files* || _description_  ||
 || CTRL+PageDown / CTRL+PageUp || Move to next/previous open file || 
@@ -46,6 +46,7 @@
 || *Building* || _description_  ||
 || CTRL+F11 || Start last run || 
 
+ 
  
  
  
