@@ -1,6 +1,6 @@
 #summary All the Eclipse & FDT key bindings you ever wanted to know but were afraid to ask.
 
-|| = Eclipse & FDT Shortcuts = ||
+ = Eclipse & FDT Shortcuts = 
 
 || *Searching* || ||
 || CTRL+SHIFT+R || Find Resources ||
@@ -9,7 +9,7 @@
 || CTRL+J / CTRL+SHIFT+J || Incremental search (search as you type) ||
 
 
-|| *Navigating* ||
+|| *Navigating* || ||
 || F2 || Select class in flash explorer || 
 || F3 || Show property/method declaration/implementation || 
 || F4 || Show type declaration || 
@@ -20,7 +20,7 @@
 || CTRL+U || Show type dependency || 
 || CTRL+O || Show quick outline || 
 
-|| *Editing Single Files* ||
+|| *Editing Single Files* || ||
 || ALT+UpArrow || Move line up || 
 || ALT+DownArrow || Move line down || 
 || CTRL+D/CTRL+SHIFT+D || Delete line/duplicate line || 
@@ -30,21 +30,22 @@
 || CTRL+M || Maximize view || 
 || CTRL+(numeric)ENTER || Alternative to CTRL+M || 
 
-|| *Generating*  ||
+|| *Generating*  || ||
 || CTRL+Space || Insert code template/auto complete code || 
 || CTRL+SHIFT+O || Organize imports || 
 
-|| *Editing Several Files* ||
+|| *Editing Several Files* || ||
 || CTRL+PageDown / CTRL+PageUp || Move to next/previous open file || 
 || CTRL+F6 || Alternative to CTRL+PageDown/CTRL+PageUp || 
 || ALT+LeftArrow / ALT+RightArrow || Navigate to next/previous opened files (history) || 
 
-|| *Fixing* ||
+|| *Fixing* || ||
 || CTRL+1 || Show fixes (if error bulb is shown) || 
 
-|| *Building* ||
+|| *Building* || ||
 || CTRL+F11 || Start last run || 
 
+ 
  
  
  
