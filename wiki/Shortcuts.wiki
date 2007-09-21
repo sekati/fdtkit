@@ -1,4 +1,4 @@
-#All the Eclipse & FDT key bindings you ever wanted to know but were afraid to ask.
+#summary All the Eclipse & FDT key bindings you ever wanted to know but were afraid to ask.
 
 = Eclipse & FDT Shortcuts =
 
@@ -45,4 +45,5 @@
 || *Building* ||
 || CTRL+F11 || Start last run || 
 
+ 
  
