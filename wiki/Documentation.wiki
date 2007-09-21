@@ -15,8 +15,8 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Press `"Finish"` and your project will be created. You may see this in the `"Flash Explorer"` panel (`"Window -> Show View -> Flash Explorer"`).
  
 == Create the Project Layout ==
-  # Now we want to create a good project structure to keep things organized. Right click our "Test Project" in the Flash Explorer and click "New -> Folder".
-  # Name the folder "deploy" and press finish.
+  # Now we want to create a good project structure to keep things organized. Right click our `"Test Project"` in the Flash Explorer and click `"New -> Folder"`.
+  # Name the folder `"deploy"` and press finish.
   # Repeat steps 1 & 2 and create the following project directory structure:
 
     * *deploy*/ `- project files ready for deployment to a productions server (sans source code)`
@@ -33,48 +33,48 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
 
 
 == Create a Source Folder ==
-  # Now we need a project source folder to keep our classes in.  We so this simply by right-clicking our "Test Project" in the Flash Explorer.
-  # Choose "New -> Source Folder" which we will name "src".
+  # Now we need a project source folder to keep our classes in.  We so this simply by right-clicking our `"Test Project"` in the Flash Explorer.
+  # Choose `"New -> Source Folder"` which we will name `"src"`.
 
 
 == Create a Class ==
-  # Right click on our project "src" folder and choose "New -> Class".
-  # In the "Create AS2 Class" wizard fill in our package: "com.sekati.core", classname:"Test", superclass:"MovieClip".
-  # Press "Finish". Our class has been created, you may view it by expanding the "src" folder to see our package and its class contents. 
+  # Right click on our project `"src"` folder and choose `"New -> Class"`.
+  # In the `"Create AS2 Class"` wizard fill in our package: `"com.sekati.core"`, classname:`"Test"`, superclass: `"MovieClip"`.
+  # Press `"Finish"`. Our class has been created, you may view it by expanding the `"src"` folder to see our package and its class contents. 
  
 
 == Create an Fla ==
-  # Right click on our project "src" folder and choose "New -> Fla".
-  # In the "New Fla" wizard fill in our fla name: "Main.fla"
-  # Press "Finish". Our fla has been created.
-  # Double click the "Main.fla" in our "src" folder and the Flash IDE will launch and open the Fla.
-  # Next go to "Publish Settings" in the Flash IDE and set the FlashPlayer Version for the FLA to match your Core Library.
-  # Select the "Formats" tab in "Publish Settings". 
-  # Uncheck "HTML".
-  # Change the "Flash" file from "Main.fla" to "../deploy/Main.fla" so our movie will be published into the "deploy" directory in our project structure.
+  # Right click on our project `"src"` folder and choose `"New -> Fla"`.
+  # In the `"New Fla"` wizard fill in our fla name: `"Main.fla"`
+  # Press `"Finish"`. Our fla has been created.
+  # Double click the `"Main.fla"` in our `"src"` folder and the Flash IDE will launch and open the Fla.
+  # Next go to `"Publish Settings"` in the Flash IDE and set the FlashPlayer Version for the FLA to match your Core Library.
+  # Select the `"Formats"` tab in `"Publish Settings"`. 
+  # Uncheck `"HTML"`.
+  # Change the `"Flash"` file from `"Main.swf"` to `"../deploy/Main.swf"` so our movie will be published into the `"deploy"` directory in our project structure.
 
 
 == Creating Test Fla's ==
-  # Creating unit test fla's in the "tests/" directory is quite similar to the process described above except we do not want to publish our swf's  into the deploy directory and we will need to adjust the as2 path.
-  # To adjust the class path in the Flash IDE we go to  "Publish Settings" and click "settings" next to "ActionScript version" and add "../src" so our test fla's can locate our classes.
+  # Creating unit test fla's in the `"tests/"` directory is quite similar to the process described above except we do not want to publish our swf's  into the deploy directory and we will need to adjust the as2 path.
+  # To adjust the class path in the Flash IDE we go to  `"Publish Settings"` and click `"settings"` next to `"ActionScript version"` and add `"../src"` so our test fla's can locate our classes.
 
 
 == Automate Compilation, Documentation & Other Common Tasks ==
 
   === Add the Project Buildfile ===
   # A great number of things can be automated in Eclipse using [http://fdtkit.googlecode.com/svn/trunk/build.xml FDTKit's Buildfile] & [http://en.wikipedia.org/wiki/Apache_Ant Apache Ant].
-  # First we need to copy the FDTKit Buildfile into our project: Expand the "fdtkit" project in FlashExplorer.
-  # Right click on "build.xml" in fdtkit" and choose "Copy".
-  # Right click our "Test Project" and choose "Paste".
-  # Double click the Build.xml now in your Test Project so that we may configure the buildfile for our project.
-  # Edit the "project name" attribute.
-  # Edit the "fdtkit" location to reflect the absolute path to the "fdtkit" project on your computer.
-  # Edit the "Project Details" paying special attention to corelib, target_player, target_fla & target_swf (the remaining Project Details are unused unless you plan on compiling with MTASC).
+  # First we need to copy the FDTKit Buildfile into our project: Expand the `"fdtkit"` project in FlashExplorer.
+  # Right click on `"build.xml"` in `"fdtkit"` and choose `"Copy"`.
+  # Right click our `"Test Project"` and choose `"Paste"`.
+  # Double click the `"Build.xml"` now in your `"Test Project"` so that we may configure the buildfile for our project.
+  # Edit the `"project name"` attribute.
+  # Edit the `"fdtkit"` location to reflect the absolute path to the `"fdtkit"` project on your computer.
+  # Edit the `"Project Details"` paying special attention to `corelib, target_player, target_fla & target_sw"` (the remaining Project Details are unused unless you plan on compiling with MTASC).
   # Save you updated build.xml and close the file.
   
   === Using the Project Buildfile === 
-  # Open Ant: "Window -> Show View -> Ant".
-  # In the Ant panel press the "Add Buildfiles" button (small ant icon with a plus symbol).
+  # Open Ant: `"Window -> Show View -> Ant"`.
+  # In the Ant panel press the `"Add Buildfiles"` button (small ant icon with a plus symbol).
   # Select "Test Project -> build.xml", the buildfile tasks will appear in the Ant panel.
   # Since you must run the Buildfile in the same JRE as the workspace: "Run -> External Tools -> JRE -> Run in the same JRE as the workspace".
   # You Buildfile is now configured and you may run any task you wish. You may expand the Buildfile to see all available tasks by clickin on the arrow to the left of the Buildfile project title. 
@@ -88,4 +88,5 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # You may like to have some familiar hotkeys similar to those you used in flash. For instance if you would like to map Control+Enter to the "TestMovie" task from the FDTKit buildfile so you can easily go straight from editting a class in Eclipse to viewing the compiled swf you can do this via: "Eclipse -> Preferences -> Keys". 
   # Find the Command  "Run Ant Build", When: "In Windows" under Category: "Run/Debug" and add a key binding of your choosing (usually Control+Enter or Command+Enter).
   # If you use SVN you may also choose to add bindings for "&Add to Version Control" (Control+A) and "&Commit..." (Control+S).
+ 
  
