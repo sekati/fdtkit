@@ -2,7 +2,7 @@
 
 = Eclipse & FDT Shortcuts =
 
-|| *Searching* ||
+|| *Searching* || ||
 || CTRL+SHIFT+R || Find Resources ||
 || CTRL+H || Search in different files ||
 || CTRL+F || Search in one file (CTRL+K/CTRL+SHIFT+K: next/previous) ||
@@ -45,5 +45,6 @@
 || *Building* ||
 || CTRL+F11 || Start last run || 
 
+ 
  
  
