@@ -74,7 +74,7 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Right click on our project `"src"` folder and choose `"New -> Class"`.
   # In the `"Create AS2 Class"` wizard fill in our package: `"com.sekati.core"`, classname:`"Test"`, superclass: `"MovieClip"`.
   # Press `"Finish"`. Our class has been created, you may view it by expanding the `"src"` folder to see our package and its class contents. 
-  # Assuming you have followed the [http://code.google.com/p/fdtkit/wiki/Installation FDTKit Installation Wiki] and configured your FDT templates your resulting class will look similar to the one below. A method has been added with as2api compatible javadoc format for reference:
+  # Assuming you have followed the [http://code.google.com/p/fdtkit/wiki/Installation FDTKit Installation Wiki] and configured your FDT templates your resulting class will look similar to the one below. A method has been added with as2api compatible javadoc formatted comments for reference:
 
    {{{
 /**
@@ -137,6 +137,7 @@ class com.sekati.core.Test extends MovieClip {
 
   === Built-In Shortcuts ===
  If you would like to know more about the built-in shortcuts and key-bindings in Eclipse & FDT please see the [http://code.google.com/p/fdtkit/wiki/Shortcuts FDTKit Shortcuts Wiki page].
+ 
  
  
  
