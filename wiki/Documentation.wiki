@@ -48,7 +48,7 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Next right-click your `"Test Project"` in the Flash Explorer and select `"Refresh"`. Your new project directory structure will appear as follows:
 
     * *deploy*/ `- project files ready for deployment to a productions server (sans source code)`
-    * deploy/__archive `- compress build archives may be stored here if version control is not being used`
+    * deploy/archive `- compress build archives may be stored here if version control is not being used`
     * deploy/assets `- misc external project graphics, audio, videos, etc`
     * deploy/css `- css files`
     * deploy/js `- javascript files`
@@ -103,6 +103,7 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
 
   === Built-In Shortcuts ===
  If you would like to know more about the built-in shortcuts and key-bindings in Eclipse & FDT please see the [http://code.google.com/p/fdtkit/wiki/Shortcuts FDTKit Shortcuts Wiki page].
+ 
  
  
  
