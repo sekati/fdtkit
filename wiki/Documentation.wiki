@@ -25,7 +25,9 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Edit the `"project name"` attribute.
   # Edit the `"fdtkit"` location to reflect the absolute path to the `"fdtkit"` project on your computer.
   # Edit the `"Project Details"` paying special attention to `corelib, target_player, target_fla & target_swf"` (the remaining Project Details are unused unless you plan on compiling with MTASC).
-  # Edit the `"Deployment Settings"`, `"Project Deployment Paths"` & `"Documentation Deployment Paths"` if you are running OS X or are using [http://www.cygwin.com/ cygwin] for `"rsync"` + `"ssh"` support on Windows and wish to automate any of the `"deployment"` tasks.
+  # If you are planning on using any of the automated `"deployment"` tasks and are running OS X or are using [http://www.cygwin.com/ cygwin] for `"rsync"` + `"ssh"` support on Windows; Edit the `"Deployment Settings"`, `"Project Deployment Paths"` & `"Documentation Deployment Paths"`. 
+
+Please note you will need to generate and install a `"publish SSH key"` on the server you wish to automate deployment on. This can be done simply.
   # Save you updated build.xml and close the file.
   # Next open the Eclipse Ant panel: `"Window -> Show View -> Ant"`.
   # In the Ant panel press the `"Add Buildfiles"` button (small ant icon with a plus symbol).
@@ -138,6 +140,7 @@ class com.sekati.core.Test extends MovieClip {
 
   === Built-In Shortcuts ===
  If you would like to know more about the built-in shortcuts and key-bindings in Eclipse & FDT please see the [http://code.google.com/p/fdtkit/wiki/Shortcuts FDTKit Shortcuts Wiki page].
+ 
  
  
  
