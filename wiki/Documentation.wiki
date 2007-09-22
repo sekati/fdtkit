@@ -36,7 +36,7 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
     * *create_project_structure* `- creates a general project directory structure.` 
     * *document_as2api* `- will generate html documents for all javadoc'd classes in the project "docs" directory.`
 
-  _Note:_ In the next section we will use the `create_project_structure` task to create our project layout.
+  In the next section we will use the `create_project_structure` task to create our project layout.
 
  
 == Create the Project Layout ==
@@ -58,7 +58,7 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
     * *tests*/ `- unit tests and fla's`
     * *src*/ `-  source classes, packages and project fla's`
 
-  If you would like to add additional directories you may do so simple by right clicking your `"Test Project"` in the Flash Explorer and click `"New -> Folder"`. Give it a name of your choosing and press `"Finish"`.
+  _Note:_ If you would like to add additional directories you may do so simple by right clicking your `"Test Project"` in the Flash Explorer and click `"New -> Folder"`. Give it a name of your choosing and press `"Finish"`.
 
 
 == Create a Source Folder ==
@@ -98,6 +98,7 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
 
   === Built-In Shortcuts ===
  If you would like to know more about the built-in shortcuts and key-bindings in Eclipse & FDT please see the [http://code.google.com/p/fdtkit/wiki/Shortcuts FDTKit Shortcuts Wiki page].
+ 
  
  
  
