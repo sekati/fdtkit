@@ -13,6 +13,32 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Enter `"Test Project"` for `"Project Name"`, insuring that `"Use Default Location"` is checked and hit `"Next"`.
   # Select your default `"Core Library"` (based on your target FlashPlayer version). If you would like to use a different Core Library simply press `"Change Core Library"` and select the version you would like (these will already be available via FDTKit installation).
   # Press `"Finish"` and your project will be created. You may see this in the `"Flash Explorer"` panel (`"Window -> Show View -> Flash Explorer"`).
+
+== Add the Project Buildfile ==
+  # A great number of things can be automated in Eclipse using [http://fdtkit.googlecode.com/svn/trunk/build.xml FDTKit's Buildfile] & [http://en.wikipedia.org/wiki/Apache_Ant Apache Ant].
+  # First we need to copy the FDTKit Buildfile into our project: Expand the `"fdtkit"` project in FlashExplorer.
+  # Right click on `"build.xml"` in `"fdtkit"` and choose `"Copy"`.
+  # Right click our `"Test Project"` and choose `"Paste"`.
+  # Double click the `"Build.xml"` now in your `"Test Project"` so that we may configure the buildfile for our project.
+  # Edit the `"project name"` attribute.
+  # Edit the `"fdtkit"` location to reflect the absolute path to the `"fdtkit"` project on your computer.
+  # Edit the `"Project Details"` paying special attention to `corelib, target_player, target_fla & target_swf"` (the remaining Project Details are unused unless you plan on compiling with MTASC).
+  # Save you updated build.xml and close the file.
+  # Next open the Eclipse Ant panel: `"Window -> Show View -> Ant"`.
+  # In the Ant panel press the `"Add Buildfiles"` button (small ant icon with a plus symbol).
+  # Select `"Test Project -> build.xml"`, the buildfile will now appear in the Ant panel.
+  # Since you must run the Buildfile in the same JRE as the workspace: `"Run -> External Tools -> JRE -> Run in the same JRE as the workspace"`.
+  # You Buildfile is now configured and you may run any of the available tasks you wish on your project. You may expand the Buildfile to see all available tasks by clickin on the arrow to the left of the Buildfile project title. 
+  # The tasks you will most likely be interested in are: 
+
+    * *TestMovie* `- _will run a "Test Movie" in the flash IDE for the currently opened fla.`
+    * *build_target* `- will open your main fla in the flash ide and compile it.`
+    * *create_project_structure* `- creates a general project directory structure.` 
+    * *document_as2api* `- will generate html documents for all javadoc'd classes in the project "docs" directory.`
+
+  In the next section we will use the _create_project_structure_ task to create our project layout.
+
+
  
 == Create the Project Layout ==
   # Now we want to create a good project structure to keep things organized. Right click our `"Test Project"` in the Flash Explorer and click `"New -> Folder"`.
@@ -59,38 +85,14 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # To adjust the class path in the Flash IDE we go to  `"Publish Settings"` and click `"settings"` next to `"ActionScript version"` and add `"../src"` so our test fla's can locate our classes.
 
 
-== Automate Compilation, Documentation & Other Common Tasks ==
-
-  === Add the Project Buildfile ===
-  # A great number of things can be automated in Eclipse using [http://fdtkit.googlecode.com/svn/trunk/build.xml FDTKit's Buildfile] & [http://en.wikipedia.org/wiki/Apache_Ant Apache Ant].
-  # First we need to copy the FDTKit Buildfile into our project: Expand the `"fdtkit"` project in FlashExplorer.
-  # Right click on `"build.xml"` in `"fdtkit"` and choose `"Copy"`.
-  # Right click our `"Test Project"` and choose `"Paste"`.
-  # Double click the `"Build.xml"` now in your `"Test Project"` so that we may configure the buildfile for our project.
-  # Edit the `"project name"` attribute.
-  # Edit the `"fdtkit"` location to reflect the absolute path to the `"fdtkit"` project on your computer.
-  # Edit the `"Project Details"` paying special attention to `corelib, target_player, target_fla & target_swf"` (the remaining Project Details are unused unless you plan on compiling with MTASC).
-  # Save you updated build.xml and close the file.
-  
-  === Using the Project Buildfile === 
-  # Open Ant: `"Window -> Show View -> Ant"`.
-  # In the Ant panel press the `"Add Buildfiles"` button (small ant icon with a plus symbol).
-  # Select `"Test Project -> build.xml"`, the buildfile tasks will appear in the Ant panel.
-  # Since you must run the Buildfile in the same JRE as the workspace: `"Run -> External Tools -> JRE -> Run in the same JRE as the workspace"`.
-  # You Buildfile is now configured and you may run any task you wish. You may expand the Buildfile to see all available tasks by clickin on the arrow to the left of the Buildfile project title. 
-  # The tasks you will most likely want use are: 
-
-    * *TestMovie* `- _will run a "Test Movie" in the flash IDE for the currently opened fla.`
-    * *build_target* `- will open your main fla in the flash ide and compile it.` 
-    * *document_as2api* `- will generate html documents for all javadoc'd classes in the project "docs" directory.`
-
-  === Adding Key Bindings ===
+== Adding Key Bindings ==
   # You may like to have some familiar hotkeys similar to those you used in flash. For instance if you would like to map `"Control+Enter"` to the `"TestMovie"` default task from the FDTKit buildfile so you can easily go straight from editting a class in Eclipse to viewing the compiled swf you can do this via: `"Eclipse -> Preferences -> Keys"`. 
   # Find the Command  `"Run Ant Build"`, When: `"In Windows"` under Category: `"Run/Debug"` and add a key binding of your choosing (usually `"Control+Enter"` or `"Command+Enter"`).
   # If you use SVN you may also choose to add bindings for `"&Add to Version Control"` `(Control+A)` and `"&Commit..."` `(Control+S)`.
 
-  === Built-In Shortcuts ===
+== Built-In Shortcuts ==
  If you would like to know more about the built-in shortcuts and key-bindings in Eclipse & FDT please see the [http://code.google.com/p/fdtkit/wiki/Shortcuts FDTKit Shortcuts Wiki page].
+ 
  
  
  
