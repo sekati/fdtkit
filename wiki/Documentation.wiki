@@ -38,7 +38,6 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
 
   In the next section we will use the _create_project_structure_ task to create our project layout.
 
-
  
 == Create the Project Layout ==
   # Now we want to create a good project structure to keep things organized. Right click our `"Test Project"` in the Flash Explorer and click `"New -> Folder"`.
@@ -85,13 +84,17 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # To adjust the class path in the Flash IDE we go to  `"Publish Settings"` and click `"settings"` next to `"ActionScript version"` and add `"../src"` so our test fla's can locate our classes.
 
 
-== Adding Key Bindings ==
+== Automate Compilation, Documentation & Other Common Tasks ==
+
+
+  === Adding Key Bindings ===
   # You may like to have some familiar hotkeys similar to those you used in flash. For instance if you would like to map `"Control+Enter"` to the `"TestMovie"` default task from the FDTKit buildfile so you can easily go straight from editting a class in Eclipse to viewing the compiled swf you can do this via: `"Eclipse -> Preferences -> Keys"`. 
   # Find the Command  `"Run Ant Build"`, When: `"In Windows"` under Category: `"Run/Debug"` and add a key binding of your choosing (usually `"Control+Enter"` or `"Command+Enter"`).
   # If you use SVN you may also choose to add bindings for `"&Add to Version Control"` `(Control+A)` and `"&Commit..."` `(Control+S)`.
 
-== Built-In Shortcuts ==
+  === Built-In Shortcuts ===
  If you would like to know more about the built-in shortcuts and key-bindings in Eclipse & FDT please see the [http://code.google.com/p/fdtkit/wiki/Shortcuts FDTKit Shortcuts Wiki page].
+ 
  
  
  
