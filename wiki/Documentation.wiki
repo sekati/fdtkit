@@ -36,13 +36,14 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
     * *create_project_structure* `- creates a general project directory structure.` 
     * *document_as2api* `- will generate html documents for all javadoc'd classes in the project "docs" directory.`
 
-  In the next section we will use the _create_project_structure_ task to create our project layout.
+  In the next section we will use the `create_project_structure` task to create our project layout.
 
  
 == Create the Project Layout ==
-  # Now we want to create a good project structure to keep things organized. Right click our `"Test Project"` in the Flash Explorer and click `"New -> Folder"`.
-  # Name the folder `"deploy"` and press finish.
-  # Repeat steps 1 & 2 and create the following project directory structure:
+  # Now we want to create a good project structure to keep things organized. Fortunately the `create_project_structure` task from the Buildfile we added in the previous section will automate this for us. Start by expanding your Buildfile in the Ant Panel to view all tasks`.
+  # Locate the `"create_project_structure"` task and press small green play icon button.
+  # The Eclipse console will appear notifying you that the project structure has been created.
+  # Next right-click your `"Test Project"` in the Flash Explorer and select `"Refresh"`. Your new project directory structure will appear as follows:
 
     * *deploy*/ `- project files ready for deployment to a productions server (sans source code)`
     * deploy/assets `- misc external project graphics, audio, videos, etc`
@@ -55,6 +56,9 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
     * lib/comps `- design comps`
     * lib/fonts `- reqiured fonts`
     * *tests*/ `- unit tests and fla's`
+    * *src*/ `-  source classes, packages and project fla's`
+
+  # If you would like to add additional directories you may do so simple by right clicking your `"Test Project"` in the Flash Explorer and click `"New -> Folder"`. Give it a name of your choosing and press `"Finish"`.
 
 
 == Create a Source Folder ==
@@ -94,6 +98,7 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
 
   === Built-In Shortcuts ===
  If you would like to know more about the built-in shortcuts and key-bindings in Eclipse & FDT please see the [http://code.google.com/p/fdtkit/wiki/Shortcuts FDTKit Shortcuts Wiki page].
+ 
  
  
  
