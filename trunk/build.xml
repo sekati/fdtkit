@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************************************************
-		FDTKit Buildfile v1.3.3
+		FDTKit Buildfile v1.3.5
 		
 		@note	You must run this Buildfile in the same JRE as the workspace. To configure
 		        this: Run -> External Tools -> JRE -> Run in the same JRE as the workspace
@@ -45,11 +45,18 @@
 
 	<!-- Project Structure -->
 	<property name="deploy" location="${basedir}/deploy"/>
+	<property name="deploy_archive" location="${deploy}/archive"/>
+	<property name="deploy_assets" location="${deploy}/assets"/>
+	<property name="deploy_css" location="${deploy}/css"/>
+	<property name="deploy_js" location="${deploy}/js"/>
+	<property name="deploy_php" location="${deploy}/php"/>
 	<property name="docs" location="${basedir}/docs"/>
 	<property name="lib" location="${basedir}/lib"/>
+	<property name="lib_assets" location="${basedir}/lib/assets"/>
+	<property name="lib_comps" location="${basedir}/lib/comps"/>
+	<property name="lib_fonts" location="${basedir}/lib/fonts"/>
 	<property name="tests" location="${basedir}/tests"/>
 	<property name="src" location="${basedir}/src"/>
-	<property name="archive" location="${deploy}/_archive"/>
 
 	<!-- Project Details -->
 	<property name="corelib" location="${flash8}"/>
@@ -92,7 +99,39 @@
     	<antcall target="build_project"/>
     	<!--<antcall target="batch_doc"/>-->
         <antcall target="deploy_project"/>
-    </target>	
+    </target>
+	
+	<!-- TASK: create a new project structure -->
+    <target name="create_project_structure">
+    	<echo message="Creating Project Structure ..."/>
+		<mkdir dir="${deploy}"/>
+    	<echo message="Creating: ${deploy}"/>
+    	<mkdir dir="${deploy_archive}"/>
+    	<echo message="Creating: ${deploy_archive}"/>
+    	<mkdir dir="${deploy_assets}"/>
+    	<echo message="Creating: ${deploy_assets}"/>
+    	<mkdir dir="${deploy_css}"/>
+    	<echo message="Creating: ${deploy_css}"/>
+    	<mkdir dir="${deploy_js}"/>
+    	<echo message="Creating: ${deploy_js}"/>
+    	<mkdir dir="${deploy_php}"/>
+    	<echo message="Creating: ${deploy_php}"/>
+    	<mkdir dir="${docs}"/>
+    	<echo message="Creating: ${docs}"/>
+    	<mkdir dir="${lib}"/>
+    	<echo message="Creating: ${lib}"/>
+    	<mkdir dir="${lib_assets}"/>
+    	<echo message="Creating: ${lib_assets}"/>
+    	<mkdir dir="${lib_comps}"/>
+    	<echo message="Creating: ${lib_comps}"/>
+    	<mkdir dir="${lib_fonts}"/>
+    	<echo message="Creating: ${lib_fonts}"/>
+    	<mkdir dir="${tests}"/>
+    	<echo message="Creating: ${tests}"/>
+    	<mkdir dir="${src}"/>
+    	<echo message="Creating: ${src}"/>
+    	<echo message="Project Structure Created Successfully! Now refresh your project in Eclipse (right click on the project and select 'Refresh')"/>
+    </target>		
 	
 	<!-- TASK: remove all old documentation files -->	
 	<target name="document_cleanup">
