@@ -14,7 +14,7 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Select your default `"Core Library"` (based on your target FlashPlayer version). If you would like to use a different Core Library simply press `"Change Core Library"` and select the version you would like (these will already be available via FDTKit installation).
   # Press `"Finish"` and your project will be created. You may see this in the `"Flash Explorer"` panel (`"Window -> Show View -> Flash Explorer"`).
 
-== Add the Project Buildfile ==
+== Add a Project Buildfile ==
   # A great number of things can be automated in Eclipse using [http://fdtkit.googlecode.com/svn/trunk/build.xml FDTKit's Buildfile] & [http://en.wikipedia.org/wiki/Apache_Ant Apache Ant].
   # First we need to copy the FDTKit Buildfile into our project: Expand the `"fdtkit"` project in FlashExplorer.
   # Right click on `"build.xml"` in `"fdtkit"` and choose `"Copy"`.
@@ -94,6 +94,7 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
 
   === Built-In Shortcuts ===
  If you would like to know more about the built-in shortcuts and key-bindings in Eclipse & FDT please see the [http://code.google.com/p/fdtkit/wiki/Shortcuts FDTKit Shortcuts Wiki page].
+ 
  
  
  
