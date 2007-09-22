@@ -36,7 +36,7 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
     * *create_project_structure* `- creates a general project directory structure.` 
     * *document_as2api* `- will generate html documents for all javadoc'd classes in the project "docs" directory.`
 
-  In the next section we will use the `create_project_structure` task to create our project layout.
+  *Note:* In the next section we will use the `create_project_structure` task to create our project layout.
 
  
 == Create the Project Layout ==
@@ -98,6 +98,7 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
 
   === Built-In Shortcuts ===
  If you would like to know more about the built-in shortcuts and key-bindings in Eclipse & FDT please see the [http://code.google.com/p/fdtkit/wiki/Shortcuts FDTKit Shortcuts Wiki page].
+ 
  
  
  
