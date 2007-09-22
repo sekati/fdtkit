@@ -7,12 +7,14 @@
 
 Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclipse_FDT_Subclipse_Install_Guide Eclipse, FDT, Subclipse] & [http://code.google.com/p/fdtkit/wiki/Installation FDTKit] you are ready to start using your new environment. So, lets start by creating a test project and continue customizing our environment.
 
+
 == Create a new Project ==
   # First we must make sure we are in the _Flash Perspective_ by going to `"Window -> Open Perspective -> Flash"`.
   # `"File -> New -> New Flash Project"`.
   # Enter `"Test Project"` for `"Project Name"`, insuring that `"Use Default Location"` is checked and hit `"Next"`.
   # Select your default `"Core Library"` (based on your target FlashPlayer version). If you would like to use a different Core Library simply press `"Change Core Library"` and select the version you would like (these will already be available via FDTKit installation).
   # Press `"Finish"` and your project will be created. You may see this in the `"Flash Explorer"` panel (`"Window -> Show View -> Flash Explorer"`).
+
 
 == Add a Project Buildfile ==
   # A great number of things can be automated in Eclipse using [http://fdtkit.googlecode.com/svn/trunk/build.xml FDTKit's Buildfile] & [http://en.wikipedia.org/wiki/Apache_Ant Apache Ant].
@@ -61,9 +63,10 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   _Note:_ If you would like to add additional directories you may do so simple by right clicking your `"Test Project"` in the Flash Explorer and click `"New -> Folder"`. Give it a name of your choosing and press `"Finish"`.
 
 
-== Create a Source Folder ==
-  # Now we need a project source folder to keep our classes in.  We so this simply by right-clicking our `"Test Project"` in the Flash Explorer.
-  # Choose `"New -> Source Folder"` which we will name `"src"`.
+== Linking the Source Folder ==
+  # Next we need to tell Eclipse and FDT that we want to use `"src"` as our source folder by adding it to our project classpath. Start by right-clicking on the `"src"` folder in Flash Explorer.
+  # Select `"Source Folder -> Add to Classpath"`.
+  # Notice the icon has changed from that of a generic folder (yellow) to a source folder (blue).
 
 
 == Create a Class ==
@@ -96,8 +99,10 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Find the Command  `"Run Ant Build"`, When: `"In Windows"` under Category: `"Run/Debug"` and add a key binding of your choosing (usually `"Control+Enter"` or `"Command+Enter"`).
   # If you use SVN you may also choose to add bindings for `"&Add to Version Control"` `(Control+A)` and `"&Commit..."` `(Control+S)`.
 
+
   === Built-In Shortcuts ===
  If you would like to know more about the built-in shortcuts and key-bindings in Eclipse & FDT please see the [http://code.google.com/p/fdtkit/wiki/Shortcuts FDTKit Shortcuts Wiki page].
+ 
  
  
  
