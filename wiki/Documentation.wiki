@@ -25,7 +25,7 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Edit the `"project name"` attribute.
   # Edit the `"fdtkit"` location to reflect the absolute path to the `"fdtkit"` project on your computer.
   # Edit the `"Project Details"` paying special attention to `corelib, target_player, target_fla & target_swf"` (the remaining Project Details are unused unless you plan on compiling with MTASC).
-  # If you are planning on using any of the automated `"deployment"` tasks and are running OS X or are using [http://www.cygwin.com/ cygwin] for `"rsync"` + `"ssh"` support on Windows; edit the `"Deployment Settings"`, `"Project Deployment Paths"` & `"Documentation Deployment Paths"`. _Please note_ you will need to generate and install a `"public SSH key"` on the server you wish to automate deployment on. If you have not generated an SSH key pair before you can do this simply by entering `"ssh-keygen -t dsa`" into the Terminal on your development machine (be sure to leave the `"Password"` blank so that Eclipse can do remote deployments). Next copy the contents of the resulting public key  from `"~/.ssh/id_dsa.pub"` in to the `"~/.ssh/authorized_keys"` file _on your production server_.
+  # If you are planning on using any of the automated `"deployment"` tasks and are running OS X or Windows with [http://www.cygwin.com/ cygwin] installed (for `"rsync"` + `"ssh"` support); edit the `"Deployment Settings"`, `"Project Deployment Paths"` & `"Documentation Deployment Paths"`. _Please note_ you will need to generate and install a `"public SSH key"` on the server you wish to automate deployment on. If you have not generated an SSH key pair before you can do this simply by entering `"ssh-keygen -t dsa`" into the Terminal on your development machine (be sure to leave the `"Password"` blank so that Eclipse can do remote deployments). Next copy the contents of the resulting public key  from `"~/.ssh/id_dsa.pub"` in to the `"~/.ssh/authorized_keys"` file _on your production server_.
   # Save you updated build.xml and close the file.
   # Next open the Eclipse Ant panel: `"Window -> Show View -> Ant"`.
   # In the Ant panel press the `"Add Buildfiles"` button (small ant icon with a plus symbol).
@@ -138,6 +138,7 @@ class com.sekati.core.Test extends MovieClip {
 
   === Built-In Shortcuts ===
  If you would like to know more about the built-in shortcuts and key-bindings in Eclipse & FDT please see the [http://code.google.com/p/fdtkit/wiki/Shortcuts FDTKit Shortcuts Wiki page].
+ 
  
  
  
