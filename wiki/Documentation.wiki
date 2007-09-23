@@ -32,7 +32,7 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Select `"Test Project -> build.xml"`, the buildfile will now appear in the Ant panel.
   # Since you must run the Buildfile in the same JRE as the workspace: `"Run -> External Tools -> JRE -> Run in the same JRE as the workspace"`.
   # You Buildfile is now configured and you may run any of the available tasks you wish on your project. You may expand the Buildfile to see all available tasks by clickin on the arrow to the left of the Buildfile project title. 
-  # You may [http://ant.apache.org/manual/ add your own custom tasks or use some of those already provided by FDTKit. The tasks you will most likely be interested in are: 
+  # You may [http://ant.apache.org/manual/ create your own custom tasks] or use some of those already provided by FDTKit. The tasks you will most likely be interested in are: 
 
     * *TestMovie* `- _will run a "Test Movie" in the flash IDE for the currently opened fla.`
     * *build_target* `- will open your main fla in the flash ide and compile it.`
@@ -138,32 +138,4 @@ class com.sekati.core.Test extends MovieClip {
 
   === Built-In Shortcuts ===
  If you would like to know more about the built-in shortcuts and key-bindings in Eclipse & FDT please see the [http://code.google.com/p/fdtkit/wiki/Shortcuts FDTKit Shortcuts Wiki page].
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
