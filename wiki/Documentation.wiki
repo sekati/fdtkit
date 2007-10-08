@@ -54,6 +54,7 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
     * deploy/css `- css files`
     * deploy/js `- javascript files`
     * deploy/php `- php files`
+    * deploy/xml `- xml files`
     * *docs*/ `- ActionScript Documentation generated with FDTKit`
     * *lib*/ `- assets needed for project development but not for production`
     * lib/assets `- generic assets`
