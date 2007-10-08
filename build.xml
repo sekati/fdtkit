@@ -109,7 +109,7 @@
     	<copy file="${ftemplates}/misc/index_open.htaccess" tofile="${build}/.htaccess" overwrite="true"  failonerror="true"/>
         <echo message="Creating: ${build}"/>    	
 		<mkdir dir="${deploy}"/>
-    	<copy file="${ftemplates}/misc/index_close.htaccess" tofile="${deploy}/.htaccess" overwrite="true"  failonerror="true"/>
+    	<copy file="${ftemplates}/misc/index_closed.htaccess" tofile="${deploy}/.htaccess" overwrite="true"  failonerror="true"/>
     	<echo message="Creating: ${deploy}"/>
     	<mkdir dir="${deploy_assets}"/>
     	<echo message="Creating: ${deploy_assets}"/>
