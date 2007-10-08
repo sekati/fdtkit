@@ -50,6 +50,7 @@
 	<property name="deploy_css" location="${deploy}/css"/>
 	<property name="deploy_js" location="${deploy}/js"/>
 	<property name="deploy_php" location="${deploy}/php"/>
+	<property name="deploy_xml" location="${deploy}/xml"/>
 	<property name="docs" location="${basedir}/docs"/>
 	<property name="lib" location="${basedir}/lib"/>
 	<property name="lib_assets" location="${basedir}/lib/assets"/>
@@ -113,11 +114,10 @@
     	<mkdir dir="${deploy_assets}"/>
     	<echo message="Creating: ${deploy_assets}"/>
     	<mkdir dir="${deploy_css}"/>
-    	<echo message="Creating: ${deploy_css}"/>
+    	<echo message="Creating: ${deploy_css}, ${deploy_js}, ${deploy_php}, ${deploy_xml}"/>
     	<mkdir dir="${deploy_js}"/>
-    	<echo message="Creating: ${deploy_js}"/>
     	<mkdir dir="${deploy_php}"/>
-    	<echo message="Creating: ${deploy_php}"/>
+    	<mkdir dir="${deploy_xml}"/>
     	<mkdir dir="${docs}"/>
     	<echo message="Creating: ${docs}"/>
     	<mkdir dir="${lib}"/>
