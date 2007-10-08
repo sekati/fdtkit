@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************************************************
-		FDTKit Buildfile v1.3.5
+		FDTKit Buildfile v1.3.7
 		
 		@note	You must run this Buildfile in the same JRE as the workspace. To configure
 		        this: Run -> External Tools -> JRE -> Run in the same JRE as the workspace
@@ -44,8 +44,8 @@
 	<property name="sloccount" location="${fbin}/scripts/slocCount.sh"/>
 
 	<!-- Project Structure -->
+	<property name="build" location="${basedir}/build"/>
 	<property name="deploy" location="${basedir}/deploy"/>
-	<property name="deploy_archive" location="${deploy}/archive"/>
 	<property name="deploy_assets" location="${deploy}/assets"/>
 	<property name="deploy_css" location="${deploy}/css"/>
 	<property name="deploy_js" location="${deploy}/js"/>
@@ -104,10 +104,12 @@
 	<!-- TASK: create a new project structure -->
     <target name="create_project_structure">
     	<echo message="Creating Project Structure ..."/>
+    	<mkdir dir="${build}"/>
+    	<copy file="${ftemplates}/misc/index_open.htaccess" tofile="${build}/.htaccess" overwrite="true"  failonerror="true"/>
+        <echo message="Creating: ${build}"/>    	
 		<mkdir dir="${deploy}"/>
+    	<copy file="${ftemplates}/misc/index_close.htaccess" tofile="${deploy}/.htaccess" overwrite="true"  failonerror="true"/>
     	<echo message="Creating: ${deploy}"/>
-    	<mkdir dir="${deploy_archive}"/>
-    	<echo message="Creating: ${deploy_archive}"/>
     	<mkdir dir="${deploy_assets}"/>
     	<echo message="Creating: ${deploy_assets}"/>
     	<mkdir dir="${deploy_css}"/>
