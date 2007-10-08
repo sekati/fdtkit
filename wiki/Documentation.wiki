@@ -48,8 +48,8 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # The Eclipse console will appear notifying you that the project structure has been created.
   # Next right-click your `"Test Project"` in the Flash Explorer and select `"Refresh"`. Your new project directory structure will appear as follows:
 
+    * *build*/ `- compressed & dated project archives (i.e. myProject-mm-dd-yy.zip) for hand-off &/or archival purposes.`
     * *deploy*/ `- project files ready for deployment to a productions server (sans source code)`
-    * deploy/archive `- compress build archives may be stored here if version control is not being used`
     * deploy/assets `- misc external project graphics, audio, videos, etc`
     * deploy/css `- css files`
     * deploy/js `- javascript files`
