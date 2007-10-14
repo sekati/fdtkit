@@ -30,7 +30,7 @@ Assuming you have already installed [http://code.google.com/p/fdtkit/wiki/Eclips
   # Next open the Eclipse Ant panel: `"Window -> Show View -> Ant"`.
   # In the Ant panel press the `"Add Buildfiles"` button (small ant icon with a plus symbol).
   # Select `"Test Project -> build.xml"`, the buildfile will now appear in the Ant panel.
-  # Since you must run the Buildfile in the same JRE as the workspace: `"Run -> External Tools -> JRE -> Run in the same JRE as the workspace"`.
+  # Since you must run the Buildfile in the same JRE as the workspace, navigate to: `"Run -> External Tools -> Open External Tools Dialogue ... -> (select the tab) JRE -> (check the option) Run in the same JRE as the workspace"`.
   # You Buildfile is now configured and you may run any of the available tasks you wish on your project. You may expand the Buildfile to see all available tasks by clickin on the arrow to the left of the Buildfile project title. 
   # You may [http://ant.apache.org/manual/ create your own custom tasks] or use some of those already provided by FDTKit. The tasks you will most likely be interested in are: 
 
