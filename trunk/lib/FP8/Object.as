@@ -3,7 +3,7 @@
 // Object object
 //****************************************************************************
 
-intrinsic class Object
+dynamic intrinsic class Object
 {
 	static var prototype:Object;
 
