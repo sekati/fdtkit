@@ -2,6 +2,22 @@
  * @author ${user}
  */
 class ${enclosing_package_and_type} ${cursor}{
+}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Extend MovieClip Class" enabled="true" name="classe">class ${enclosing_package_and_type} extends MovieClip {
+
+	private var _this:MovieClip;
+
+	private function ${enclosing_type}() {
+		super();
+	}
+	
+	private function onLoad():Void {
+		configUI ();
+	}
+	
+	public function configUI():Void {
+		_this = this;
+		${cursor}
+	}
 }</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Create an extends MovieClip class" enabled="true" name="classExtends">class ${enclosing_package_and_type} extends MovieClip {
 	private var _this:MovieClip;
 	private function ${enclosing_type}() {
@@ -19,6 +35,32 @@ class ${enclosing_package_and_type} ${cursor}{
  * ${enclosing_type} Constructor
  */
 public function ${enclosing_type}() {
+	${cursor}
+}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Creates Constructor with Delegated UI Events" enabled="true" name="constructor_delegate">/**
+ * ${enclosing_type} Constructor
+ */
+public function ${enclosing_type}() {
+	${cursor}
+	// ui events
+	${instance}.onRollOver = ${instance}.onDragOver = Delegate.create(${origin}, _onRollOver);
+	${instance}.onRollOut = ${instance}.onDragOut = Delegate.create(${origin}, _onRollOut);
+	${instance}.onPress = Delegate.create(${origin}, _onPress);
+	${instance}.onRelease = ${instance}.onReleaseOutside = Delegate.create(${origin}, _onRelease);
+}
+
+private function _onRollOver():Void {
+	${cursor}
+}
+
+private function _onRollOut():Void {
+	${cursor}
+}
+
+private function _onPress():Void {
+	${cursor}
+}
+
+private function _onRelease():Void {
 	${cursor}
 }</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Private Constructor" enabled="true" name="constructor_private">/**
  * ${enclosing_type} Private Constructor
@@ -52,7 +94,7 @@ private function ${enclosing_type}() {
 		depth : Number, init : Object) : ${enclosing_type} {
 	var mc : MovieClip = container.attachMovie("${enclosing_package_and_type}", name, depth, init);	
 	return ${enclosing_type}(mc);
-}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Comment Description" enabled="true" name="desc">/**
+}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Delegated Method" enabled="true" name="delegate">${instance}.${event} = Delegate.create(${scope}, ${method});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Comment Description" enabled="true" name="desc">/**
  * ${cursor}
  */</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="do-while loop" enabled="true" id="com.pf.fdt.ui.editor.template.do" name="do">do {
 	${cursor}
@@ -76,10 +118,16 @@ private function ${enclosing_type}() {
  * @author ${user}
  * Copyright (C) ${year}  jason m horwitz, Sekat LLC. All Rights Reserved.
  * Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
- */</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Creates an empty if-else block" enabled="true" id="com.pf.fdt.ui.editor.template.ifel" name="ifel">if(${condition}) {
+ */</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Creates an empty if block" enabled="true" id="com.pf.fdt.ui.editor.template.ifel" name="if">if (${condition}) {
+	${cursor}
+}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Creates an empty if-else block" enabled="true" name="ifel">if (${condition}) {
 	${cursor}
 } else {
-	
+	${cursor}
+}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Creates an empty if-else-if block" enabled="true" name="ifelif">if (${condition0}) {
+	${cursor}
+} else if (${condition1}) {
+	${cursor}
 }</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="test type and cast" enabled="true" id="com.pf.fdt.ui.editor.template.instanceof" name="instanceof">if (${name} instanceof ${type}) {
 	var ${newName} : ${type} = ${type}(${name});
 	${cursor}
@@ -92,7 +140,11 @@ interface ${enclosing_package_and_type} ${cursor}{
 	${cursor}
 }</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Creates an MTASC public static main function" enabled="true" id="com.pf.fdt.ui.editor.template.smain" name="main">public static function main(container : MovieClip) : Void {
 	${cursor}
-}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Delegated onPress" enabled="true" name="onPress_delegate">${instance}.onPress = Delegate.create(${origin}, ${out_method});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Delegated onRelease" enabled="true" name="onRelease_delegate">${instance}.onRelease = ${instance}.onReleaseOutside = Delegate.create(${origin}, ${out_method});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Delegated onRollOut" enabled="true" name="onRollOut_delegate">${instance}.onRollOut = ${instance}.onDragOut = Delegate.create(${origin}, ${out_method});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Delegated onRollOver" enabled="true" name="onRollOver_delegate">${instance}.onRollOver = ${instance}.onDragOver = Delegate.create(${origin}, ${over_method});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Create a Singleton" enabled="true" name="singleton">	private static var _instance:${enclosing_type};
+}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Delegated events for UI Events" enabled="true" name="onDelegate">// ui events
+${instance}.onRollOver = ${instance}.onDragOver = Delegate.create(${origin}, ${over_method});
+${instance}.onRollOut = ${instance}.onDragOut = Delegate.create(${origin}, ${out_method});
+${instance}.onPress = Delegate.create(${origin}, ${press_method});
+${instance}.onRelease = ${instance}.onReleaseOutside = Delegate.create(${origin}, ${release_method});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Delegated onPress" enabled="true" name="onPress_delegate">${instance}.onPress = Delegate.create(${origin}, ${press_method});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Delegated onRelease" enabled="true" name="onRelease_delegate">${instance}.onRelease = ${instance}.onReleaseOutside = Delegate.create(${origin}, ${release_method});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Delegated onRollOut" enabled="true" name="onRollOut_delegate">${instance}.onRollOut = ${instance}.onDragOut = Delegate.create(${origin}, ${out_method});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Delegated onRollOver" enabled="true" name="onRollOver_delegate">${instance}.onRollOver = ${instance}.onDragOver = Delegate.create(${origin}, ${over_method});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Create a Singleton" enabled="true" name="singleton">	private static var _instance:${enclosing_type};
 
 	/**
 	 * Singleton Private Constructor.
