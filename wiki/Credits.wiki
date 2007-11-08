@@ -4,6 +4,6 @@
 
 FDTKit was built and is maintained by  [http://sekati.com Jason M Horwitz] [mailto:sekati@gmail.com <sekati@gmail.com>], thanks largely to the direct and indirect contributions via knowledge and code sharing of several friends, colleagues and other open source projects.
 
-== Notes to Project Members ==
+=== Notes to Project Members ===
 
 Upon contributing work to FDTKit you may [http://fdt.powerflasher.com/index.php?page=os apply to PowerFlashers for an FDT3 OS License] as a new project member.
