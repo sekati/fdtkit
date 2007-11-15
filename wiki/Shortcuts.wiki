@@ -26,7 +26,8 @@ _Note: `CTRL` should be replaced with `Command` for MacOS X_
 
 || *Generating*  || _description_  ||
 || CTRL+Space || Insert code template/auto complete code || 
-|| CTRL+SHIFT+O || Organize imports || 
+|| CTRL+SHIFT+O || Organize imports ||
+|| CTRL +SHIFT+F || Code Formatter ||
 
 || *Editing Single Files* || _description_  ||
 || ALT+UpArrow || Move line up || 
