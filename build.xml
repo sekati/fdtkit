@@ -77,7 +77,8 @@
 	
 	
 	<target name="document_as2api" description="run as2api to build documentation">
-		<exec executable="${as2api}" failonerror="true">
+		<exec dir="${as2api.dir}" executable="${ruby}" failonerror="true">
+			<arg line='${as2api.rb}'/>
 			<arg line='package-spec ${package}'/>
 			<arg line='--classpath ${src}'/>
 			<arg line='--output-dir ${docs}'/>
