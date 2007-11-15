@@ -3,6 +3,8 @@
 
 = Eclipse & FDT Shortcuts = 
 
+_Note: CTRL should be replaced with `Command` for MacOS X_
+
 || *Searching* || _description_ ||
 || CTRL+SHIFT+R || Find Resources ||
 || CTRL+H || Search in different files ||
