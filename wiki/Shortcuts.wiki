@@ -20,6 +20,7 @@
 || CTRL+L || Go to line || 
 || CTRL+U || Show type dependency || 
 || CTRL+O || Show quick outline || 
+|| CTRL+E || Show Quick Navigation between opened classes || 
 
 || *Generating*  || _description_  ||
 || CTRL+Space || Insert code template/auto complete code || 
