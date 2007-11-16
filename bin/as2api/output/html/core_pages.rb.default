@@ -694,15 +694,8 @@ class PackageIndexPage < BasicPage
 	    io.puts("    label=\"#{astype.unqualified_name}\",")
 	    io.puts("    URL=\"#{astype.unqualified_name}.html\",")
 	    io.puts("    tooltip=\"#{astype.qualified_name}\",")
-	    #io.puts("    fontname=\"Verdana-Italic\",") if astype.is_a?(ASInterface)
-	    io.puts("    fontname=\"Verdana\",")
-            io.puts("    fontsize=\"9\"")
-	    #io.puts("	 fontcolor=\"white\"")                      
-            io.puts("    color=\"#729b12\"")
-	    #io.puts("    shape=\"box\"")
+	    io.puts("    fontname=\"Times-Italic\",") if astype.is_a?(ASInterface)
 	    io.puts("    shape=\"record\"")
-	    #io.puts("    shape=\"ellipse\"")
-	    #io.puts("    style=\"filled\"")
 	    io.puts("  ];")
 	  end
 	  asclasses.each do |astype|
@@ -730,11 +723,8 @@ class PackageIndexPage < BasicPage
 	    io.puts("    label=\"#{astype.unqualified_name}\",")
 	    io.puts("    URL=\"#{astype.unqualified_name}.html\",")
 	    io.puts("    tooltip=\"#{astype.qualified_name}\",")
-	    io.puts("    fontname=\"Verdana-Italic\",") if astype.is_a?(ASInterface)
-	    io.puts("    fontsize=\"9\"")
-	    io.puts("    color=\"#2d5492\"")
+	    io.puts("    fontname=\"Times-Italic\",") if astype.is_a?(ASInterface)
 	    io.puts("    shape=\"record\"")
-	    #io.puts("    shape=\"ellipse\"")
 	    io.puts("  ];")
 	  end
 	  asinterfaces.each do |astype|
