@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************************************************
-		FDTKit Buildfile v1.5.1
+		FDTKit Buildfile v1.5.2
 		
 		@note	You must run this Buildfile in the same JRE as the workspace. To configure
 		        this: Run -> External Tools -> JRE -> Run in the same JRE as the workspace
@@ -17,7 +17,7 @@
 <project name="FDTKit Buildfile Template" default="TestMovie" basedir=".">
 
 	
-	<property file="build.fdtkit.properties"/>
+	<property file="/Applications/FlashBuilder/workspace/fdtkit/build.fdtkit.properties"/>
 	<property file="build.project.properties"/>
 	
 	
