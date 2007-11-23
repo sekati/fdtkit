@@ -1,50 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?><templates><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="onPress Delegated UI Method" enabled="true" name="_onPress">private function _onPress():Void {
+<?xml version="1.0" encoding="UTF-8"?><templates><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="onClick Event Handler" enabled="true" name="_onClick">protected function _onClick(e:MouseEvent):void {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="onDoubleClick Event Handler" enabled="true" name="_onDoubleClick">this.doubleClickEnabled = true;
+
+protected function _onDoubleClick(e:MouseEvent):void {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="onMouseDown Event Handler" enabled="true" name="_onMouseDown">protected function _onMouseDown(e:MouseEvent):void {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="onMouseMove Event Handler" enabled="true" name="_onMouseMove">protected function _onMouseMove(e:MouseEvent):void {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="onMouseOut Event Handler" enabled="true" name="_onMouseOut">protected function _onMouseOut(e:MouseEvent):void {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="onMouseOver Event Handler" enabled="true" name="_onMouseOver">protected function _onMouseOver(e:MouseEvent):void {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="onMouseUp Event Handler" enabled="true" name="_onMouseUp">protected function _onMouseUp(e:MouseEvent):void {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="onMouseWheel Event Handler" enabled="true" name="_onMouseWheel">protected function _onMouseWheel(e:MouseEvent):void {
+	${cursor}
+}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="onPress Delegated UI Method" enabled="true" name="_onPress">private function _onPress():Void {
 	${cursor}
 }</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="onRelease Delegated UI Method" enabled="true" name="_onRelease">private function _onRelease():Void {
 	${cursor}
 }</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="onRollOut Delegated UI Method" enabled="true" name="_onRollOut">private function _onRollOut():Void {
 	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="onRollOut Event Handler" enabled="true" name="_onRollOut">protected function _onRollOut(e:MouseEvent):void {
+	${cursor}
 }</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="onRollOver Delegated UI Method" enabled="true" name="_onRollOver">private function _onRollOver():Void {
 	${cursor}
-}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Nested CallBack Function" enabled="true" name="cb">var cb:Function = function():Void {
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="onRollOver Event Handler" enabled="true" name="_onRollOver">protected function _onRollOver(e:MouseEvent):void {
 	${cursor}
-};</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Creates an empty class" enabled="true" id="com.pf.fdt.ui.editor.template.class" name="class">/**
- * @author ${user}
- */
-class ${enclosing_package_and_type} ${cursor}{
-}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Extend MovieClip Class" enabled="true" name="classe">class ${enclosing_package_and_type} extends MovieClip {
-
-	private var _this:MovieClip;
-
-	private function ${enclosing_type}() {
-		super();
-	}
-	
-	private function onLoad():Void {
-		configUI ();
-	}
-	
-	public function configUI():Void {
-		_this = this;
-		${cursor}
-	}
-}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Create an extends MovieClip class" enabled="true" name="classExtends">class ${enclosing_package_and_type} extends MovieClip {
-	private var _this:MovieClip;
-	private function ${enclosing_type}() {
-	}
-	private function onLoad():Void {
-		configUI ();
-	}
-	public function configUI():Void {
-		_this = this;
-		${cursor}
-	}
-	//
-}
-// eof</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Creates Constructor for a class" enabled="true" id="com.pf.fdt.ui.editor.template.constructor" name="constructor">/**
- * ${enclosing_type} Constructor
- */
-public function ${enclosing_type}() {
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Add EventListener" enabled="true" name="addEventListener">addEventListener(${name}, ${handler});</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Add Mouse EventListener" enabled="true" name="addMouseEventListener">addEventListener(MouseEvent.${event_name}, ${event_handler});</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as2" deleted="false" description="Creates an empty class" enabled="true" id="com.powerflasher.fdt.ui.editor.template.as2.class" name="class">class ${enclosing_package_and_type} ${cursor}{
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Creates an empty class without an package declaration" enabled="true" id="com.powerflasher.fdt.ui.editor.template.class" name="class">class ${enclosing_type} ${cursor}{
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Internal Constant" enabled="true" name="const_internal">internal const ${name}:${type} = ${value};</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Internal Static Constant" enabled="true" name="const_internal_static">internal static const ${name}:${type} = ${value};</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Private Constant" enabled="true" name="const_private">private const ${name}:${type} = ${value};</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Private Static Constant" enabled="true" name="const_private_static">private static const ${name}:${type} = ${value};</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Protected Constant" enabled="true" name="const_protected">protected const ${name}:${type} = ${value};</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Protected Static Constant" enabled="true" name="const_protected_static">protected static const ${name}:${type} = ${value};</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Public Constant" enabled="true" name="const_public">public const ${name}:${type} = ${value};</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Public Static Constant" enabled="true" name="const_public_static">public static const ${name}:${type} = ${value};</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as2" deleted="false" description="Creates Constructor for a class" enabled="true" id="com.powerflasher.fdt.ui.editor.template.as2.constructor" name="constructor">public function ${enclosing_type}() {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Creates Constructor for a class" enabled="true" id="com.powerflasher.fdt.ui.editor.template.constructor" name="constructor">public function ${enclosing_type}() {
 	${cursor}
 }</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Creates Constructor with Delegated UI Events" enabled="true" name="constructor_delegate">/**
  * ${enclosing_type} Constructor
@@ -100,57 +88,127 @@ private function ${enclosing_type}() {
 	 */
 	 public static function get $$():${enclosing_type} {
 	 	return ${enclosing_type}.getInstance();	
-	 }</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="static create a component" enabled="true" id="com.pf.fdt.ui.editor.template.create" name="create">public static function create(container : MovieClip,name : String,
+	 }</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as2" deleted="false" description="static create a component" enabled="true" id="com.powerflasher.fdt.ui.editor.template.as2.create" name="create">public static function create(container : MovieClip,name : String,
 		depth : Number, init : Object) : ${enclosing_type} {
 	var mc : MovieClip = container.attachMovie("${enclosing_package_and_type}", name, depth, init);	
 	return ${enclosing_type}(mc);
 }</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Delegated Method" enabled="true" name="delegate">${instance}.${event} = Delegate.create(${scope}, ${method});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Comment Description" enabled="true" name="desc">/**
  * ${cursor}
- */</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="do-while loop" enabled="true" id="com.pf.fdt.ui.editor.template.do" name="do">do {
+ */</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="DispatchEvent Template" enabled="true" name="dispatchEvent">dispatchEvent(new Event(${name}, ${bubble}, ${cancellable}));</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as2" deleted="false" description="do-while loop" enabled="true" id="com.powerflasher.fdt.ui.editor.template.as2.do" name="do">do {
 	${cursor}
-} while (${condition});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Create a generic for loop" enabled="true" name="for">for (var i:Number=0; i &lt; ${cursor}; i++) {
-	
-}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Iterator over an array using enumeration" enabled="true" id="com.pf.fdt.ui.editor.template.foren" name="fore">for (var ${index} : String in ${array}) {
+} while (${condition});</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="do-while loop" enabled="true" id="com.powerflasher.fdt.ui.editor.template.do" name="do">do {
 	${cursor}
-}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Iterator over an array" enabled="true" id="com.pf.fdt.ui.editor.template.forit" name="fori">for (var ${index} : Number = 0; ${index} &lt; ${array}.length; ${index}++) {
+} while (${condition});</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as2" deleted="false" description="Iterator over an array using enumeration" enabled="true" id="com.powerflasher.fdt.ui.editor.template.as2.foren" name="fore">for (var ${index} : String in ${array}) {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Iterator over keys of an array using enumeration" enabled="true" id="com.powerflasher.fdt.ui.editor.template.foren" name="fore">for (var ${index} : String in ${array}) {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Iterator over value of an array using enumeration" enabled="true" id="com.powerflasher.fdt.ui.editor.template.foreach" name="foreach">for each (var ${index} : ${type} in ${array}) {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as2" deleted="false" description="Iterator over an array" enabled="true" id="com.powerflasher.fdt.ui.editor.template.as2.forit" name="fori">for (var ${index}:Number = 0; ${index} &lt; ${array}.length; ${index}++) {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Iterator over an array" enabled="true" id="com.powerflasher.fdt.ui.editor.template.forit" name="fori">for (var ${index}:Number = 0; ${index} &lt; ${array}.length; ${index}++) {
+	${cursor}
+}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Anonymous Function" enabled="true" name="function_anonymous">var ${fvar}:Function = function ${method_name}(${method_params}):${return_type} {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Anonymous Function" enabled="true" name="function_anonymous">var ${fvar}:Function = function ${method_name}(${method_params}):${return_type} {
+	${cursor}
+}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Getter Function" enabled="true" name="function_get">public function get ${pseudo_property}():${return_type} {
+	return ${cursor};
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Getter Function" enabled="true" name="function_get">public function get ${pseudo_property}():${return_type} {
+	return ${cursor};
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Getter Setter Function Pair" enabled="true" name="function_get_set">public function get ${pseudo_property}():${return_type} {
+	return ${cursor};
+}
+
+public function set ${pseudo_property}(val:${value_type}):void {
+	${property} = ${val};
+}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Getter Setter Function Pair" enabled="true" name="function_get_set">public function get ${pseudo_property}():${return_type} {
+	return ${cursor};
+}
+
+public function set ${pseudo_property}(val:${value_type}):Void {
+	${property} = ${val};
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Internal Function" enabled="true" name="function_internal">internal function ${method_name}(${method_params}):${return_type} {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Internal Function" enabled="true" name="function_internal_override">internal override function ${method_name}(${method_params}):${return_type} {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Internal Static Function" enabled="true" name="function_internal_static">internal static function ${method_name}(${method_params}):${return_type} {
 	${cursor}
 }</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Private Function" enabled="true" name="function_private">private function ${method_name}(${method_params}):${return_type} {
 	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Private Function" enabled="true" name="function_private">private function ${method_name}(${method_params}):${return_type} {
+	${cursor}
 }</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Private Static Function" enabled="true" name="function_private_static">private static function ${method_name}(${method_params}):${return_type} {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Private Static Function" enabled="true" name="function_private_static">private static function ${method_name}(${method_params}):${return_type} {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Protected Function" enabled="true" name="function_protected">protected function ${method_name}(${method_params}):${return_type} {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Protected Override Function" enabled="true" name="function_protected_override">protected override function ${method_name}(${method_params}):${return_type} {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Protected Static Function" enabled="true" name="function_protected_static">protected static function ${method_name}(${method_params}):${return_type} {
 	${cursor}
 }</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Public Function" enabled="true" name="function_public">public function ${method_name}(${method_params}):${return_type} {
 	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Public Function" enabled="true" name="function_public">public function ${method_name}(${method_params}):${return_type} {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Public Override Function" enabled="true" name="function_public_override">public override function ${method_name}(${method_params}):${return_type} {
+	${cursor}
 }</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Public Static Function" enabled="true" name="function_public_static">public static function ${method_name}(${method_params}):${return_type} {
 	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Public Static Function" enabled="true" name="function_public_static">public static function ${method_name}(${method_params}):${return_type} {
+	${cursor}
+}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Setter Function" enabled="true" name="function_set">public function set ${pseudo_property}(val:${value_type}):Void {
+	${property} = ${val};
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Setter Function" enabled="true" name="function_set">public function set ${pseudo_property}(val:${value_type}):void {
+	${property} = ${val};
 }</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Comment Header" enabled="true" name="header">/**
  * ${enclosing_package_and_type}
  * @version 1.0.0
  * @author ${user}
  * Copyright (C) ${year}  jason m horwitz, Sekat LLC. All Rights Reserved.
  * Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
- */</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Creates an empty if block" enabled="true" id="com.pf.fdt.ui.editor.template.ifel" name="if">if (${condition}) {
+ */</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Creates an empty if block" enabled="true" name="if">if (${condition}) {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Creates an empty if block" enabled="true" name="if">if (${condition}) {
 	${cursor}
 }</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Creates an empty if-else block" enabled="true" name="ifel">if (${condition}) {
 	${cursor}
 } else {
 	${cursor}
-}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Creates an empty if-else-if block" enabled="true" name="ifelif">if (${condition0}) {
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Creates an empty if-else block" enabled="true" name="ifel">if (${condition}) {
+	${cursor}
+} else {
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Creates an empty if-else-if block" enabled="true" name="ifelif">if (${condition0}) {
 	${cursor}
 } else if (${condition1}) {
 	${cursor}
-}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="test type and cast" enabled="true" id="com.pf.fdt.ui.editor.template.instanceof" name="instanceof">if (${name} instanceof ${type}) {
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as2" deleted="false" description="test type and cast" enabled="true" id="com.powerflasher.fdt.ui.editor.template.as2.instanceof" name="instanceof">if (${name} instanceof ${type}) {
 	var ${newName} : ${type} = ${type}(${name});
 	${cursor}
-}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Creates an empty interface" enabled="true" id="com.pf.fdt.ui.editor.template.interface" name="interface">/**
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as2" deleted="false" description="Creates an empty interface" enabled="true" id="com.powerflasher.fdt.ui.editor.template.as2.interface" name="interface">/**
  * @author ${user}
  */
 interface ${enclosing_package_and_type} ${cursor}{
-}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="lazy create an instance" enabled="true" id="com.pf.fdt.ui.editor.template.lazy" name="lazy">if (${name} == null) {
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Creates an empty interface" enabled="true" id="com.powerflasher.fdt.ui.editor.template.interface" name="interface">/**
+ * @author ${user}
+ */
+interface ${enclosing_type} ${cursor}{
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="test type and cast" enabled="true" id="com.powerflasher.fdt.ui.editor.template.is" name="is">if (${name} is ${type}) {
+	var ${newName} : ${type} = ${type}(${name});
+	${cursor}
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as2" deleted="false" description="lazy create an instance" enabled="true" id="com.powerflasher.fdt.ui.editor.template.as2.lazy" name="lazy">if (${name} == null) {
 	${name} = new ${type}(${arguments});
 	${cursor}
-}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Creates an MTASC public static main function" enabled="true" id="com.pf.fdt.ui.editor.template.smain" name="main">public static function main(container : MovieClip) : Void {
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="lazy create an instance" enabled="true" id="com.powerflasher.fdt.ui.editor.template.lazy" name="lazy">if (${name} == null) {
+	${name} = new ${type}(${arguments});
 	${cursor}
-}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Delegated onPress" enabled="true" name="onPress_delegate">${instance}.onPress = Delegate.create(${origin}, ${press_method});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Delegated onRelease" enabled="true" name="onRelease_delegate">${instance}.onRelease = ${instance}.onReleaseOutside = Delegate.create(${origin}, ${release_method});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Delegated onRollOut" enabled="true" name="onRollOut_delegate">${instance}.onRollOut = ${instance}.onDragOut = Delegate.create(${origin}, ${out_method});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Delegated onRollOver" enabled="true" name="onRollOver_delegate">${instance}.onRollOver = ${instance}.onDragOver = Delegate.create(${origin}, ${over_method});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Create a Singleton" enabled="true" name="singleton">	private static var _instance:${enclosing_type};
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as2" deleted="false" description="Creates an MTASC public static main function" enabled="true" id="com.powerflasher.fdt.ui.editor.template.as2.smain" name="main">public static function main(container : MovieClip) : Void {
+	${cursor}
+}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Delegated onPress" enabled="true" name="onPress_delegate">${instance}.onPress = Delegate.create(${origin}, ${press_method});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Delegated onRelease" enabled="true" name="onRelease_delegate">${instance}.onRelease = ${instance}.onReleaseOutside = Delegate.create(${origin}, ${release_method});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Delegated onRollOut" enabled="true" name="onRollOut_delegate">${instance}.onRollOut = ${instance}.onDragOut = Delegate.create(${origin}, ${out_method});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Delegated onRollOver" enabled="true" name="onRollOver_delegate">${instance}.onRollOver = ${instance}.onDragOver = Delegate.create(${origin}, ${over_method});</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Creates an empty package declaration" enabled="true" id="com.powerflasher.fdt.ui.editor.template.package" name="package">package ${enclosing_package} {
+	${cursor}
+}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Create a Singleton" enabled="true" name="singleton">	private static var _instance:${enclosing_type};
 
 	/**
 	 * Singleton Private Constructor.
@@ -176,7 +234,7 @@ interface ${enclosing_package_and_type} ${cursor}{
 	 	return ${enclosing_type}.getInstance();	
 	 }
 	
-	${cursor}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Creates complete Singleton" enabled="true" id="com.pf.fdt.ui.editor.template.singleton" name="singletonClass">/**
+	${cursor}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as2" deleted="false" description="Creates complete Singleton" enabled="true" id="com.powerflasher.fdt.ui.editor.template.as2.singleton" name="singleton">/**
  * @author ${user}
  */
 class ${enclosing_package_and_type} {
@@ -195,11 +253,13 @@ class ${enclosing_package_and_type} {
 	private function ${enclosing_type}() {
 		${cursor}
 	}
-}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="trace current method" enabled="true" id="com.pf.fdt.ui.editor.template.systrace" name="systrace">trace("${enclosing_type}.${enclosing_method}(${enclosing_method_arguments})");</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="creates toString function" enabled="true" id="com.pf.fdt.ui.editor.template.toString" name="toString">public function toString() : String {
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as2" deleted="false" description="trace current method" enabled="true" id="com.powerflasher.fdt.ui.editor.template.as2.systrace" name="systrace">trace("${enclosing_type}.${enclosing_method}(${enclosing_method_arguments})");</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="trace current method" enabled="true" name="systrace">trace("${enclosing_type}.${enclosing_method}(${enclosing_method_arguments})");</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as2" deleted="false" description="creates toString function" enabled="true" id="com.powerflasher.fdt.ui.editor.template.as2.toString" name="toString">public function toString() : String {
 	return "${enclosing_package_and_type}";
-}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Trace for the lazy man" enabled="true" name="trace">trace(${string});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Comment Usage" enabled="true" name="usage">/**
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="creates toString function" enabled="true" id="com.powerflasher.fdt.ui.editor.template.toString" name="toString">override public function toString() : String {
+	return "${enclosing_package_and_type}";
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Trace for the lazy man" enabled="true" name="trace">trace(${string});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Trace for the lazy man" enabled="true" name="trace">trace(${string});</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Comment Usage" enabled="true" name="usage">/**
  * 
  * {@code Usage:
  * ${cursor}
  * }
- */</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Private Var" enabled="true" name="var_private">private var ${name}:${type};</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Private Var (Initialized)" enabled="true" name="var_private_initialized">private var ${name}:${type} = ${value};</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Private Static Var (Initialized)" enabled="true" name="var_private_static_initialized">private static var ${name}:${type} = ${value};</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Public Var" enabled="true" name="var_public">public var ${name}:${type};</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Public Var (Initialized)" enabled="true" name="var_public_initialized">public var ${name}:${type} = ${value};</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Public Static Var (Initialized)" enabled="true" name="var_public_static_initialized">public static var ${name}:${type} = ${value};</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Ternary Var" enabled="true" name="var_ternary">${accessor} var ${name}:${type} = (${condition}) ? ${then_value} : ${else_value};</template></templates>
+ */</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Internal Var" enabled="true" name="var_internal">internal var ${name}:${type};</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Internal Var (Initialized)" enabled="true" name="var_internal_initialized">internal var ${name}:${type} = ${value};</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Internal Static Var (Initialized)" enabled="true" name="var_internal_static_initialized">internal static var ${name}:${type} = ${value};</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Private Var" enabled="true" name="var_private">private var ${name}:${type};</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Private Var" enabled="true" name="var_private">private var ${name}:${type};</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Private Var (Initialized)" enabled="true" name="var_private_initialized">private var ${name}:${type} = ${value};</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Private Var (Initialized)" enabled="true" name="var_private_initialized">private var ${name}:${type} = ${value};</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Private Static Var (Initialized)" enabled="true" name="var_private_static_initialized">private static var ${name}:${type} = ${value};</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Private Static Var (Initialized)" enabled="true" name="var_private_static_initialized">private static var ${name}:${type} = ${value};</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Protected Var" enabled="true" name="var_protected">protected var ${name}:${type};</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Protected Var (Initialized)" enabled="true" name="var_protected_initialized">protected var ${name}:${type} = ${value};</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Protected Static Var (Initialized)" enabled="true" name="var_protected_static_initialized">protected static var ${name}:${type} = ${value};</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Public Var" enabled="true" name="var_public">public var ${name}:${type};</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Public Var" enabled="true" name="var_public">public var ${name}:${type};</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Public Var (Initialized)" enabled="true" name="var_public_initialized">public var ${name}:${type} = ${value};</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Public Var (Initialized)" enabled="true" name="var_public_initialized">public var ${name}:${type} = ${value};</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Public Static Var (Initialized)" enabled="true" name="var_public_static_initialized">public static var ${name}:${type} = ${value};</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Public Static Var (Initialized)" enabled="true" name="var_public_static_initialized">public static var ${name}:${type} = ${value};</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Ternary Var" enabled="true" name="var_ternary">${accessor} var ${name}:${type} = (${condition}) ? ${then_value} : ${else_value};</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Ternary Var" enabled="true" name="var_ternary">${accessor} var ${name}:${type} = (${condition}) ? ${then_value} : ${else_value};</template></templates>
