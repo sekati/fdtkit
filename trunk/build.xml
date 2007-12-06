@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************************************************
-		FDTKit Buildfile v1.5.2
+		FDTKit Buildfile v1.5.3
 		
 		@note	You must run this Buildfile in the same JRE as the workspace. To configure
 		        this: Run -> External Tools -> JRE -> Run in the same JRE as the workspace
@@ -60,6 +60,8 @@
     	<echo message="Creating: ${lib_comps}"/>
     	<mkdir dir="${lib_fonts}"/>
     	<echo message="Creating: ${lib_fonts}"/>
+    	<mkdir dir="${lib_ia}"/>
+    	<echo message="Creating: ${lib_ia}"/>    	
     	<mkdir dir="${tests}"/>
     	<echo message="Creating: ${tests}"/>
     	<mkdir dir="${src}"/>
