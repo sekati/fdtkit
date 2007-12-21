@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************************************************
-		FDTKit Buildfile v1.5.3
+		FDTKit Buildfile v1.5.5
 		
 		@note	You must run this Buildfile in the same JRE as the workspace. To configure
 		        this: Run -> External Tools -> JRE -> Run in the same JRE as the workspace
@@ -18,7 +18,7 @@
 
 	
 	<property file="/Applications/FlashBuilder/workspace/fdtkit/build.fdtkit.properties"/>
-	<property file="build.project.properties"/>
+	<property file="build/build.project.properties"/>
 	
 	
     <target name="batch_document" description="batch run a set of documentation tasks">
@@ -36,7 +36,9 @@
 	
     <target name="create_project_structure" description="create a new project structure">
     	<echo message="Creating Project Structure ..."/>
-		<mkdir dir="${deploy}"/>
+		<mkdir dir="${build}"/>
+    	<echo message="Creating: ${build}"/>
+    	<mkdir dir="${deploy}"/>
     	<echo message="Creating: ${deploy}"/>
     	<mkdir dir="${deploy_archive}"/>
     	<echo message="Creating: ${deploy_archive}"/>
