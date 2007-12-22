@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************************************************
-		FDTKit Buildfile v1.5.5
+		FDTKit Buildfile v2.0.0
 		
-		@note	You must run this Buildfile in the same JRE as the workspace. To configure
-		        this: Run -> External Tools -> JRE -> Run in the same JRE as the workspace
-				
-		@setup	This Buildfile is currently scoped for OSX,Eclipse, Subclipse, FDT. If 
-		        you would like to use it on Windows simply install Cygwin and adjust 
-		        the necessary path properties.
-			     
-		May 22, 2007 - jason m horwitz | Sekati LLC | sekati.com
+		Dec 21, 2007 - jason m horwitz | Sekati LLC | sekati.com
 		
 		Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
+		
+		@see	http://fdtkit.googlecode.com/
+		@see	http://sasapi.googlecode.com/
+		@see	http://inde.googlecode.com/
+		
+		@note	While targeted for INDE & FDTKit this Buildfile and its dependencies may
+				be refactored for generic Eclipse & FDT3 use. If you would like to use it 
+				on Windows simply install Cygwin and adjust the necessary path properties.
+		
+		@info	You must run this Buildfile in the same JRE as the workspace. To configure
+		        this: Run -> External Tools -> JRE -> Run in the same JRE as the workspace
+		        
      ************************************************************************************* -->
 
 <project name="FDTKit Buildfile Template" default="TestMovie" basedir=".">
 
 	
-	<property file="/Applications/FlashBuilder/workspace/fdtkit/build.fdtkit.properties"/>
-	<property file="build/build.project.properties"/>
+	<property file="/Applications/FlashBuilder/workspace/fdtkit/build/fdtkit.properties"/>
+	<property file="build/project.properties"/>
 	
 	
     <target name="batch_document" description="batch run a set of documentation tasks">
@@ -32,13 +37,13 @@
     	<antcall target="build_project"/>
         <antcall target="deploy_project"/>
     </target>
-	
+
 	
     <target name="create_project_structure" description="create a new project structure">
     	<echo message="Creating Project Structure ..."/>
 		<mkdir dir="${build}"/>
-    	<echo message="Creating: ${build}"/>
-    	<mkdir dir="${deploy}"/>
+    	<echo message="Creating: ${build}"/>    	
+		<mkdir dir="${deploy}"/>
     	<echo message="Creating: ${deploy}"/>
     	<mkdir dir="${deploy_archive}"/>
     	<echo message="Creating: ${deploy_archive}"/>
@@ -84,6 +89,7 @@
 		<exec dir="${as2api.dir}" executable="${ruby}" failonerror="true">
 			<arg line='${as2api.rb}'/>
 			<arg line='package-spec ${package}'/>
+			<arg line='package-spec ${package2}'/>
 			<arg line='--classpath ${src}'/>
 			<arg line='--output-dir ${docs}'/>
 			<arg line='--title ${ant.project.name}'/>
@@ -110,14 +116,9 @@
 
 	
 	<target name="document_asdoc" description="run asdoc to build documentation for AS3 classes">
-		<exec executable="${asdoc}" failonerror="false">
-			<arg line = "-source-path ${src}" />
-			<arg line='-doc-sources ${src}/com/'/>
-			<arg line="-window-title 'Documentation'"/>
-			<arg line='-output ${docs}'/>
-			<arg line="-templates-path '${flex2}/asdoc/templates'"/>
+		<exec executable="${asdoc}" failonerror="true">
+			<arg line = "-source-path ${src} -doc-sources ${src}/com/ -window-title 'Documentation' -output ${docs} -templates-path '${flex2}/asdoc/templates'" />
 		</exec>
-		<copydir src="${flex2}/asdoc/templates/images" dest="${docs}/images"/>
 	</target>
 	
 	
@@ -145,8 +146,8 @@
 			<arg value="${deploy_dest_user}@${deploy_dest_host}:${deploy_dest_path}"/>
 		</exec>
 	</target>
-		
-
+	
+	
 	<target name="build_project" description="compile all fla's in src dir with Flash IDE">
 	    <fdt.flashCompile>
 	        <fileset dir="${src}">
@@ -181,16 +182,6 @@
             <arg line="-v -version 8 -mx -swf"/>
             <arg line="${target_swf} ${main_class}"/>
         </exec>
-    </target>	
-	
-
-	<target name="launch_external" description="launch target swf in FlashPlayer">
-    	<fdt.extSWFViewer.startSWF file="${target_swf}" width="${movie.width}" height="${movie.height}" flashvars="${movie.flashvars}"/>
-    </target>
-    		
-
-    <target name="launch_fdt" description="launch target swf in FDT viewer">
-    	<fdt.viewDocument location="${target_swf}"/>
     </target>
 	
 	
