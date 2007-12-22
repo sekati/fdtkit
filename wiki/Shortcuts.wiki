@@ -17,7 +17,7 @@ _Note: `CTRL` should be replaced with `Command` for MacOS X_
 || F2 || Select class in flash explorer || 
 || F3 || Show property/method declaration/implementation || 
 || F4 || Show type declaration || 
-|| F5 || Show superclass || 
+|| F5 || Show superclass implementation || 
 || CTRL+T || Show type hierarchy || 
 || CTRL+R || Search references || 
 || CTRL+L || Go to line || 
@@ -25,9 +25,6 @@ _Note: `CTRL` should be replaced with `Command` for MacOS X_
 || CTRL+O || Show quick outline || 
 || CTRL+E || Show Quick Navigation between opened classes || 
 || CTRL +SHIFT+R || Open Resource ||
-|| F3 || Open Declaration ||
-|| F4 || Open Type Declaration ||
-|| F5 || Open Super Implementation ||
 
 || *Generating*  || _description_  ||
 || CTRL+Space || Insert code template/auto complete code || 
