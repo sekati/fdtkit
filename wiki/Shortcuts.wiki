@@ -6,6 +6,7 @@
 _Note: `CTRL` should be replaced with `Command` for MacOS X_
 
 || *Searching* || _description_ ||
+|| CTRL+SHIFT+L || Show all available Hotkeys ||
 || CTRL+SHIFT+R || Find Resources ||
 || CTRL+H || Search in different files ||
 || CTRL+F || Search in one file (CTRL+K/CTRL+SHIFT+K: next/previous) ||
@@ -23,6 +24,10 @@ _Note: `CTRL` should be replaced with `Command` for MacOS X_
 || CTRL+U || Show type dependency || 
 || CTRL+O || Show quick outline || 
 || CTRL+E || Show Quick Navigation between opened classes || 
+|| CTRL +SHIFT+R || Open Resource ||
+|| F3 || Open Declaration ||
+|| F4 || Open Type Declaration ||
+|| F5 || Open Super Implementation ||
 
 || *Generating*  || _description_  ||
 || CTRL+Space || Insert code template/auto complete code || 
