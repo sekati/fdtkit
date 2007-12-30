@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************************************************
-		FDTKit Buildfile v2.0.0
+		FDTKit Buildfile v2.0.1
 		
-		Dec 21, 2007 - jason m horwitz | Sekati LLC | sekati.com
+		Dec 30, 2007 - jason m horwitz | Sekati LLC | sekati.com
 		
 		Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
 		
@@ -116,9 +116,14 @@
 
 	
 	<target name="document_asdoc" description="run asdoc to build documentation for AS3 classes">
-		<exec executable="${asdoc}" failonerror="true">
-			<arg line = "-source-path ${src} -doc-sources ${src}/com/ -window-title 'Documentation' -output ${docs} -templates-path '${flex2}/asdoc/templates'" />
+		<exec executable="${asdoc}" failonerror="false">
+			<arg line = "-source-path ${src}" />
+			<arg line='-doc-sources ${src}/com/'/>
+			<arg line="-window-title 'Documentation'"/>
+			<arg line='-output ${docs}'/>
+			<arg line="-templates-path '${flex2}/asdoc/templates'"/>
 		</exec>
+		<copydir src="${flex2}/asdoc/templates/images" dest="${docs}/images"/>
 	</target>
 	
 	
