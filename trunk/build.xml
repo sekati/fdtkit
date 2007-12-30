@@ -122,6 +122,11 @@
 			<arg line="-window-title 'Documentation'"/>
 			<arg line='-output ${docs}'/>
 			<arg line="-templates-path '${flex2}/asdoc/templates'"/>
+			<arg line="-keep-xml"/>
+			<!--
+			<arg line="-skip-xsl"/>
+			<arg line="-show-actionscript-warnings=false"/>
+			-->
 		</exec>
 		<copydir src="${flex2}/asdoc/templates/images" dest="${docs}/images"/>
 	</target>
