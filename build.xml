@@ -22,7 +22,7 @@
 <project name="FDTKit Buildfile Template" default="TestMovie" basedir=".">
 
 	
-	<property file="/Applications/FlashBuilder/workspace/fdtkit/build/fdtkit.properties"/>
+	<property file="/Applications/inde/workspace/fdtkit/build/fdtkit.properties"/>
 	<property file="build/project.properties"/>
 	
 	
