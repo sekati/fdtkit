@@ -101,30 +101,72 @@ private function _onRelease():Void {
  */
 private function ${enclosing_type}() {
 	${cursor}
-}</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Singleton Private Constructor and Accessor" enabled="true" name="constructor_singleton">	private static var _instance:${enclosing_type};
-
-	/**
-	 * Singleton Private Constructor.
-	 */
-	private function ${enclosing_type}() {
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Singleton Constructor and Accessor" enabled="true" name="constructor_singleton">private static var _instance:${enclosing_type};
+		
+/**
+ * ${enclosing_type} Singleton Constructor
+ * @param $$ SingletonEnforcer - internal to the AS file; the param prevents external instantiation without error.
+ */
+public function ${enclosing_type}( $$ : SingletonEnforcer = null) {
+	if (!$$) {
+		throw new ArgumentError( "${enclosing_type} is a Singleton and may only be accessed via its accessor methods: 'getInstance()' or '$$'." );	
 	}
+}
 
-	/**
- 	 * Singleton Accessor.
-	 * @return ${enclosing_type}
-	 */
-	public static function getInstance():${enclosing_type} {
-		if (!_instance) _instance = new ${enclosing_type}();
+/**
+ * Singleton Accessor
+ * @return ${enclosing_type}
+ */
+public static function getInstance() : ${enclosing_type} {
+	if( _instance == null ) _instance = new ${enclosing_type}( new SingletonEnforcer( ) );
 		return _instance;
-	}
+}
+
+/**
+ * Shorthand singleton accessor getter
+ * @return ${enclosing_type}
+ */
+public static function get $$() : ${enclosing_type} {
+	return ${enclosing_type}.getInstance( );	
+}
+
+// !!! MOVE THIS ENFORCER CLASS IS *OUTSIDE* OF THE PACKAGE BODY !!!
+		
+/**
+ * Internal class is accessible only to this AS file
+ * and is used as a constructor param to enforce
+ * proper Singleton behavior.
+ */
+internal class SingletonEnforcer {
+}		</template><template autoinsert="true" context="com.pf.fdt.ui.editor.template.actionscript" deleted="false" description="Singleton Private Constructor and Accessor" enabled="true" name="constructor_singleton">private static var _instance:${enclosing_type};
+
+/**
+ * Singleton Private Constructor.
+ */
+private function ${enclosing_type}() {
+}
+
+/**
+ * Singleton Accessor.
+ * @return ${enclosing_type}
+ */
+public static function getInstance():${enclosing_type} {
+	if (!_instance) _instance = new ${enclosing_type}();
+	return _instance;
+}
 	
-	/**
-	 * Shorthand Singleton accessor getter.
-	 * @return ${enclosing_type}
-	 */
-	 public static function get $$():${enclosing_type} {
-	 	return ${enclosing_type}.getInstance();	
-	 }</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as2" deleted="false" description="static create a component" enabled="true" id="com.powerflasher.fdt.ui.editor.template.as2.create" name="create">public static function create(container : MovieClip,name : String,
+/**
+ * Shorthand Singleton accessor getter.
+ * @return ${enclosing_type}
+ */
+public static function get $$():${enclosing_type} {
+	return ${enclosing_type}.getInstance();	
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as3" deleted="false" description="Creates Constructor for a static class to prevent instantiation" enabled="true" name="constructor_static">/**
+ * ${enclosing_type} Static Constructor
+ */
+public function ${enclosing_type}() {
+	throw new Error( "${enclosing_type} is a static class and cannot be instantiated." );
+}</template><template autoinsert="true" context="com.powerflasher.fdt.ui.editor.template.as2" deleted="false" description="static create a component" enabled="true" id="com.powerflasher.fdt.ui.editor.template.as2.create" name="create">public static function create(container : MovieClip,name : String,
 		depth : Number, init : Object) : ${enclosing_type} {
 	var mc : MovieClip = container.attachMovie("${enclosing_package_and_type}", name, depth, init);	
 	return ${enclosing_type}(mc);
