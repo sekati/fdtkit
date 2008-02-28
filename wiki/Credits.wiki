@@ -2,7 +2,7 @@
 
 = Credits =
 
-FDTKit was built and is maintained by  [http://sekati.com Jason M Horwitz] [mailto:sekati@gmail.com <sekati@gmail.com>], thanks largely to the direct and indirect contributions via knowledge and code sharing of several friends, colleagues and other open source projects.
+FDTKit was built and is maintained by  [http://sekati.com Jason M Horwitz], thanks largely to the direct and indirect contributions via knowledge and code sharing of several friends, colleagues and other open source projects.
 
 === Notes to Project Members ===
 
