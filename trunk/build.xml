@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************************************************
-		FDTKit Buildfile v3.0.0
+		FDTKit Buildfile v3.1.0
 		
-		Dec 30, 2007 - jason m horwitz | Sekati LLC | sekati.com
+		Mar 7, 2008 - jason m horwitz | Sekati LLC | sekati.com
 		
 		Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
 		
@@ -18,9 +18,9 @@
 		        this: Run -> External Tools -> JRE -> Run in the same JRE as the workspace
 		        
 		@usage	1. Copy this build.xml file to the root of your project directory.
-				2. Copy the build/project.properties file to project/build
+				2. Copy the build/build.properties file to project/build
 				3. Edit the build.xml project name attribute to reflect your project name.
-				4. Edit the project/build/build.properties file if you wish to automatedeployment or documentation.
+				4. Edit the project/build/build.properties file to reflect your project settings.
 				5. Add the build file to eclipse via the Ant panel view.
 				6. Run the "create_project_structure" task to create a generic project structure. 
 		        
@@ -28,9 +28,71 @@
 
 <project name="FDTKit Buildfile Template" default="TestMovie" basedir=".">
 
+
+	<!-- Definitions -->
+	<property file="build/fdtkit.properties"/>	
+	<property file="build/build.properties"/>
 	
-	<property file="/Applications/inde/workspace/fdtkit/build/fdtkit.properties"/>
-	<property file="build/project.properties"/>
+	
+	<!-- Resources -->
+    <taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
+
+	
+	<!-- Sanity Check -->
+	<target name="verify_properties">
+		<fail unless="FDTKIT_HOME">The "FDTKIT_HOME" property must be set in build/build.properties.</fail>
+	</target>
+	
+	
+	
+    <target name="create_structure" description="Create a new project directory structure.">
+    	<echo message="Creating Project Structure ..."/>
+		<mkdir dir="${build.dir}"/>
+    	<echo message="Creating: ${build.dir}"/>    	
+		<mkdir dir="${deploy.dir}"/>
+    	<echo message="Creating: ${deploy.dir}"/>
+    	<mkdir dir="${deploy.admin.dir}"/>
+    	<echo message="Creating: ${deploy.admin.dir}"/>
+    	<mkdir dir="${deploy.assets.dir}"/>
+    	<echo message="Creating: ${deploy.assets.dir}"/>
+    	<mkdir dir="${deploy.css.dir}"/>
+    	<echo message="Creating: ${deploy.css.dir}"/>
+    	<mkdir dir="${deploy.js.dir}"/>
+    	<echo message="Creating: ${deploy.js.dir}"/>
+    	<mkdir dir="${deploy.php.dir}"/>
+    	<echo message="Creating: ${deploy.php.dir}"/>
+    	<mkdir dir="${deploy.xml.dir}"/>
+    	<echo message="Creating: ${deploy.xml.dir}"/>    	
+    	<mkdir dir="${docs.dir}"/>
+    	<echo message="Creating: ${docs.dir}"/>
+    	<mkdir dir="${lib.dir}"/>
+    	<echo message="Creating: ${lib.dir}"/>
+    	<mkdir dir="${lib.assets.dir}"/>
+    	<echo message="Creating: ${lib.assets.dir}"/>
+    	<mkdir dir="${lib.comps.dir}"/>
+    	<echo message="Creating: ${lib.comps.dir}"/>
+    	<mkdir dir="${lib.fonts.dir}"/>
+    	<echo message="Creating: ${lib.fonts.dir}"/>
+    	<mkdir dir="${lib.ia.dir}"/>
+    	<echo message="Creating: ${lib.ia.dir}"/>    	
+    	<mkdir dir="${tests.dir}"/>
+    	<echo message="Creating: ${tests.dir}"/>
+    	<mkdir dir="${src.dir}"/>
+    	<echo message="Creating: ${src.dir}"/>
+    	<echo message="Project Structure Created Successfully! Now refresh your project in Eclipse (right click on the project and select 'Refresh')"/>
+    </target>		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- OLD BELOW -->
 	
 	
     <target name="batch_document" description="batch run a set of documentation tasks">
