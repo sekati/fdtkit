@@ -26,25 +26,246 @@
 		        
      ************************************************************************************* -->
 
-<project name="FDTKit Buildfile Template" default="TestMovie" basedir=".">
+<project name="FDTKit Buildfile Template" default="build" basedir=".">
 
 
-	<!-- Definitions -->
+	<!-- DEFINITIONS -->
 	<property file="build/fdtkit.properties"/>	
 	<property file="build/build.properties"/>
 	
 	
-	<!-- Resources -->
+	<!-- RESOURCE -->
     <taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
 
 	
-	<!-- Sanity Check -->
+	<!-- SANITY CHECK -->
 	<target name="verify_properties">
 		<fail unless="FDTKIT_HOME">The "FDTKIT_HOME" property must be set in build/build.properties.</fail>
 	</target>
 	
 	
-    <target name="create_structure" description="Create a new project directory structure.">
+	<!-- AUTOMATION -->
+	
+    <target name="batch_document" description="batch run a set of documentation tasks">
+        <antcall target="sloc_count"/>
+        <antcall target="doc_asdoc"/>
+        <antcall target="deploy_documentation"/>
+    </target>
+	
+	
+    <target name="batch_project" description="batch run a set of project tasks">
+    	<antcall target="build_project"/>
+        <antcall target="deploy_project"/>
+    </target>	
+
+	
+	<!-- COMPILE & BUILD -->	
+	
+	
+	<target name="build" description="compile current opened fla in src dir with Flash IDE (clear's ASO cache and saves FLA)">
+		<echo message="|*|*|*| class cache clear | source save | compiler start |*|*|*|"/>
+		<exec executable="open"><arg line="${compile.jsfl}"/></exec>
+	</target>
+		
+	
+	<target name="compile_as" description="compile actionscript application with mxmlc" depends="verify_properties">
+		<mxmlc 
+			file="${project.class}" 
+			output="${project.swf}" 
+			compiler.as3="${compiler.as3}"
+			compiler.optimize="${compiler.optimize}"
+			compiler.strict="${compiler.strict}"
+			actionscript-file-encoding="${compiler.encoding}"
+			keep-generated-actionscript="${compiler.keep-generated-as}"
+			incremental="${compiler.incremental}"
+			benchmark="${compiler.benchmark}"
+			debug="${compiler.debug}"
+			use-network="${compiler.use-network}"
+			warnings="${compiler.warnings}"
+			default-background-color="${project.bgcolor}">
+		    <default-size width="${project.width}" height="${project.height}" />
+			<metadata title="${project.meta.title}" description="${project.meta.description}" date="${project.meta.date}">
+				<contributor name="${project.meta.contributor}" />
+				<creator name="${project.meta.creator}" />
+				<publisher name="${project.meta.publisher}" />
+			</metadata>
+			<compiler.external-library-path dir="${lib.dir}">
+			    <include name="**/*.swc" />
+			    <exclude name="not-this-one.swc" />
+			</compiler.external-library-path>			
+		</mxmlc>
+	</target>
+	
+
+	<target name="generate_wrapper">
+	        <html-wrapper 
+	              title="${ant.project.name}"
+	              width="${project.wrapper.width}"
+	              height="${project.wrapper.height}"
+	              bgcolor="${project.wrapper.bgcolor}"
+	              application="${project.wrapper.name}"
+	              swf="${app.swf}"
+	              version-major="${project.version.major}"
+	              version-minor="${project.version.minor}"
+	              version-revision="${project.version.revision}"
+	              history="${project.wrapper.history}"
+	              template="express-installation"
+	              output="${project.wrapper.output.dir}"/>
+	    </target>	
+	
+
+	<target name="compile_fla" description="compile fla application with Flash IDE">
+		<fdt.flashCompile>
+	        <fileset dir="${src.dir}">
+	            <include name="${target.fla}"/>
+	        </fileset>
+	    </fdt.flashCompile>		
+	</target>
+	
+	
+	<target name="compile_fla_lib" description="compile all fla's in lib dir with Flash IDE">
+	    <fdt.flashCompile>
+	        <fileset dir="${lib.dir}">
+	        	 <include name="*.fla"/>
+	        </fileset>
+	    </fdt.flashCompile>
+	</target>
+	
+	
+	<target name="compile_fla_src" description="compile all fla's in src dir with Flash IDE">
+	    <fdt.flashCompile>
+	        <fileset dir="${src.dir}">
+	        	 <include name="*.fla"/>
+	        </fileset>
+	    </fdt.flashCompile>
+	</target>	
+	
+	
+	<target name="compile_fla_tests" description="compile all fla's in tests dir with Flash IDE">
+		 <fdt.flashCompile failonerror="false">
+		   <fileset dir="${tests.dir}">
+		    <include name="*.fla"/>
+		   </fileset>
+		  </fdt.flashCompile>
+	</target>
+	
+	<!--
+
+	<target name="compile_basic" description="compile the actionscript application Document Class with mxmlc/comppc">
+		<exec executable="${mxmlc.exe}" failonerror="true">
+			<arg line ="-output ${app.swf}" />
+			<arg line ="${app.class}" />
+		</exec>
+	</target>
+	-->
+	
+	
+	<!-- DOCUMENTATION -->
+
+	
+	<target name="doc_asdoc" description="Run asdoc to build documentation for AS3 projects." depends="verify_properties">
+		<exec executable="${asdoc.exe}" failonerror="false">
+			<arg line ="-source-path ${src.dir}" />
+			<arg line='-source-path ${project.extra.lib}'/>
+			<arg line='-doc-sources ${src.dir}/.'/>
+			<arg line="-templates-path '${flex3sdk}/asdoc/templates'"/>
+			<arg line="-main-title ${doc.asdoc.maintitle}"/>
+			<arg line="-window-title ${doc.asdoc.windowtitle}"/>
+		    <arg line="-footer ${doc.asdoc.footer}"/>
+			<arg line='-output ${docs.dir}'/>
+			<arg line='-exclude-classes=${doc.asdoc.excludes}'/>
+		</exec>
+		<copy todir="${docs.dir}/images">
+		  <fileset dir="${flex3sdk}/asdoc/templates/images" excludes="**/.svn"/>
+		</copy>
+	</target>
+				
+				
+	<target name="doc_graph" description="Run asdoc to build xml for graphviz dot diagrams." depends="verify_properties">
+		<exec executable="${asdoc.exe}" failonerror="false">
+			<arg line = "-source-path ${src.dir}" />
+			<arg line='-doc-sources ${src.dir}'/>
+			<arg line='-output ${docs.dir}/graph'/>
+			<arg line="-keep-xml"/>
+			<arg line="-skip-xsl"/>
+			<arg line="-show-actionscript-warnings=false"/>
+			<arg line="-templates-path '${flex3sdk}/asdoc/templates'"/>
+		</exec>
+	</target>
+	
+	
+	<target name="doc_as2api" description="Run AS2API to build documentation." depends="verify_properties">
+		<exec dir="${as2api.dir}" executable="${ruby.exe}" failonerror="true">
+			<arg line='${as2api.rb}'/>
+			<arg line='package-spec ${doc.as2api.package}'/>
+			<arg line='--classpath ${src.dir}'/>
+			<arg line='--output-dir ${docs.dir}'/>
+			<arg line='--title ${doc.asdoc.maintitle}'/>
+			<arg line='--sources'/>
+			<arg line='--progress'/>
+        	<arg line='--draw-diagram'/>
+        	<arg line='--dot-exe ${dot.exe}'/>
+		</exec>
+		<copy file="${fdtkit.template}/as2api/doc_sekati_index.html" tofile="${docs.dir}/index.html" overwrite="true"  failonerror="true"/>
+		<copy file="${fdtkit.template}/as2api/doc_sekati_style.css" tofile="${docs.dir}/style.css" overwrite="true"  failonerror="true"/>
+		<copy file="${fdtkit.template}/as2api/doc_sekati_unnatural.css" tofile="${docs.dir}/unnatural.css" overwrite="true"  failonerror="true"/>
+	</target>	
+	
+	
+	<target name="doc_clean" description="Remove all old documentation files." depends="verify_properties">
+		<defaultexcludes echo="true"/>
+		<delete includeemptydirs="true">
+			<fileset dir="${docs.dir}" includes="**/*" excludes="**/.svn"/>
+		</delete>	
+	</target>			
+	
+	
+	<!-- DEPLOYMENT-->	
+	
+	
+	<target name="deploy_project" description="rsync+ssh project to target server." depends="verify_properties">
+		<exec executable="${rsync.exe}">
+			<arg value="-ave ssh"/>
+			<arg value="--delete"/>
+			<arg value="--force"/>
+			<arg value="--progress"/>
+			<arg value="--exclude=${deploy.local.excludes}"/>
+			<arg value="${deploy.local.dir}"/>
+			<arg value="${deploy.remote.user}@${deploy.remote.host}:${deploy.remote.dir}"/>
+		</exec>
+	</target>	
+	
+	
+	<target name="deploy_documentation" description="rsync+ssh documentation to target server." depends="verify_properties">
+		<exec executable="${rsync.exe}">
+			<arg value="-ave ssh"/>
+			<arg value="--delete"/>
+			<arg value="--force"/>
+			<arg value="--progress"/>
+			<arg value="--exclude=${deploy.local.excludes}"/>
+			<arg value="${deploy.local.doc.dir}"/>
+			<arg value="${deploy.remote.user}@${deploy.remote.host}:${deploy.remote.doc.dir}"/>
+		</exec>
+	</target>
+
+	
+	<target name="deploy_backend" description="rsync+ssh project backend to target server." depends="verify_properties">
+		<exec executable="${rsync.exe}">
+			<arg value="-ave ssh"/>
+			<arg value="--delete"/>
+			<arg value="--force"/>
+			<arg value="--progress"/>
+			<arg value="--exclude=${deploy.local.excludes}"/>
+			<arg value="${deploy.local.backend.dir}"/>
+			<arg value="${deploy.remote.user}@${deploy.remote.host}:${deploy.remote.backend.dir}"/>
+		</exec>
+	</target>	
+	
+	
+	<!-- SUPPORT -->
+	
+	
+    <target name="create_structure" description="Create a new project directory structure." depends="verify_properties">
     	<echo message="Creating Project Structure ..."/>
 		<mkdir dir="${build.dir}"/>
     	<echo message="Creating: ${build.dir}"/>    	
@@ -79,198 +300,12 @@
     	<mkdir dir="${src.dir}"/>
     	<echo message="Creating: ${src.dir}"/>
     	<echo message="Project Structure Created Successfully! Now refresh your project in Eclipse (right click on the project and select 'Refresh')"/>
-    </target>		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<!-- OLD BELOW -->
-	
-	
-    <target name="batch_document" description="batch run a set of documentation tasks">
-        <antcall target="sloc_count"/>
-        <antcall target="document_as2api"/>
-        <antcall target="deploy_documentation"/>
     </target>
 	
 	
-    <target name="batch_project" description="batch run a set of project tasks">
-    	<antcall target="build_project"/>
-        <antcall target="deploy_project"/>
-    </target>
-
-	
-    <target name="create_project_structure" description="create a new project structure">
-    	<echo message="Creating Project Structure ..."/>
-		<mkdir dir="${build}"/>
-    	<echo message="Creating: ${build}"/>    	
-		<mkdir dir="${deploy}"/>
-    	<echo message="Creating: ${deploy}"/>
-    	<mkdir dir="${deploy_archive}"/>
-    	<echo message="Creating: ${deploy_archive}"/>
-    	<mkdir dir="${deploy_assets}"/>
-    	<echo message="Creating: ${deploy_assets}"/>
-    	<mkdir dir="${deploy_css}"/>
-    	<echo message="Creating: ${deploy_css}"/>
-    	<mkdir dir="${deploy_js}"/>
-    	<echo message="Creating: ${deploy_js}"/>
-    	<mkdir dir="${deploy_php}"/>
-    	<echo message="Creating: ${deploy_php}"/>
-    	<mkdir dir="${deploy_xml}"/>
-    	<echo message="Creating: ${deploy_xml}"/>    	
-    	<mkdir dir="${docs}"/>
-    	<echo message="Creating: ${docs}"/>
-    	<mkdir dir="${lib}"/>
-    	<echo message="Creating: ${lib}"/>
-    	<mkdir dir="${lib_assets}"/>
-    	<echo message="Creating: ${lib_assets}"/>
-    	<mkdir dir="${lib_comps}"/>
-    	<echo message="Creating: ${lib_comps}"/>
-    	<mkdir dir="${lib_fonts}"/>
-    	<echo message="Creating: ${lib_fonts}"/>
-    	<mkdir dir="${lib_ia}"/>
-    	<echo message="Creating: ${lib_ia}"/>    	
-    	<mkdir dir="${tests}"/>
-    	<echo message="Creating: ${tests}"/>
-    	<mkdir dir="${src}"/>
-    	<echo message="Creating: ${src}"/>
-    	<echo message="Project Structure Created Successfully! Now refresh your project in Eclipse (right click on the project and select 'Refresh')"/>
-    </target>	
-	
-	
-	<target name="document_cleanup" description="remove all old documentation files">
-		<defaultexcludes echo="true"/>
-		<delete includeemptydirs="true">
-			<fileset dir="${docs}" includes="**/*" excludes="**/.svn"/>
-		</delete>	
-	</target>
-	
-	
-	<target name="document_as2api" description="run as2api to build documentation">
-		<exec dir="${as2api.dir}" executable="${ruby}" failonerror="true">
-			<arg line='${as2api.rb}'/>
-			<arg line='package-spec ${package}'/>
-			<arg line='package-spec ${package2}'/>
-			<arg line='--classpath ${src}'/>
-			<arg line='--output-dir ${docs}'/>
-			<arg line='--title ${ant.project.name}'/>
-			<arg line='--sources'/>
-			<arg line='--progress'/>
-        	<arg line='--draw-diagram'/>
-        	<arg line='--dot-exe ${dot}'/>
-		</exec>
-		<copy file="${ftemplates}/as2api/doc_sekati_index.html" tofile="${docs}/index.html" overwrite="true"  failonerror="true"/>
-		<copy file="${ftemplates}/as2api/doc_sekati_style.css" tofile="${docs}/style.css" overwrite="true"  failonerror="true"/>
-		<copy file="${ftemplates}/as2api/doc_sekati_unnatural.css" tofile="${docs}/unnatural.css" overwrite="true"  failonerror="true"/>
-	</target>
-	
-	
-	<target name="document_naturaldocs" description="run naturaldocs to build documentation">		
-		<exec executable="${naturaldocs}" failonerror="true">
-			<arg line='-i ${src}'/>
-			<arg line='-o FramedHTML ${docs}'/>
-			<arg line='-p ${docs}/_ndp'/>
-			<arg line='-s Small'/>
-			<arg line='-r'/>
-		</exec>
-	</target>	
-
-	
-	<target name="document_asdoc" description="run asdoc to build documentation for AS3 classes">
-		<exec executable="${asdoc}" failonerror="false">
-			<arg line = "-source-path ${src}" />
-			<arg line='-doc-sources ${src}/com/'/>
-			<arg line="-window-title 'Documentation'"/>
-			<arg line='-output ${docs}'/>
-			<arg line="-templates-path '${flex2}/asdoc/templates'"/>
-			<arg line="-keep-xml"/>
-			<!--
-			<arg line="-skip-xsl"/>
-			<arg line="-show-actionscript-warnings=false"/>
-			-->
-		</exec>
-		<copydir src="${flex2}/asdoc/templates/images" dest="${docs}/images"/>
-	</target>
-	
-	
-	<target name="deploy_documentation" description="rsync+ssh documentation to target server">
-		<exec executable="${rsync}">
-			<arg value="-ave ssh"/>
-			<arg value="--delete"/>
-			<arg value="--force"/>
-			<arg value="--progress"/>
-			<arg value="--exclude=${deploy_excludes}"/>
-			<arg value="${deploy_source_docpath}"/>
-			<arg value="${deploy_dest_user}@${deploy_dest_host}:${deploy_dest_docpath}"/>
-		</exec>
+	<target name="sloc_count" description="count source lines of code." depends="verify_properties">
+		<exec executable="${sloccount.sh}" />
 	</target>		
-	
 
-	<target name="deploy_project" description="rsync+ssh project to target server">
-		<exec executable="${rsync}">
-			<arg value="-ave ssh"/>
-			<arg value="--delete"/>
-			<arg value="--force"/>
-			<arg value="--progress"/>
-			<arg value="--exclude=${deploy_excludes}"/>
-			<arg value="${deploy_source_path}"/>
-			<arg value="${deploy_dest_user}@${deploy_dest_host}:${deploy_dest_path}"/>
-		</exec>
-	</target>
-	
-	
-	<target name="build_project" description="compile all fla's in src dir with Flash IDE">
-	    <fdt.flashCompile>
-	        <fileset dir="${src}">
-	        	 <include name="*.fla"/>
-	        </fileset>
-	    </fdt.flashCompile>
-	</target>
-	
-
-	<target name="build_target" description="build target fla with Flash IDE">
-		<fdt.flashCompile>
-	        <fileset dir="${src}">
-	            <include name="${target_fla}"/>
-	        </fileset>
-	    </fdt.flashCompile>		
-	</target>
-	
-
-	<target name="build_tests" description="compile all fla's in tests dir with Flash IDE">
-		 <fdt.flashCompile failonerror="false">
-		   <fileset dir="${tests}">
-		    <include name="*.fla"/>
-		   </fileset>
-		  </fdt.flashCompile>
-	</target>	
-
-
-    <target name="build_mtasc" description="compile target fla in src dir with mtasc">
-        <exec executable="${mtasc}" dir="." failonerror="true">
-            <arg line="-cp ${corelib}"/>
-            <arg line="-cp ${classpath}"/>
-            <arg line="-v -version 8 -mx -swf"/>
-            <arg line="${target_swf} ${main_class}"/>
-        </exec>
-    </target>
-	
-	
-	<target name="sloc_count" description="count source lines of code">
-		<exec executable="${sloccount}" />
-	</target>	
-
-	
-	<target name="TestMovie" description="compile current opened fla in src dir with Flash IDE (clear's ASO cache and saves FLA)">
-		<echo message="@@@@@ Clearing ASO Cache, saving FLA, and executing TestMovie() in IDE @@@@@"/>
-		<exec executable="open"><arg line="${compile.jsfl}"/></exec>
-	</target>	
 	
 </project>
