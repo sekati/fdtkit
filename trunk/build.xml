@@ -44,7 +44,6 @@
 	</target>
 	
 	
-	
     <target name="create_structure" description="Create a new project directory structure.">
     	<echo message="Creating Project Structure ..."/>
 		<mkdir dir="${build.dir}"/>
