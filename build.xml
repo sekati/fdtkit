@@ -62,13 +62,19 @@
 	<!-- COMPILE & BUILD -->	
 	
 	
-	<target name="build" description="compile current opened fla in src dir with Flash IDE (clear's ASO cache and saves FLA)">
+	<target name="build" description="Compile current opened fla in src dir with Flash IDE (clear's ASO cache and saves FLA)" depends="verify_properties">
+		<echo message="|*|*|*| class cache clear | source save | compiler start |*|*|*|"/>
+		<exec executable="open"><arg line="${compile.jsfl}"/></exec>
+	</target>
+	
+
+	<target name="compile" description="Compile current opened fla in src dir with Flash IDE (clear's ASO cache and saves FLA)" depends="verify_properties">
 		<echo message="|*|*|*| class cache clear | source save | compiler start |*|*|*|"/>
 		<exec executable="open"><arg line="${compile.jsfl}"/></exec>
 	</target>
 		
 	
-	<target name="compile_as" description="compile actionscript application with mxmlc" depends="verify_properties">
+	<target name="compile_as" description="Compile actionscript application with mxmlc" depends="verify_properties">
 		<mxmlc 
 			file="${project.class}" 
 			output="${project.swf}" 
@@ -89,41 +95,54 @@
 				<creator name="${project.meta.creator}" />
 				<publisher name="${project.meta.publisher}" />
 			</metadata>
+			<!-- adjust this area to fit your library needs -->
+			<!--
 			<compiler.external-library-path dir="${lib.dir}">
 			    <include name="**/*.swc" />
 			    <exclude name="not-this-one.swc" />
-			</compiler.external-library-path>			
+			</compiler.external-library-path>
+			-->			
 		</mxmlc>
 	</target>
 	
 
-	<target name="generate_wrapper">
-	        <html-wrapper 
-	              title="${ant.project.name}"
-	              width="${project.wrapper.width}"
-	              height="${project.wrapper.height}"
-	              bgcolor="${project.wrapper.bgcolor}"
-	              application="${project.wrapper.name}"
-	              swf="${app.swf}"
-	              version-major="${project.version.major}"
-	              version-minor="${project.version.minor}"
-	              version-revision="${project.version.revision}"
-	              history="${project.wrapper.history}"
-	              template="express-installation"
-	              output="${project.wrapper.output.dir}"/>
-	    </target>	
+	<target name="generate_wrapper" description="Generate an HTML wrapper for SWF." depends="verify_properties">
+	        <html-wrapper
+	        	title="${ant.project.name}"
+				width="${project.wrapper.width}"
+				height="${project.wrapper.height}"
+				bgcolor="${project.wrapper.bgcolor}"
+				application="${project.wrapper.name}"
+				swf="${app.swf}"
+	        	version-major="${project.version.major}"
+	        	version-minor="${project.version.minor}"
+	        	version-revision="${project.version.revision}"
+				history="${project.wrapper.history}"
+				template="${project.wrapper.template}"
+				output="${project.wrapper.output.dir}"
+	        />
+	</target>
+	
+	
+	<target name="browser_preview" description="View the results of the generated wrapper in browser." depends="verify_properties">
+		<exec executable="${browser}" spawn="true">
+			<arg line="${browser.args}"/>
+			<arg line="file:///${tests.dir}"/>
+			<!--<arg line='${project.wrapper.output.dir}/index.html'/>-->
+		</exec>	
+	</target>	
 	
 
-	<target name="compile_fla" description="compile fla application with Flash IDE">
+	<target name="compile_fla" description="Compile fla application with Flash IDE" depends="verify_properties">
 		<fdt.flashCompile>
 	        <fileset dir="${src.dir}">
-	            <include name="${target.fla}"/>
+	            <include name="${project.fla}"/>
 	        </fileset>
 	    </fdt.flashCompile>		
 	</target>
 	
 	
-	<target name="compile_fla_lib" description="compile all fla's in lib dir with Flash IDE">
+	<target name="compile_fla_lib" description="Compile all fla's in lib dir with Flash IDE" depends="verify_properties">
 	    <fdt.flashCompile>
 	        <fileset dir="${lib.dir}">
 	        	 <include name="*.fla"/>
@@ -132,7 +151,7 @@
 	</target>
 	
 	
-	<target name="compile_fla_src" description="compile all fla's in src dir with Flash IDE">
+	<target name="compile_fla_src" description="compile all fla's in src dir with Flash IDE" depends="verify_properties">
 	    <fdt.flashCompile>
 	        <fileset dir="${src.dir}">
 	        	 <include name="*.fla"/>
@@ -141,7 +160,7 @@
 	</target>	
 	
 	
-	<target name="compile_fla_tests" description="compile all fla's in tests dir with Flash IDE">
+	<target name="compile_fla_tests" description="compile all fla's in tests dir with Flash IDE" depends="verify_properties">
 		 <fdt.flashCompile failonerror="false">
 		   <fileset dir="${tests.dir}">
 		    <include name="*.fla"/>
@@ -149,15 +168,23 @@
 		  </fdt.flashCompile>
 	</target>
 	
-	<!--
-
-	<target name="compile_basic" description="compile the actionscript application Document Class with mxmlc/comppc">
+	
+    <target name="compile_mtasc" description="Basic compile AS2 project with mtasc" depends="verify_properties">
+        <exec executable="${mtasc.exe}" dir="." failonerror="true">
+            <arg line="-cp ${mtasc.corelib}"/>
+            <arg line="-cp ${mtasc.classpath}"/>
+            <arg line="-v -version ${mtasc.target_player} -mx -swf"/>
+            <arg line="${project.swf} ${project.class}"/>
+        </exec>
+    </target>
+	
+	
+	<target name="compile_mxmlc" description="Basic compile AS3 project with mxmlc" depends="verify_properties">
 		<exec executable="${mxmlc.exe}" failonerror="true">
-			<arg line ="-output ${app.swf}" />
-			<arg line ="${app.class}" />
+			<arg line ="-output ${project.swf}" />
+			<arg line ="${project.class}" />
 		</exec>
 	</target>
-	-->
 	
 	
 	<!-- DOCUMENTATION -->
