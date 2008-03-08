@@ -68,9 +68,10 @@
 	</target>
 	
 
-	<target name="compile" description="Compile current opened fla in src dir with Flash IDE (clear's ASO cache and saves FLA)" depends="verify_properties">
-		<echo message="|*|*|*| class cache clear | source save | compiler start |*|*|*|"/>
-		<exec executable="open"><arg line="${compile.jsfl}"/></exec>
+	<target name="compile" description="mxmlc compile, generate wrapper, browser preview" depends="verify_properties">
+		<antcall target="compile_as"/>
+		<antcall target="generate_wrapper"/>
+		<antcall target="browser_preview"/>
 	</target>
 		
 	
