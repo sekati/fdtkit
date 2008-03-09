@@ -240,7 +240,7 @@
 	
 	<target name="preview-player" description="View the project.swf in the debug Flash Player">
 		<echo>FDTKit Player Preview -> ${player.args}: ${project.swf}</echo>
-		<exec executable="${swfviewer.exe}" spawn="true">
+		<exec executable="${swfviewer.exe}" spawn="false">
 			<arg line="${flashplayer.exe}"/>
 			<arg line="${project.swf}"/>
 		</exec>
