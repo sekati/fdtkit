@@ -277,7 +277,7 @@
 	<target name="doc-asdoc" description="Run asdoc to build documentation for AS3 projects.">
 		<exec executable="${asdoc.exe}" failonerror="false">
 			<arg line ="-source-path ${src.dir}" />
-			<arg line='-source-path ${project.linked.lib}'/>
+			<arg line='-source-path ${project.lib.linked}'/>
 			<arg line='-doc-sources ${src.dir}/.'/>
 			<arg line="-templates-path '${flex3sdk}/asdoc/templates'"/>
 			<arg line="-main-title ${doc.asdoc.maintitle}"/>
