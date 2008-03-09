@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************************************************
-		FDTKit Buildfile v3.1.5
+		FDTKit Buildfile v3.2.1
 		
 		Mar 9, 2008 - jason m horwitz | Sekati LLC | sekati.com
 		
@@ -22,6 +22,11 @@
 				5. Edit the build.xml "build" target to point to the appropriate compile antcall.
 				6. Add the build file to eclipse via the Ant panel view.
 				7. Run the "create_project_structure" task to create a generic project structure. 
+		        
+		@warn	If using the "player-preview" task to preview the compiled swf in the debug
+				player you will need to add your workspace as an allowed location in the flash
+				security preference panel (which will pop up) and make sure compiler.use-network
+				is set false. 			        
 		        
      ************************************************************************************* -->
 

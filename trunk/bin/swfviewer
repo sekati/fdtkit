@@ -49,4 +49,6 @@ fi
 
 open -a "$PLAYER" "$SWF"
 echo "---new build---" > $FLASHLOG
+
+# disabled until Ant Console bug can be resolved.
 #tail -n 0 -f "$FLASHLOG"
