@@ -42,9 +42,8 @@
     <taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
 		
 		
-
 	<!-- **************************************************************** 
-		 CUSTOMIZE THE DEFAULT BUILD TARGET TO YOUR PROJECT 
+		 CUSTOMIZE BEGINS 
 		 **************************************************************** -->
 	
 	
@@ -64,7 +63,7 @@
 		
 		<!-- PREVIEW OPTION -->
 		
-		<antcall target="preview-wrapper"/>
+		<antcall target="preview-browser"/>
 		
 		<!--
 		- SELECT A PREVIEW OPTION FROM THE LIST BELOW -
@@ -73,6 +72,11 @@
 		<antcall target="preview-wrapper"/>
 		-->
 	</target>
+	
+	
+	<!-- **************************************************************** 
+		 CUSTOMIZE ENDS
+		 **************************************************************** -->	
 	
 	
 	<!-- BUILD AUTOMATION -->
