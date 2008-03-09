@@ -47,6 +47,6 @@ fi
 
 # Launch player and tail log
 
-open -n -a "$PLAYER" "$SWF"
+open -a "$PLAYER" "$SWF"
 echo "---new build---" > $FLASHLOG
 tail -n 0 -f "$FLASHLOG"
