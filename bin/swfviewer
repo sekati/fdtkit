@@ -49,4 +49,4 @@ fi
 
 open -a "$PLAYER" "$SWF"
 echo "---new build---" > $FLASHLOG
-tail -n 0 -f "$FLASHLOG"
+#tail -n 0 -f "$FLASHLOG"

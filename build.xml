@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************************************************
-		FDTKit Buildfile v3.1.1
+		FDTKit Buildfile v3.1.5
 		
 		Mar 9, 2008 - jason m horwitz | Sekati LLC | sekati.com
 		
@@ -16,7 +16,7 @@
 		        this: Run -> External Tools -> JRE -> Run in the same JRE as the workspace
 		        
 		@usage	1. Copy build.xml file to your project root directory.
-				2. Copy build/build.properties & build/fdt.properties file to project/build
+				2. Copy build/build.properties file to your project/build directory.
 				3. Edit the build.xml project name attribute to reflect your project name.
 				4. Edit the project/build/build.properties file to reflect your project settings.
 				5. Edit the build.xml "build" target to point to the appropriate compile antcall.
@@ -29,7 +29,7 @@
 
 
 	<!-- DEFINITIONS -->
-	<property file="build/default.properties"/>	
+	<property file="/Applications/inde/workspace/fdtkit/build/default.properties"/>	
 	<property file="build/build.properties"/>
 	
 	
@@ -58,7 +58,7 @@
 	<!-- CORE COMPILATION, BUILD TARGETS -->	
 	
 
-	<target name="compile-flex" description="mxmlc compile, generate wrapper, browser preview">
+	<target name="compile-flex" description="mxmlc compile and preview">
 		<antcall target="compile-mxmlc-advanced">
 			<param name="compiler.debug" value="false"/>
 		</antcall>
@@ -66,7 +66,7 @@
 	</target>
 	
 		
-	<target name="compile-flex-debug" description="mxmlc debug compile, generate wrapper, browser preview">
+	<target name="compile-flex-debug" description="mxmlc debug compile and preview">
 		<antcall target="compile-mxmlc-advanced">
 			<param name="compiler.debug" value="true"/>
 		</antcall>
@@ -169,7 +169,7 @@
 	<!-- private: do not call directly -->
 	<target name="preview-player" description="View the compile results in the player.">
 		<!--<echo>FDTKit Player Preview -> ${player.args}: ${project.swf}</echo>-->
-		<exec executable="${swfviewer.exe}">
+		<exec executable="${swfviewer.exe}" spawn="true">
 			<arg line="${flashplayer.exe}"/>
 			<arg line="${project.swf}"/>
 		</exec>
