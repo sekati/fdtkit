@@ -29,7 +29,7 @@
 
 
 	<!-- DEFINITIONS -->
-	<property file="build/fdtkit.properties"/>	
+	<property file="build/default.properties"/>	
 	<property file="build/build.properties"/>
 	
 	
