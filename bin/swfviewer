@@ -1,0 +1,52 @@
+#!/bin/sh
+####################################################################################
+# FDTKit SWFViewer - v.1.0.0 - jason m horwitz | sekati [ dot ] com
+# Copyright (C) 2008  jason m horwitz, Sekat LLC. All Rights Reserved.
+# Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
+#
+# This script checks if mm.cfg has flashlog.txt enabled & configures it if it is not
+# Accepts player & swf arguments and tails the flashlog output.
+#
+# @see http://fdtkit.googlecode.com
+# @see http://inde.googlecode.com
+#
+# @usage ./fdtkitSWFViewer /path/to/flashplayer path/to/your.swf
+#
+####################################################################################
+PLAYER=$1
+SWF=$2
+USER=`whoami`
+
+MMCFG="/Library/Application Support/Macromedia/mm.cfg"
+FLASHLOG="/Users/$USER/Library/Preferences/Macromedia/Flash Player/Logs/flashlog.txt"
+
+ERRORENABLE="ErrorReportingEnable=1"
+TRACEENABLE="TraceOutputFileEnable=1"
+
+HEAD="-= FDTKit | SWFViewer =-"
+SEP="----------------------------------------------"
+
+echo "$SEP"
+echo "$HEAD"
+echo "$SEP"
+
+# Test mm.cfg settings
+
+TEST=`cat "$MMCFG" | grep "$TRACEENABLE" | wc -l | sed 's/^[ \t]*//'`
+if [ "$TEST" = "0" ]; then
+	echo "Your mm.cfg is not properly configured for trace output: repairing now ..."
+	echo "$ERRORENABLE" > $MMCFG
+	echo "$TRACEENABLE" >> $MMCFG
+fi
+
+# Make sure flashlog exists or bail
+
+if [ -e $FLASHLOG ]; then
+	touch $FLASHLOG
+fi
+
+# Launch player and tail log
+
+open -n -a "$PLAYER" "$SWF"
+echo "---new build---" > $FLASHLOG
+tail -n 0 -f "$FLASHLOG"

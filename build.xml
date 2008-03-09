@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************************************************
-		FDTKit Buildfile v3.1.0
+		FDTKit Buildfile v3.1.1
 		
-		Mar 7, 2008 - jason m horwitz | Sekati LLC | sekati.com
+		Mar 9, 2008 - jason m horwitz | Sekati LLC | sekati.com
 		
 		Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
 		
@@ -10,19 +10,18 @@
 		@see	http://sasapi.googlecode.com/
 		@see	http://inde.googlecode.com/
 		
-		@note	While targeted for INDE & FDTKit this Buildfile and its dependencies may
-				be refactored for generic Eclipse & FDT3 use. If you would like to use it 
-				on Windows simply install Cygwin and adjust the necessary path properties.
+		@note	Targeted for INDE/FDTKit this Buildfile can be used in standard Eclipse/FDT.
 		
-		@info	You must run this Buildfile in the same JRE as the workspace. To configure
+		@info	You *must* run this Buildfile in the same JRE as the workspace. To configure
 		        this: Run -> External Tools -> JRE -> Run in the same JRE as the workspace
 		        
-		@usage	1. Copy this build.xml file to the root of your project directory.
-				2. Copy the build/build.properties file to project/build
+		@usage	1. Copy build.xml file to your project root directory.
+				2. Copy build/build.properties & build/fdt.properties file to project/build
 				3. Edit the build.xml project name attribute to reflect your project name.
 				4. Edit the project/build/build.properties file to reflect your project settings.
-				5. Add the build file to eclipse via the Ant panel view.
-				6. Run the "create_project_structure" task to create a generic project structure. 
+				5. Edit the build.xml "build" target to point to the appropriate compile antcall.
+				6. Add the build file to eclipse via the Ant panel view.
+				7. Run the "create_project_structure" task to create a generic project structure. 
 		        
      ************************************************************************************* -->
 
@@ -39,43 +38,76 @@
 
 	
 	<!-- SANITY CHECK -->
-	<target name="verify_properties">
+	<target name="verify-properties">
 		<fail unless="FDTKIT_HOME">The "FDTKIT_HOME" property must be set in build/build.properties.</fail>
+	</target>
+		
+		
+	<!-- DEFAULT TARGET: Customize call to your main project build -->
+	
+	<target name="build" description="Default project build target." depends="verify-properties">
+		<antcall target="compile-flex"/>
+		<!--
+		<antcall target="compile-flex-debug"/>
+		<antcall target="compile-swc"/>
+		<antcall target="compile-flash"/>
+		-->
+	</target>	
+	
+	
+	<!-- CORE COMPILATION, BUILD TARGETS -->	
+	
+
+	<target name="compile-flex" description="mxmlc compile, generate wrapper, browser preview" depends="verify-properties">
+		<antcall target="compile-mxmlc-advanced">
+			<param name="compiler.debug" value="false"/>
+		</antcall>
+		<antcall target="preview-player"/>
+	</target>
+	
+		
+	<target name="compile-flex-debug" description="mxmlc debug compile, generate wrapper, browser preview" depends="verify-properties">
+		<antcall target="compile-mxmlc-advanced">
+			<param name="compiler.debug" value="true"/>
+		</antcall>
+		<antcall target="preview-player"/>
 	</target>
 	
 	
-	<!-- AUTOMATION -->
+	<!-- BATCH AUTOMATIONS -->
 	
-    <target name="batch_document" description="batch run a set of documentation tasks">
-        <antcall target="sloc_count"/>
-        <antcall target="doc_asdoc"/>
-        <antcall target="deploy_documentation"/>
+	
+    <target name="batch-document" description="Batch a set of documentation related tasks." depends="verify-properties">
+        <antcall target="doc-asdoc"/>
+        <antcall target="deploy-documentation"/>
     </target>
 	
 	
-    <target name="batch_project" description="batch run a set of project tasks">
-    	<antcall target="build_project"/>
-        <antcall target="deploy_project"/>
-    </target>	
-
-	
-	<!-- COMPILE & BUILD -->	
+    <target name="batch-project" description="Batch a set of project related tasks." depends="verify-properties">
+    	<antcall target="compile"/>
+        <antcall target="deploy-project"/>
+    </target>
 	
 	
-	<target name="build" description="Compile current opened fla in src dir with Flash IDE (clear's ASO cache and saves FLA)" depends="verify_properties">
-		<echo message="|*|*|*| class cache clear | source save | compiler start |*|*|*|"/>
-		<exec executable="open"><arg line="${compile.jsfl}"/></exec>
+	<!-- *************************************************************************************
+		 							INTERNAL TARGETS BELOW			        
+	     ************************************************************************************* -->
+	
+	
+	<!-- AS3 COMPILATION -->	
+	
+	
+	<target name="compile-mxmlc-basic" description="Basic compile AS3 project with mxmlc" depends="verify-properties">
+		<exec executable="${mxmlc.exe}" failonerror="true">
+			<arg line ="-output ${project.swf}" />
+			<arg line ="${project.class}" />
+		</exec>
 	</target>
 	
-
-	<target name="compile" description="mxmlc compile, generate wrapper, browser preview" depends="verify_properties">
-		<antcall target="compile_as"/>
-		<antcall target="generate_wrapper"/>
-		<antcall target="browser_preview"/>
-	</target>
-		
 	
-	<target name="compile_as" description="Compile actionscript application with mxmlc" depends="verify_properties">
+	<!-- private: do not call directly -->
+	<target name="compile-mxmlc-advanced" description="Compile actionscript application with mxmlc" depends="verify-properties">
+		<echo>FDTKit MXMLC Compiler -> ${project.class}</echo>
 		<mxmlc 
 			file="${project.class}" 
 			output="${project.swf}" 
@@ -96,45 +128,101 @@
 				<creator name="${project.meta.creator}" />
 				<publisher name="${project.meta.publisher}" />
 			</metadata>
-			<!-- adjust this area to fit your library needs -->
-			<!--
-			<compiler.external-library-path dir="${lib.dir}">
+			<compiler.external-library-path dir="${lib.swc.dir}">
 			    <include name="**/*.swc" />
-			    <exclude name="not-this-one.swc" />
+				<include name="${project.lib.linked}" />
+				<exclude name="${project.lib.exclude}" />
 			</compiler.external-library-path>
-			-->			
+			<load-config filename="${compiler.config}"/>
 		</mxmlc>
 	</target>
-	
 
-	<target name="generate_wrapper" description="Generate an HTML wrapper for SWF." depends="verify_properties">
-	        <html-wrapper
-	        	title="${ant.project.name}"
-				width="${project.wrapper.width}"
-				height="${project.wrapper.height}"
-				bgcolor="${project.wrapper.bgcolor}"
-				application="${project.wrapper.name}"
-				swf="${app.swf}"
-	        	version-major="${project.version.major}"
-	        	version-minor="${project.version.minor}"
-	        	version-revision="${project.version.revision}"
-				history="${project.wrapper.history}"
-				template="${project.wrapper.template}"
-				output="${project.wrapper.output.dir}"
-	        />
-	</target>
 	
-	
-	<target name="browser_preview" description="View the results of the generated wrapper in browser." depends="verify_properties">
-		<exec executable="${browser}" spawn="true">
-			<arg line="${browser.args}"/>
-			<arg line="file:///${tests.dir}"/>
-			<!--<arg line='${project.wrapper.output.dir}/index.html'/>-->
-		</exec>	
+	<!-- private: do not call directly -->
+	<target name="generate-wrapper" description="Generate an HTML wrapper for SWF." depends="verify-properties">
+		<property name="wrapper.dir" value="${TEMP_DIR}/${project.swf.prefix}"/>
+		<echo>FDTKit Wrapper -> ${wrapper.dir}"</echo>
+		<delete includeemptydirs="true" failonerror="false">
+			<fileset dir="${wrapper.dir}" includes="**/*" excludes="**/.svn"/>
+		</delete>
+		<mkdir dir="${wrapper.dir}"/>
+		<html-wrapper
+			title="${ant.project.name}"
+			width="${project.wrapper.width}"
+			height="${project.wrapper.height}"
+			bgcolor="${project.wrapper.bgcolor}"
+			application="${project.wrapper.name}"
+			swf="${project.swf.prefix}"
+	        version-major="${project.version.major}"
+	        version-minor="${project.version.minor}"
+	        version-revision="${project.version.revision}"
+			history="${project.wrapper.history}"
+			template="${project.wrapper.template}"
+			output="${wrapper.dir}"
+		/>
+		<copy todir="${wrapper.dir}">
+		  <fileset file="${project.swf}" excludes="**/.svn"/>
+		</copy>		
 	</target>	
 	
+	
+	<!-- private: do not call directly -->
+	<target name="preview-player" description="View the compile results in the player.">
+		<echo>FDTKit Player Preview -> ${player.args}: ${project.swf}</echo>
+		<exec executable="${swfviewer.exe}">
+			<arg line="${flashplayer.exe}"/>
+			<arg line="${project.swf}"/>
+		</exec>
+		<!--
+		<exec executable="${sys.open}" spawn="false">
+			<arg line="${flashplayer.exe}"/>
+			<arg line="${project.swf}"/>
+		</exec>
+		-->		
+	</target>		
 
-	<target name="compile_fla" description="Compile fla application with Flash IDE" depends="verify_properties">
+	
+	<!-- private: do not call directly -->
+	<target name="preview-browser" description="View the compile results in browser.">
+		<echo>FDTKit Brower Preview -> ${browser.args}: ${project.preview.url}</echo>
+		<exec executable="${sys.open}" spawn="true">
+			<arg line="${browser.args}"/>
+			<arg line="${project.preview.url}"/>
+		</exec>	
+	</target>
+				
+	
+	<!-- private: do not call directly -->
+	<target name="preview-wrapper" description="View the results of the generated wrapper in browser.">
+		<echo>FDTKit Wrapper Preview -> ${browser.args}: file://${TEMP_DIR}/${project.swf.prefix}/index.html</echo>
+		<exec executable="${sys.open}" spawn="true">
+			<arg line="${browser.args}"/>
+			<arg line="file://${TEMP_DIR}/${project.swf.prefix}/index.html"/>
+		</exec>	
+	</target>	
+				
+	
+	<target name="compile-swc" description="Compile the project source to an SWC.">
+		<echo>FDTKit SWC Compiler -> ${project.swc.source}</echo>
+		<compc output="${project.swc}">
+			<source-path path-element="${src.dir}" />
+			<include-sources dir="${project.swc.source}" includes="*" excludes="**/.svn"/>
+		</compc>
+	</target>	
+	
+	
+	<!-- IDE FLA COMPILATION -->	
+	
+
+	<target name="compile-flash" description="Compile the current, opened FLA with Flash IDE (clear's ASO cache and saves FLA)">
+		<echo message="|*|*|*| class cache clear | source save | compiler start |*|*|*|"/>
+		<exec executable="open">
+			<arg line="${compile.jsfl}"/>
+		</exec>	
+	</target>
+				
+				
+	<target name="compile-flash-fla" description="Compile project.fla application with Flash IDE">
 		<fdt.flashCompile>
 	        <fileset dir="${src.dir}">
 	            <include name="${project.fla}"/>
@@ -143,7 +231,7 @@
 	</target>
 	
 	
-	<target name="compile_fla_lib" description="Compile all fla's in lib dir with Flash IDE" depends="verify_properties">
+	<target name="compile-flash-lib" description="Compile all fla's in lib dir with Flash IDE">
 	    <fdt.flashCompile>
 	        <fileset dir="${lib.dir}">
 	        	 <include name="*.fla"/>
@@ -152,7 +240,7 @@
 	</target>
 	
 	
-	<target name="compile_fla_src" description="compile all fla's in src dir with Flash IDE" depends="verify_properties">
+	<target name="compile-flash-src" description="compile all fla's in src dir with Flash IDE">
 	    <fdt.flashCompile>
 	        <fileset dir="${src.dir}">
 	        	 <include name="*.fla"/>
@@ -161,7 +249,7 @@
 	</target>	
 	
 	
-	<target name="compile_fla_tests" description="compile all fla's in tests dir with Flash IDE" depends="verify_properties">
+	<target name="compile-flash-tests" description="compile all fla's in tests dir with Flash IDE">
 		 <fdt.flashCompile failonerror="false">
 		   <fileset dir="${tests.dir}">
 		    <include name="*.fla"/>
@@ -170,7 +258,10 @@
 	</target>
 	
 	
-    <target name="compile_mtasc" description="Basic compile AS2 project with mtasc" depends="verify_properties">
+	<!-- MTASC AS2 COMPILATION -->	
+	
+	
+    <target name="compile-mtasc" description="Basic compile AS2 project with mtasc">
         <exec executable="${mtasc.exe}" dir="." failonerror="true">
             <arg line="-cp ${mtasc.corelib}"/>
             <arg line="-cp ${mtasc.classpath}"/>
@@ -180,21 +271,13 @@
     </target>
 	
 	
-	<target name="compile_mxmlc" description="Basic compile AS3 project with mxmlc" depends="verify_properties">
-		<exec executable="${mxmlc.exe}" failonerror="true">
-			<arg line ="-output ${project.swf}" />
-			<arg line ="${project.class}" />
-		</exec>
-	</target>
-	
-	
 	<!-- DOCUMENTATION -->
 
 	
-	<target name="doc_asdoc" description="Run asdoc to build documentation for AS3 projects." depends="verify_properties">
+	<target name="doc-asdoc" description="Run asdoc to build documentation for AS3 projects.">
 		<exec executable="${asdoc.exe}" failonerror="false">
 			<arg line ="-source-path ${src.dir}" />
-			<arg line='-source-path ${project.extra.lib}'/>
+			<arg line='-source-path ${project.linked.lib}'/>
 			<arg line='-doc-sources ${src.dir}/.'/>
 			<arg line="-templates-path '${flex3sdk}/asdoc/templates'"/>
 			<arg line="-main-title ${doc.asdoc.maintitle}"/>
@@ -209,7 +292,7 @@
 	</target>
 				
 				
-	<target name="doc_graph" description="Run asdoc to build xml for graphviz dot diagrams." depends="verify_properties">
+	<target name="doc-asdoc-graph" description="Run asdoc to build xml for graphviz dot diagrams.">
 		<exec executable="${asdoc.exe}" failonerror="false">
 			<arg line = "-source-path ${src.dir}" />
 			<arg line='-doc-sources ${src.dir}'/>
@@ -222,7 +305,7 @@
 	</target>
 	
 	
-	<target name="doc_as2api" description="Run AS2API to build documentation." depends="verify_properties">
+	<target name="doc-as2api" description="Run AS2API to build documentation.">
 		<exec dir="${as2api.dir}" executable="${ruby.exe}" failonerror="true">
 			<arg line='${as2api.rb}'/>
 			<arg line='package-spec ${doc.as2api.package}'/>
@@ -240,7 +323,7 @@
 	</target>	
 	
 	
-	<target name="doc_clean" description="Remove all old documentation files." depends="verify_properties">
+	<target name="doc-clean" description="Remove all old documentation files.">
 		<defaultexcludes echo="true"/>
 		<delete includeemptydirs="true">
 			<fileset dir="${docs.dir}" includes="**/*" excludes="**/.svn"/>
@@ -251,7 +334,7 @@
 	<!-- DEPLOYMENT-->	
 	
 	
-	<target name="deploy_project" description="rsync+ssh project to target server." depends="verify_properties">
+	<target name="deploy-project" description="rsync+ssh project to target server.">
 		<exec executable="${rsync.exe}">
 			<arg value="-ave ssh"/>
 			<arg value="--delete"/>
@@ -264,7 +347,7 @@
 	</target>	
 	
 	
-	<target name="deploy_documentation" description="rsync+ssh documentation to target server." depends="verify_properties">
+	<target name="deploy-documentation" description="rsync+ssh documentation to target server.">
 		<exec executable="${rsync.exe}">
 			<arg value="-ave ssh"/>
 			<arg value="--delete"/>
@@ -277,7 +360,7 @@
 	</target>
 
 	
-	<target name="deploy_backend" description="rsync+ssh project backend to target server." depends="verify_properties">
+	<target name="deploy-backend" description="rsync+ssh project backend to target server.">
 		<exec executable="${rsync.exe}">
 			<arg value="-ave ssh"/>
 			<arg value="--delete"/>
@@ -293,7 +376,7 @@
 	<!-- SUPPORT -->
 	
 	
-    <target name="create_structure" description="Create a new project directory structure." depends="verify_properties">
+    <target name="create-structure" description="Create a new project directory structure.">
     	<echo message="Creating Project Structure ..."/>
 		<mkdir dir="${build.dir}"/>
     	<echo message="Creating: ${build.dir}"/>    	
@@ -323,6 +406,8 @@
     	<echo message="Creating: ${lib.fonts.dir}"/>
     	<mkdir dir="${lib.ia.dir}"/>
     	<echo message="Creating: ${lib.ia.dir}"/>    	
+    	<mkdir dir="${lib.swc.dir}"/>
+    	<echo message="Creating: ${lib.swc.dir}"/>
     	<mkdir dir="${tests.dir}"/>
     	<echo message="Creating: ${tests.dir}"/>
     	<mkdir dir="${src.dir}"/>
@@ -331,9 +416,24 @@
     </target>
 	
 	
-	<target name="sloc_count" description="count source lines of code." depends="verify_properties">
+	<target name="sloc-count" description="count source lines of code.">
 		<exec executable="${sloccount.sh}" />
-	</target>		
-
+	</target>	
+	
+	
+	<!--
+	<target name="input-test">
+		<input
+		    message="Do you want something?"
+		    validargs="yes,no"
+		    addproperty="do.delete"
+		  />
+		  <condition property="do.abort">
+		    <equals arg1="no" arg2="${do.delete}"/>
+		  </condition>
+		  <fail if="do.abort">Build aborted by user.</fail>	
+	</target>	
+	-->
+	
 	
 </project>
