@@ -58,7 +58,7 @@
 	<!-- CORE COMPILATION, BUILD TARGETS -->	
 	
 
-	<target name="compile-flex" description="mxmlc compile, generate wrapper, browser preview" depends="verify-properties">
+	<target name="compile-flex" description="mxmlc compile, generate wrapper, browser preview">
 		<antcall target="compile-mxmlc-advanced">
 			<param name="compiler.debug" value="false"/>
 		</antcall>
@@ -66,7 +66,7 @@
 	</target>
 	
 		
-	<target name="compile-flex-debug" description="mxmlc debug compile, generate wrapper, browser preview" depends="verify-properties">
+	<target name="compile-flex-debug" description="mxmlc debug compile, generate wrapper, browser preview">
 		<antcall target="compile-mxmlc-advanced">
 			<param name="compiler.debug" value="true"/>
 		</antcall>
@@ -77,13 +77,13 @@
 	<!-- BATCH AUTOMATIONS -->
 	
 	
-    <target name="batch-document" description="Batch a set of documentation related tasks." depends="verify-properties">
+    <target name="batch-document" description="Batch a set of documentation related tasks.">
         <antcall target="doc-asdoc"/>
         <antcall target="deploy-documentation"/>
     </target>
 	
 	
-    <target name="batch-project" description="Batch a set of project related tasks." depends="verify-properties">
+    <target name="batch-project" description="Batch a set of project related tasks.">
     	<antcall target="compile"/>
         <antcall target="deploy-project"/>
     </target>
@@ -97,7 +97,7 @@
 	<!-- AS3 COMPILATION -->	
 	
 	
-	<target name="compile-mxmlc-basic" description="Basic compile AS3 project with mxmlc" depends="verify-properties">
+	<target name="compile-mxmlc-basic" description="Basic compile AS3 project with mxmlc">
 		<exec executable="${mxmlc.exe}" failonerror="true">
 			<arg line ="-output ${project.swf}" />
 			<arg line ="${project.class}" />
@@ -106,8 +106,8 @@
 	
 	
 	<!-- private: do not call directly -->
-	<target name="compile-mxmlc-advanced" description="Compile actionscript application with mxmlc" depends="verify-properties">
-		<echo>FDTKit MXMLC Compiler -> ${project.class}</echo>
+	<target name="compile-mxmlc-advanced" description="Compile actionscript application with mxmlc">
+		<!--<echo>FDTKit MXMLC Compiler -> ${project.class}</echo>-->
 		<mxmlc 
 			file="${project.class}" 
 			output="${project.swf}" 
@@ -139,7 +139,7 @@
 
 	
 	<!-- private: do not call directly -->
-	<target name="generate-wrapper" description="Generate an HTML wrapper for SWF." depends="verify-properties">
+	<target name="generate-wrapper" description="Generate an HTML wrapper for SWF.">
 		<property name="wrapper.dir" value="${TEMP_DIR}/${project.swf.prefix}"/>
 		<echo>FDTKit Wrapper -> ${wrapper.dir}"</echo>
 		<delete includeemptydirs="true" failonerror="false">
@@ -168,7 +168,7 @@
 	
 	<!-- private: do not call directly -->
 	<target name="preview-player" description="View the compile results in the player.">
-		<echo>FDTKit Player Preview -> ${player.args}: ${project.swf}</echo>
+		<!--<echo>FDTKit Player Preview -> ${player.args}: ${project.swf}</echo>-->
 		<exec executable="${swfviewer.exe}">
 			<arg line="${flashplayer.exe}"/>
 			<arg line="${project.swf}"/>
