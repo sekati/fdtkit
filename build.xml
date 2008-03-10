@@ -164,7 +164,18 @@
 		<echo>FDTKit SWC Compiler -> ${project.swc.source}: ${project.swc}</echo>
 		<compc output="${project.swc}">
 			<source-path path-element="${src.dir}" />
-			<include-sources dir="${project.swc.source}" includes="*" excludes="**/.svn"/>
+			<!--<include-sources dir="${project.swc.source}" includes="*" excludes="**/.svn"/>-->
+			<include-sources dir="${project.swc.source}">
+				<include name="*"/>
+				<exclude name="**/.svn"/>
+				<exclude name="${project.swc.exclude0}"/>
+				<exclude name="${project.swc.exclude1}"/>
+			</include-sources>			
+			<metadata title="${project.meta.title}" description="${project.meta.description}" date="${project.meta.date}">
+				<contributor name="${project.meta.contributor}" />
+				<creator name="${project.meta.creator}" />
+				<publisher name="${project.meta.publisher}" />
+			</metadata>				
 		</compc>
 	</target>	
 	
