@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************************************************
-		FDTKit Buildfile v3.2.2
+		FDTKit Buildfile v3.2.3
 		
 		Mar 9, 2008 - jason m horwitz | Sekati LLC | sekati.com
 		
@@ -143,8 +143,12 @@
 			</metadata>
 			<compiler.external-library-path dir="${lib.swc.dir}">
 			    <include name="**/*.swc" />
-				<include name="${project.lib.linked}" />
-				<exclude name="${project.lib.exclude}" />
+				<include name="${project.lib.linked0}" />
+				<include name="${project.lib.linked1}" />
+				<include name="${project.lib.linked2}" />
+				<exclude name="${project.lib.exclude0}" />
+				<exclude name="${project.lib.exclude1}" />
+				<exclude name="${project.lib.exclude2}" />	
 			</compiler.external-library-path>
 			<load-config filename="${compiler.config}"/>
 		</mxmlc>
@@ -164,12 +168,12 @@
 		<echo>FDTKit SWC Compiler -> ${project.swc.source}: ${project.swc}</echo>
 		<compc output="${project.swc}">
 			<source-path path-element="${src.dir}" />
-			<!--<include-sources dir="${project.swc.source}" includes="*" excludes="**/.svn"/>-->
 			<include-sources dir="${project.swc.source}">
 				<include name="*"/>
 				<exclude name="**/.svn"/>
 				<exclude name="${project.swc.exclude0}"/>
 				<exclude name="${project.swc.exclude1}"/>
+				<exclude name="${project.swc.exclude2}"/>
 			</include-sources>			
 			<metadata title="${project.meta.title}" description="${project.meta.description}" date="${project.meta.date}">
 				<contributor name="${project.meta.contributor}" />
