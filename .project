@@ -5,20 +5,7 @@
 	<projects>
 	</projects>
 	<buildSpec>
-		<buildCommand>
-			<name>com.powerflasher.fdt.core.FlashBuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
 	</buildSpec>
 	<natures>
-		<nature>com.powerflasher.fdt.core.FlashNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>core</name>
-			<type>2</type>
-			<locationURI>FlashPlayer9</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>
