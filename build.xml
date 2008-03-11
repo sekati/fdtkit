@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************************************************
-		FDTKit Buildfile v3.2.3
+		FDTKit Buildfile v3.2.5
 		
 		Mar 9, 2008 - jason m horwitz | Sekati LLC | sekati.com
 		
@@ -295,7 +295,9 @@
 		<echo>FDTKit Generating ASDoc Documentation -> ${src.dir}</echo>
 		<exec executable="${asdoc.exe}" failonerror="false">
 			<arg line ="-source-path ${src.dir}" />
-			<arg line='-source-path ${project.lib.linked}'/>
+			<arg line='-source-path ${project.lib.linked0}'/>
+			<arg line='-source-path ${project.lib.linked1}'/>
+			<arg line='-source-path ${project.lib.linked2}'/>
 			<arg line='-doc-sources ${src.dir}/.'/>
 			<arg line="-templates-path '${flex3sdk}/asdoc/templates'"/>
 			<arg line="-main-title ${doc.asdoc.maintitle}"/>
