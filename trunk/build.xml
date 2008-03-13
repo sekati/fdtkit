@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************************************************
-		FDTKit Buildfile v3.2.5
+		FDTKit Buildfile v3.2.6
 		
-		Mar 9, 2008 - jason m horwitz | Sekati LLC | sekati.com
+		Mar 13, 2008 - jason m horwitz | Sekati LLC | sekati.com
 		
 		Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
 		
@@ -299,6 +299,7 @@
 			<arg line='-source-path ${project.lib.linked1}'/>
 			<arg line='-source-path ${project.lib.linked2}'/>
 			<arg line='-doc-sources ${src.dir}/.'/>
+			<arg line='-warnings=${doc.asdoc.warnings}'/>
 			<arg line="-templates-path '${flex3sdk}/asdoc/templates'"/>
 			<arg line="-main-title ${doc.asdoc.maintitle}"/>
 			<arg line="-window-title ${doc.asdoc.windowtitle}"/>
