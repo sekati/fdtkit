@@ -7,7 +7,8 @@ _Note: `CTRL` should be replaced with `Command` for MacOS X_
 
 || *Searching* || _description_ ||
 || CTRL+SHIFT+L || Show all available Hotkeys ||
-|| CTRL+SHIFT+R || Find Resources ||
+|| CTRL+SHIFT+R || Find/Open Resources ||
+|| CTRL+SHIFT+T || Find/Open Type ||
 || CTRL+H || Search in different files ||
 || CTRL+F || Search in one file (CTRL+K/CTRL+SHIFT+K: next/previous) ||
 || CTRL+J / CTRL+SHIFT+J || Incremental search (search as you type) ||
