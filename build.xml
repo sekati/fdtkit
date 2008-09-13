@@ -470,8 +470,6 @@
     	<echo message="Creating: ${lib.fonts.dir}"/>
     	<mkdir dir="${lib.ia.dir}"/>
     	<echo message="Creating: ${lib.ia.dir}"/>    	
-    	<mkdir dir="${lib.swc.dir}"/>
-    	<echo message="Creating: ${lib.swc.dir}"/>
     	<mkdir dir="${tests.dir}"/>
     	<echo message="Creating: ${tests.dir}"/>
     	<mkdir dir="${src.dir}"/>
