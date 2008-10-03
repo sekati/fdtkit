@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************************************************
-		FDTKit Buildfile v3.2.6
+		FDTKit Buildfile v3.2.7
 		
 		Mar 13, 2008 - jason m horwitz | Sekati LLC | sekati.com
 		
@@ -142,7 +142,7 @@
 				<creator name="${project.meta.creator}" />
 				<publisher name="${project.meta.publisher}" />
 			</metadata>
-			<compiler.external-library-path dir="${lib.swc.dir}">
+			<compiler.external-library-path dir="${lib.dir}">
 			    <include name="**/*.swc" />
 				<include name="${project.lib.linked0}" />
 				<include name="${project.lib.linked1}" />
